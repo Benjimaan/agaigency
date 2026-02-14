@@ -41,10 +41,10 @@
     "subtitle": "Explore a selection of projects that showcase our expertise and commitment to quality.",
     "viewProject": "View project",
     "items": {
-      "project1": {
-        "title": "Luxe Boutique",
-        "category": "E-Commerce",
-        "description": "Complete redesign of a luxury online store with a 200% increase in conversions."
+      "dkrEat": {
+        "title": "Dakar Eat",
+        "category": "Digital Tool & Online Ordering",
+        "description": "Complete platform for a Senegalese restaurant: showcase site, online ordering, admin dashboard with client tracking, influencer management and real-time commissions."
       },
       "project2": {
         "title": "ArchiStudio",

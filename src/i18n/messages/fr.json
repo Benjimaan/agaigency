@@ -41,10 +41,10 @@
     "subtitle": "Découvrez une sélection de projets qui illustrent notre expertise et notre exigence qualité.",
     "viewProject": "Voir le projet",
     "items": {
-      "project1": {
-        "title": "Luxe Boutique",
-        "category": "E-Commerce",
-        "description": "Refonte complète d'une boutique en ligne de luxe avec une augmentation de 200% des conversions."
+      "dkrEat": {
+        "title": "Dakar Eat",
+        "category": "Outil Digital & Commande en ligne",
+        "description": "Plateforme complète pour un restaurant sénégalais : site vitrine, commande en ligne, dashboard admin avec suivi clients, gestion des influenceurs et commissions en temps réel."
       },
       "project2": {
         "title": "ArchiStudio",
