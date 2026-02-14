@@ -36,14 +36,11 @@ function BrowserFrame({
 }
 
 /* ─── Hero Section ─── */
-function CaseStudyHero({
-  project,
-}: {
-  project: ProjectData;
-}) {
-  const t = useTranslations("portfolio.items." + project.translationKey);
+function CaseStudyHero({ project }: { project: ProjectData }) {
+  const t = useTranslations("portfolio");
   const locale = useLocale();
-  const title = t("title");
+  const k = project.translationKey;
+  const title = t(`items.${k}.title`);
 
   const wordVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -60,7 +57,6 @@ function CaseStudyHero({
 
   return (
     <section className="relative flex min-h-[70vh] items-end overflow-hidden px-6 pb-20 pt-32">
-      {/* Background gradient */}
       <div
         className="pointer-events-none absolute inset-0 opacity-20"
         style={{
@@ -69,7 +65,6 @@ function CaseStudyHero({
       />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl">
-        {/* Back button */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -86,7 +81,6 @@ function CaseStudyHero({
           </Link>
         </motion.div>
 
-        {/* Category badge */}
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -94,10 +88,9 @@ function CaseStudyHero({
           className="mb-6 inline-block rounded-full px-4 py-1.5 text-xs font-medium tracking-wider uppercase"
           style={{ backgroundColor: `${project.color}20`, color: project.color }}
         >
-          {t("category")}
+          {t(`items.${k}.category`)}
         </motion.span>
 
-        {/* Title — word by word */}
         <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
           {title.split(" ").map((word, i) => (
             <motion.span
@@ -113,17 +106,15 @@ function CaseStudyHero({
           ))}
         </h1>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
           className="max-w-2xl text-xl text-muted"
         >
-          {t("heroSubtitle")}
+          {t(`items.${k}.heroSubtitle`)}
         </motion.p>
 
-        {/* Stats bar */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -131,9 +122,9 @@ function CaseStudyHero({
           className="mt-12 flex gap-12"
         >
           {[
-            { value: "12+", label: t("stats.pages") },
-            { value: "25+", label: t("stats.features") },
-            { value: "8", label: t("stats.duration") },
+            { value: "12+", label: t(`items.${k}.stats.pages`) },
+            { value: "25+", label: t(`items.${k}.stats.features`) },
+            { value: "8", label: t(`items.${k}.stats.duration`) },
           ].map((stat, i) => (
             <div key={i}>
               <div className="text-3xl font-bold" style={{ color: project.color }}>
@@ -155,8 +146,6 @@ function ScrollingMockup({ project }: { project: ProjectData }) {
     target: containerRef,
     offset: ["start end", "end start"],
   });
-
-  // Move image from 0% to -50% as user scrolls through the section
   const imageY = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "-40%"]);
 
   return (
@@ -164,10 +153,7 @@ function ScrollingMockup({ project }: { project: ProjectData }) {
       <div className="mx-auto max-w-5xl">
         <BrowserFrame url="dakareat.com">
           <div className="relative h-[400px] overflow-hidden sm:h-[500px] md:h-[600px]">
-            <motion.div
-              style={{ y: imageY }}
-              className="absolute inset-x-0 top-0"
-            >
+            <motion.div style={{ y: imageY }} className="absolute inset-x-0 top-0">
               <Image
                 src={project.heroImage}
                 alt="Full page screenshot"
@@ -186,7 +172,8 @@ function ScrollingMockup({ project }: { project: ProjectData }) {
 
 /* ─── Screenshot Carousel ─── */
 function ScreenshotCarousel({ project }: { project: ProjectData }) {
-  const t = useTranslations("portfolio.items." + project.translationKey);
+  const t = useTranslations("portfolio");
+  const k = project.translationKey;
 
   return (
     <div className="relative">
@@ -211,7 +198,7 @@ function ScreenshotCarousel({ project }: { project: ProjectData }) {
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={page.image}
-                  alt={`${t("title")} - ${page.label}`}
+                  alt={`${t(`items.${k}.title`)} - ${page.label}`}
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 80vw, 700px"
@@ -223,14 +210,13 @@ function ScreenshotCarousel({ project }: { project: ProjectData }) {
         ))}
       </div>
 
-      {/* Fade edges */}
       <div className="pointer-events-none absolute top-0 left-0 bottom-6 w-10 bg-gradient-to-r from-background to-transparent" />
       <div className="pointer-events-none absolute top-0 right-0 bottom-6 w-20 bg-gradient-to-l from-background to-transparent" />
     </div>
   );
 }
 
-/* ─── Section with Sticky Text + Parallax Image ─── */
+/* ─── Sticky Section ─── */
 function StickySection({
   project,
   sectionKey,
@@ -242,7 +228,8 @@ function StickySection({
   images: string[];
   reverse?: boolean;
 }) {
-  const t = useTranslations("portfolio.items." + project.translationKey);
+  const t = useTranslations("portfolio");
+  const k = project.translationKey;
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -257,19 +244,17 @@ function StickySection({
         reverse ? "lg:flex-row-reverse" : ""
       }`}
     >
-      {/* Sticky text */}
       <div className="lg:sticky lg:top-32 lg:w-1/3">
         <ScrollReveal>
           <h3 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            {t(`sections.${sectionKey}.title`)}
+            {t(`items.${k}.sections.${sectionKey}.title`)}
           </h3>
           <p className="text-lg leading-relaxed text-muted">
-            {t(`sections.${sectionKey}.description`)}
+            {t(`items.${k}.sections.${sectionKey}.description`)}
           </p>
         </ScrollReveal>
       </div>
 
-      {/* Images with parallax */}
       <motion.div style={{ y }} className="flex-1 space-y-6">
         {images.map((img, i) => (
           <ScrollReveal key={i} delay={i * 0.1}>
@@ -291,60 +276,41 @@ function StickySection({
   );
 }
 
-/* ─── Back to Portfolio CTA ─── */
-function BackCTA({ project }: { project: ProjectData }) {
-  const locale = useLocale();
-
-  return (
-    <section className="px-6 py-32 text-center">
-      <ScrollReveal>
-        <Link
-          href={`/${locale}#portfolio`}
-          className="inline-flex items-center gap-3 rounded-full border border-border px-8 py-4 text-lg font-medium transition-all hover:border-accent hover:text-accent"
-        >
-          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-          </svg>
-          Retour au portfolio
-        </Link>
-      </ScrollReveal>
-    </section>
-  );
-}
-
 /* ─── Main Page ─── */
 export default function CaseStudyPage({ project }: { project: ProjectData }) {
+  const t = useTranslations("portfolio");
+  const locale = useLocale();
+  const k = project.translationKey;
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero with split text animation */}
       <CaseStudyHero project={project} />
 
-      {/* Scrolling mockup — the signature effect */}
       <ScrollingMockup project={project} />
 
-      {/* Section: The Website — carousel */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal className="mb-12">
-            <SectionTitle project={project} sectionKey="website" />
+            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+              {t(`items.${k}.sections.website.title`)}
+            </h2>
+            <p className="max-w-2xl text-lg text-muted">
+              {t(`items.${k}.sections.website.description`)}
+            </p>
           </ScrollReveal>
         </div>
         <ScreenshotCarousel project={project} />
       </section>
 
-      {/* Section: The Dashboard — sticky text + images */}
       <section className="mx-auto max-w-7xl py-20">
         <StickySection
           project={project}
           sectionKey="dashboard"
-          images={[
-            "/images/projects/dkr-eat/admin-login.png",
-          ]}
+          images={["/images/projects/dkr-eat/admin-login.png"]}
           reverse
         />
       </section>
 
-      {/* Results */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <ScrollReveal>
@@ -352,46 +318,30 @@ export default function CaseStudyPage({ project }: { project: ProjectData }) {
               className="mb-6 inline-block rounded-full px-4 py-1.5 text-xs font-medium tracking-wider uppercase"
               style={{ backgroundColor: `${project.color}20`, color: project.color }}
             >
-              {/* We access translations directly */}
-              <ResultsBadge project={project} />
+              {t(`items.${k}.sections.results.title`)}
             </span>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <ResultsText project={project} />
+            <p className="text-2xl font-light leading-relaxed text-muted sm:text-3xl">
+              {t(`items.${k}.sections.results.description`)}
+            </p>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* Back CTA */}
-      <BackCTA project={project} />
+      <section className="px-6 py-32 text-center">
+        <ScrollReveal>
+          <Link
+            href={`/${locale}#portfolio`}
+            className="inline-flex items-center gap-3 rounded-full border border-border px-8 py-4 text-lg font-medium transition-all hover:border-accent hover:text-accent"
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Portfolio
+          </Link>
+        </ScrollReveal>
+      </section>
     </div>
-  );
-}
-
-function SectionTitle({ project, sectionKey }: { project: ProjectData; sectionKey: string }) {
-  const t = useTranslations("portfolio.items." + project.translationKey);
-  return (
-    <>
-      <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-        {t(`sections.${sectionKey}.title`)}
-      </h2>
-      <p className="max-w-2xl text-lg text-muted">
-        {t(`sections.${sectionKey}.description`)}
-      </p>
-    </>
-  );
-}
-
-function ResultsBadge({ project }: { project: ProjectData }) {
-  const t = useTranslations("portfolio.items." + project.translationKey);
-  return <>{t("sections.results.title")}</>;
-}
-
-function ResultsText({ project }: { project: ProjectData }) {
-  const t = useTranslations("portfolio.items." + project.translationKey);
-  return (
-    <p className="text-2xl font-light leading-relaxed text-muted sm:text-3xl">
-      {t("sections.results.description")}
-    </p>
   );
 }

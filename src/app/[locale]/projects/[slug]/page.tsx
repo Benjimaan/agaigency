@@ -1,9 +1,13 @@
 import { notFound } from "next/navigation";
 import { getProjectBySlug, getAllProjectSlugs } from "@/lib/projects";
+import { routing } from "@/i18n/routing";
 import CaseStudyPage from "@/components/CaseStudyPage";
 
 export function generateStaticParams() {
-  return getAllProjectSlugs().map((slug) => ({ slug }));
+  const slugs = getAllProjectSlugs();
+  return routing.locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug }))
+  );
 }
 
 export default async function ProjectPage({
