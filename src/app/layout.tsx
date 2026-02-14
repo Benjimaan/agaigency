@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "AgaiGency — Agence Digitale Premium",
   description:
     "Nous créons des sites web premium qui convertissent. Design, développement et stratégie digitale sur mesure.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({
