@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import LangSwitcher from "./ui/LangSwitcher";
 
 const navLinks = [
@@ -50,8 +51,15 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
-        <a href="#" className="text-xl font-bold tracking-tight text-foreground">
-          Agai<span className="text-accent">Gency</span>
+        <a href="#" className="block">
+          <Image
+            src="/images/logo.png"
+            alt="AgaiGency"
+            width={160}
+            height={40}
+            className="h-8 w-auto"
+            priority
+          />
         </a>
 
         {/* Desktop nav */}

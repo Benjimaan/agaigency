@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -22,8 +23,14 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <a href="#" className="mb-4 inline-block text-xl font-bold tracking-tight">
-              Agai<span className="text-accent">Gency</span>
+            <a href="#" className="mb-4 inline-block">
+              <Image
+                src="/images/logo.png"
+                alt="AgaiGency"
+                width={160}
+                height={40}
+                className="h-8 w-auto"
+              />
             </a>
             <p className="max-w-xs text-sm leading-relaxed text-muted">
               {t("description")}

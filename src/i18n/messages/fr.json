@@ -150,7 +150,7 @@
         "name": "Votre nom complet",
         "email": "Votre adresse email",
         "company": "Nom de votre entreprise",
-        "phone": "Téléphone (optionnel)"
+        "phone": "Votre numéro de téléphone"
       },
       "projectType": {
         "title": "Quel type de projet ?",

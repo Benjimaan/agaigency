@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 
 const TOTAL_STEPS = 5;
@@ -416,7 +417,7 @@ export default function QuoteForm() {
   const canProceed = () => {
     switch (step) {
       case 0:
-        return formData.name.trim() !== "" && formData.email.trim() !== "";
+        return formData.name.trim() !== "" && formData.email.trim() !== "" && formData.phone.trim() !== "";
       case 1:
         return formData.projectType !== "";
       case 2:
@@ -469,12 +470,12 @@ export default function QuoteForm() {
         >
           <Link
             href={`/${locale}`}
-            className="mb-12 inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
+            className="mb-12 inline-flex items-center gap-3 text-sm text-muted transition-colors hover:text-foreground"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
-            AgaiGency
+            <Image src="/images/logo.png" alt="AgaiGency" width={120} height={30} className="h-6 w-auto" />
           </Link>
         </motion.div>
 
