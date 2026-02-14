@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "process": "Process",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "We craft websites that convert.",
+    "subtitle": "Premium digital agency specializing in high-performance, elegant, and results-driven web design.",
+    "cta": "Start a project",
+    "scroll": "Discover"
+  },
+  "services": {
+    "badge": "Our expertise",
+    "title": "Tailored digital solutions",
+    "subtitle": "Every project is unique. We combine design, technology, and strategy to create exceptional digital experiences.",
+    "items": {
+      "design": {
+        "title": "UI/UX Design",
+        "description": "Elegant and intuitive interfaces designed to maximize user engagement and conversion."
+      },
+      "development": {
+        "title": "Web Development",
+        "description": "High-performance sites built with cutting-edge technologies. Fast, secure, and scalable."
+      },
+      "seo": {
+        "title": "SEO & Performance",
+        "description": "Advanced search engine optimization and ultra-fast loading times for maximum visibility."
+      },
+      "ecommerce": {
+        "title": "E-Commerce",
+        "description": "Premium online stores with optimized purchase journeys to maximize your sales."
+      }
+    }
+  },
+  "portfolio": {
+    "badge": "Portfolio",
+    "title": "Our work",
+    "subtitle": "Explore a selection of projects that showcase our expertise and commitment to quality.",
+    "viewProject": "View project",
+    "items": {
+      "project1": {
+        "title": "Luxe Boutique",
+        "category": "E-Commerce",
+        "description": "Complete redesign of a luxury online store with a 200% increase in conversions."
+      },
+      "project2": {
+        "title": "ArchiStudio",
+        "category": "Showcase Website",
+        "description": "Immersive showcase site for an award-winning architecture firm, highlighting their projects."
+      },
+      "project3": {
+        "title": "FitPro App",
+        "category": "Web Application",
+        "description": "Fitness coaching SaaS platform with personalized dashboard and real-time tracking."
+      }
+    }
+  },
+  "process": {
+    "badge": "Our method",
+    "title": "A proven process",
+    "subtitle": "From idea to launch, every step is designed to deliver results that match your ambitions.",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "We analyze your needs, market, and goals to define a clear digital strategy."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Custom mockups that reflect your identity and optimize the user experience."
+      },
+      "development": {
+        "title": "Development",
+        "description": "Pixel-perfect integration with top-tier technologies and industry best practices."
+      },
+      "testing": {
+        "title": "Testing & QA",
+        "description": "Rigorous testing across all browsers and devices to ensure a flawless experience."
+      },
+      "launch": {
+        "title": "Launch",
+        "description": "Go-live, training, and support to ensure the success of your digital project."
+      }
+    }
+  },
+  "about": {
+    "badge": "About us",
+    "title": "Digital excellence, our signature.",
+    "description": "AgaiGency was born from the belief that a website can be both a design masterpiece and a powerful growth tool. We push the boundaries of the web to create experiences that leave lasting impressions.",
+    "values": {
+      "innovation": {
+        "title": "Innovation",
+        "description": "Cutting-edge technologies and creative approach"
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Every pixel matters, every detail is crafted"
+      },
+      "results": {
+        "title": "Results",
+        "description": "Sites that perform and generate ROI"
+      }
+    }
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Ready to transform your digital presence?",
+    "subtitle": "Let's discuss your project and see how we can bring it to life together.",
+    "cta": "Start a project",
+    "form": {
+      "name": "Your name",
+      "email": "Your email",
+      "message": "Describe your project...",
+      "send": "Send"
+    }
+  },
+  "footer": {
+    "description": "Premium digital agency. We craft websites that convert.",
+    "navigation": "Navigation",
+    "legal": "Legal notice",
+    "privacy": "Privacy policy",
+    "rights": "All rights reserved."
+  }
+}

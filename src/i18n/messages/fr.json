@@ -1,0 +1,126 @@
+{
+  "nav": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "process": "Processus",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Nous créons des sites qui convertissent.",
+    "subtitle": "Agence digitale premium spécialisée dans la conception de sites web performants, élégants et orientés résultats.",
+    "cta": "Démarrer un projet",
+    "scroll": "Découvrir"
+  },
+  "services": {
+    "badge": "Nos expertises",
+    "title": "Des solutions digitales sur mesure",
+    "subtitle": "Chaque projet est unique. Nous combinons design, technologie et stratégie pour créer des expériences digitales exceptionnelles.",
+    "items": {
+      "design": {
+        "title": "Design UI/UX",
+        "description": "Interfaces élégantes et intuitives conçues pour maximiser l'engagement et la conversion de vos utilisateurs."
+      },
+      "development": {
+        "title": "Développement Web",
+        "description": "Sites performants construits avec les technologies les plus modernes. Rapides, sécurisés et évolutifs."
+      },
+      "seo": {
+        "title": "SEO & Performance",
+        "description": "Optimisation avancée pour les moteurs de recherche et temps de chargement ultra-rapides."
+      },
+      "ecommerce": {
+        "title": "E-Commerce",
+        "description": "Boutiques en ligne premium avec des parcours d'achat optimisés pour maximiser vos ventes."
+      }
+    }
+  },
+  "portfolio": {
+    "badge": "Portfolio",
+    "title": "Nos réalisations",
+    "subtitle": "Découvrez une sélection de projets qui illustrent notre expertise et notre exigence qualité.",
+    "viewProject": "Voir le projet",
+    "items": {
+      "project1": {
+        "title": "Luxe Boutique",
+        "category": "E-Commerce",
+        "description": "Refonte complète d'une boutique en ligne de luxe avec une augmentation de 200% des conversions."
+      },
+      "project2": {
+        "title": "ArchiStudio",
+        "category": "Site Vitrine",
+        "description": "Site vitrine immersif pour un cabinet d'architecture primé, mettant en valeur leurs réalisations."
+      },
+      "project3": {
+        "title": "FitPro App",
+        "category": "Application Web",
+        "description": "Plateforme SaaS de coaching fitness avec dashboard personnalisé et suivi en temps réel."
+      }
+    }
+  },
+  "process": {
+    "badge": "Notre méthode",
+    "title": "Un processus éprouvé",
+    "subtitle": "De l'idée au lancement, chaque étape est pensée pour garantir un résultat à la hauteur de vos ambitions.",
+    "steps": {
+      "discovery": {
+        "title": "Découverte",
+        "description": "Nous analysons vos besoins, votre marché et vos objectifs pour définir une stratégie digitale claire."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Création de maquettes sur mesure qui reflètent votre identité et optimisent l'expérience utilisateur."
+      },
+      "development": {
+        "title": "Développement",
+        "description": "Intégration pixel-perfect avec les technologies les plus performantes et les meilleures pratiques."
+      },
+      "testing": {
+        "title": "Tests & QA",
+        "description": "Tests rigoureux sur tous les navigateurs et appareils pour garantir une expérience sans faille."
+      },
+      "launch": {
+        "title": "Lancement",
+        "description": "Mise en ligne, formation et accompagnement pour assurer le succès de votre projet digital."
+      }
+    }
+  },
+  "about": {
+    "badge": "À propos",
+    "title": "L'excellence digitale, notre signature.",
+    "description": "AgaiGency est née de la conviction qu'un site web peut être à la fois une œuvre de design et un outil de croissance redoutable. Nous repoussons les limites du web pour créer des expériences qui marquent les esprits.",
+    "values": {
+      "innovation": {
+        "title": "Innovation",
+        "description": "Technologies de pointe et approche créative"
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Chaque pixel compte, chaque détail est soigné"
+      },
+      "results": {
+        "title": "Résultats",
+        "description": "Des sites qui performent et génèrent du ROI"
+      }
+    }
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Prêt à transformer votre présence digitale ?",
+    "subtitle": "Discutons de votre projet et voyons comment nous pouvons le concrétiser ensemble.",
+    "cta": "Démarrer un projet",
+    "form": {
+      "name": "Votre nom",
+      "email": "Votre email",
+      "message": "Décrivez votre projet...",
+      "send": "Envoyer"
+    }
+  },
+  "footer": {
+    "description": "Agence digitale premium. Nous créons des sites web qui convertissent.",
+    "navigation": "Navigation",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "rights": "Tous droits réservés."
+  }
+}
