@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
-import Image from "next/image";
 import Link from "next/link";
 
 const TOTAL_STEPS = 5;
@@ -475,7 +474,7 @@ export default function QuoteForm() {
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
-            <Image src="/images/logo.png" alt="AgaiGency" width={160} height={40} className="h-10 w-auto" />
+            <img src="/images/logo.svg" alt="AgaiGency" className="h-10 w-auto" />
           </Link>
         </motion.div>
 

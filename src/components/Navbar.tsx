@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import LangSwitcher from "./ui/LangSwitcher";
 
 const navLinks = [
@@ -52,13 +51,10 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
         <a href="#" className="block">
-          <Image
-            src="/images/logo.png"
+          <img
+            src="/images/logo.svg"
             alt="AgaiGency"
-            width={200}
-            height={50}
             className="h-12 w-auto"
-            priority
           />
         </a>
 

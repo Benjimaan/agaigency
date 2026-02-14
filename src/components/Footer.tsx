@@ -1,7 +1,6 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -24,11 +23,9 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <a href="#" className="mb-4 inline-block">
-              <Image
-                src="/images/logo.png"
+              <img
+                src="/images/logo.svg"
                 alt="AgaiGency"
-                width={200}
-                height={50}
                 className="h-12 w-auto"
               />
             </a>
