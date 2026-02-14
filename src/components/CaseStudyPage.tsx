@@ -151,7 +151,7 @@ function ScrollingMockup({ project }: { project: ProjectData }) {
   return (
     <div ref={containerRef} className="px-6 py-20">
       <div className="mx-auto max-w-5xl">
-        <BrowserFrame url="dakareat.com">
+        <BrowserFrame url={project.liveUrl}>
           <div className="relative h-[400px] overflow-hidden sm:h-[500px] md:h-[600px]">
             <motion.div style={{ y: imageY }} className="absolute inset-x-0 top-0">
               <Image
@@ -194,7 +194,7 @@ function ScreenshotCarousel({ project }: { project: ProjectData }) {
             }}
             className="w-[80vw] max-w-[700px] flex-shrink-0 snap-center"
           >
-            <BrowserFrame url={`dakareat.com/${page.label.toLowerCase().replace(/\s|à/g, "-")}`}>
+            <BrowserFrame url={project.liveUrl ? `${project.liveUrl}/${page.label.toLowerCase().replace(/\s|à/g, "-")}` : undefined}>
               <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={page.image}
@@ -292,24 +292,26 @@ export default function CaseStudyPage({ project }: { project: ProjectData }) {
         <div className="mx-auto max-w-7xl px-6">
           <ScrollReveal className="mb-12">
             <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-              {t(`items.${k}.sections.website.title`)}
+              {t(`items.${k}.sections.${project.carouselSectionKey}.title`)}
             </h2>
             <p className="max-w-2xl text-lg text-muted">
-              {t(`items.${k}.sections.website.description`)}
+              {t(`items.${k}.sections.${project.carouselSectionKey}.description`)}
             </p>
           </ScrollReveal>
         </div>
         <ScreenshotCarousel project={project} />
       </section>
 
-      <section className="mx-auto max-w-7xl py-20">
-        <StickySection
-          project={project}
-          sectionKey="dashboard"
-          images={["/images/projects/dkr-eat/admin-login.png"]}
-          reverse
-        />
-      </section>
+      {project.sections.map((section) => (
+        <section key={section.key} className="mx-auto max-w-7xl py-20">
+          <StickySection
+            project={project}
+            sectionKey={section.key}
+            images={section.images || []}
+            reverse={section.reverse}
+          />
+        </section>
+      ))}
 
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">

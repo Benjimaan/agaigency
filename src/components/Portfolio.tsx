@@ -22,10 +22,10 @@ const projects: Project[] = [
     color: "#e87435",
   },
   {
-    key: "project2",
-    slug: null,
-    image: null,
-    color: "#8b9dc3",
+    key: "nisware",
+    slug: "nisware",
+    image: "/images/projects/nisware/desktop-hero.png",
+    color: "#e74c3c",
   },
   {
     key: "project3",

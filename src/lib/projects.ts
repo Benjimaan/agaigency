@@ -3,6 +3,12 @@ export interface ProjectPage {
   image: string;
 }
 
+export interface ProjectSection {
+  key: string;
+  images?: string[];
+  reverse?: boolean;
+}
+
 export interface ProjectData {
   slug: string;
   translationKey: string;
@@ -10,6 +16,10 @@ export interface ProjectData {
   liveUrl?: string;
   heroImage: string;
   pages: ProjectPage[];
+  /** First section key used above the carousel (e.g. "website", "landing") */
+  carouselSectionKey: string;
+  /** Sticky text+image sections */
+  sections: ProjectSection[];
 }
 
 export const projects: ProjectData[] = [
@@ -17,13 +27,40 @@ export const projects: ProjectData[] = [
     slug: "dakar-eat",
     translationKey: "dkrEat",
     color: "#e87435",
+    liveUrl: "dakareat.com",
     heroImage: "/images/projects/dkr-eat/accueil.png",
+    carouselSectionKey: "website",
     pages: [
       { label: "Accueil", image: "/images/projects/dkr-eat/accueil.png" },
       { label: "Menu", image: "/images/projects/dkr-eat/menu.png" },
       { label: "À propos", image: "/images/projects/dkr-eat/a-propos.png" },
       { label: "Contact", image: "/images/projects/dkr-eat/contact.png" },
       { label: "Admin", image: "/images/projects/dkr-eat/admin-login.png" },
+    ],
+    sections: [
+      {
+        key: "dashboard",
+        images: ["/images/projects/dkr-eat/admin-login.png"],
+        reverse: true,
+      },
+    ],
+  },
+  {
+    slug: "nisware",
+    translationKey: "nisware",
+    color: "#e74c3c",
+    heroImage: "/images/projects/nisware/desktop-full.png",
+    carouselSectionKey: "landing",
+    pages: [
+      { label: "Desktop", image: "/images/projects/nisware/desktop-hero.png" },
+      { label: "Tablet", image: "/images/projects/nisware/tablet-hero.png" },
+      { label: "Mobile", image: "/images/projects/nisware/mobile-hero.png" },
+    ],
+    sections: [
+      {
+        key: "concept",
+        images: ["/images/projects/nisware/mobile-full.png"],
+      },
     ],
   },
 ];

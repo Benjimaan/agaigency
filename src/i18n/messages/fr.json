@@ -66,10 +66,30 @@
           "duration": "Semaines de dev"
         }
       },
-      "project2": {
-        "title": "ArchiStudio",
-        "category": "Site Vitrine",
-        "description": "Site vitrine immersif pour un cabinet d'architecture primé, mettant en valeur leurs réalisations."
+      "nisware": {
+        "title": "Nisware",
+        "category": "Application Mobile & Landing Page",
+        "description": "Réseau social de proximité : contenu éphémère 24h, événements live, alertes et bons plans partagés par les gens autour de vous. Landing page responsive + application Android.",
+        "heroSubtitle": "Le réseau social du monde réel — voyez ce qui se passe autour de vous en temps réel",
+        "sections": {
+          "landing": {
+            "title": "La Landing Page",
+            "description": "Une page d'atterrissage épurée et moderne présentant le concept Nisware. Design responsive optimisé pour desktop, tablette et mobile avec téléchargement direct de l'APK."
+          },
+          "concept": {
+            "title": "Le Concept",
+            "description": "Les réseaux sociaux nous connectent au monde entier, mais aucun ne nous connecte à ce qui se passe autour de nous. Nisware résout ce problème avec du contenu local, éphémère et partagé par les gens à proximité."
+          },
+          "results": {
+            "title": "Fonctionnalités",
+            "description": "Marchés & rencontres, concerts & événements, promos & bons plans, alertes & incidents, vie de quartier, tourisme local — le tout visible pendant 24h dans un rayon de 3km."
+          }
+        },
+        "stats": {
+          "pages": "Écrans créés",
+          "features": "Fonctionnalités",
+          "duration": "Semaines de dev"
+        }
       },
       "project3": {
         "title": "FitPro App",

@@ -66,10 +66,30 @@
           "duration": "Weeks of dev"
         }
       },
-      "project2": {
-        "title": "ArchiStudio",
-        "category": "Showcase Website",
-        "description": "Immersive showcase site for an award-winning architecture firm, highlighting their projects."
+      "nisware": {
+        "title": "Nisware",
+        "category": "Mobile App & Landing Page",
+        "description": "Proximity-based social network: 24h ephemeral content, live events, alerts and deals shared by people around you. Responsive landing page + Android application.",
+        "heroSubtitle": "The real-world social network — see what's happening around you in real time",
+        "sections": {
+          "landing": {
+            "title": "The Landing Page",
+            "description": "A clean and modern landing page presenting the Nisware concept. Responsive design optimized for desktop, tablet and mobile with direct APK download."
+          },
+          "concept": {
+            "title": "The Concept",
+            "description": "Social networks connect us to the whole world, but none connect us to what's happening around us. Nisware solves this with local, ephemeral content shared by nearby people."
+          },
+          "results": {
+            "title": "Features",
+            "description": "Markets & meetups, concerts & events, promos & deals, alerts & incidents, neighborhood life, local tourism — all visible for 24h within a 3km radius."
+          }
+        },
+        "stats": {
+          "pages": "Screens created",
+          "features": "Features",
+          "duration": "Weeks of dev"
+        }
       },
       "project3": {
         "title": "FitPro App",
