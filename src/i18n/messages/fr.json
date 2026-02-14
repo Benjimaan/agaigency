@@ -44,7 +44,27 @@
       "dkrEat": {
         "title": "Dakar Eat",
         "category": "Outil Digital & Commande en ligne",
-        "description": "Plateforme complète pour un restaurant sénégalais : site vitrine, commande en ligne, dashboard admin avec suivi clients, gestion des influenceurs et commissions en temps réel."
+        "description": "Plateforme complète pour un restaurant sénégalais : site vitrine, commande en ligne, dashboard admin avec suivi clients, gestion des influenceurs et commissions en temps réel.",
+        "heroSubtitle": "Un outil digital complet pour la restauration sénégalaise authentique",
+        "sections": {
+          "website": {
+            "title": "Le Site Web",
+            "description": "Un site vitrine moderne et chaleureux qui met en avant la cuisine sénégalaise authentique. Navigation intuitive, menu interactif avec commande en ligne, et design responsive optimisé pour la conversion."
+          },
+          "dashboard": {
+            "title": "Le Dashboard Admin",
+            "description": "Un tableau de bord complet permettant au restaurateur de gérer ses commandes, produits, partenariats influenceurs et commissions en temps réel. Suivi client détaillé et statistiques de performance."
+          },
+          "results": {
+            "title": "Résultats",
+            "description": "Une solution digitale tout-en-un qui a transformé la gestion du restaurant et boosté sa visibilité en ligne."
+          }
+        },
+        "stats": {
+          "pages": "Pages créées",
+          "features": "Fonctionnalités",
+          "duration": "Semaines de dev"
+        }
       },
       "project2": {
         "title": "ArchiStudio",

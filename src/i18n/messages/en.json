@@ -44,7 +44,27 @@
       "dkrEat": {
         "title": "Dakar Eat",
         "category": "Digital Tool & Online Ordering",
-        "description": "Complete platform for a Senegalese restaurant: showcase site, online ordering, admin dashboard with client tracking, influencer management and real-time commissions."
+        "description": "Complete platform for a Senegalese restaurant: showcase site, online ordering, admin dashboard with client tracking, influencer management and real-time commissions.",
+        "heroSubtitle": "A complete digital tool for authentic Senegalese dining",
+        "sections": {
+          "website": {
+            "title": "The Website",
+            "description": "A modern and warm showcase site highlighting authentic Senegalese cuisine. Intuitive navigation, interactive menu with online ordering, and responsive design optimized for conversion."
+          },
+          "dashboard": {
+            "title": "The Admin Dashboard",
+            "description": "A comprehensive dashboard enabling the restaurant owner to manage orders, products, influencer partnerships and commissions in real time. Detailed client tracking and performance analytics."
+          },
+          "results": {
+            "title": "Results",
+            "description": "An all-in-one digital solution that transformed the restaurant's management and boosted its online visibility."
+          }
+        },
+        "stats": {
+          "pages": "Pages created",
+          "features": "Features",
+          "duration": "Weeks of dev"
+        }
       },
       "project2": {
         "title": "ArchiStudio",
