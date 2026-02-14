@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 
 export default function Hero() {
   const t = useTranslations("hero");
+  const locale = useLocale();
   const title = t("title");
 
   const wordVariants = {
@@ -60,8 +62,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <a
-            href="#contact"
+          <Link
+            href={`/${locale}/request-quote`}
             className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-sm font-semibold text-background transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20"
           >
             {t("cta")}
@@ -78,7 +80,7 @@ export default function Hero() {
                 d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
               />
             </svg>
-          </a>
+          </Link>
         </motion.div>
       </div>
 

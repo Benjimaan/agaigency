@@ -136,6 +136,73 @@
       "send": "Envoyer"
     }
   },
+  "quote": {
+    "title": "Démarrer un projet",
+    "subtitle": "Répondez à quelques questions pour que nous puissions comprendre vos besoins et vous proposer la meilleure solution.",
+    "back": "Retour",
+    "next": "Continuer",
+    "submit": "Envoyer ma demande",
+    "stepOf": "sur",
+    "steps": {
+      "contact": {
+        "title": "Faisons connaissance",
+        "subtitle": "Parlez-nous un peu de vous.",
+        "name": "Votre nom complet",
+        "email": "Votre adresse email",
+        "company": "Nom de votre entreprise",
+        "phone": "Téléphone (optionnel)"
+      },
+      "projectType": {
+        "title": "Quel type de projet ?",
+        "subtitle": "Sélectionnez le type de projet qui correspond le mieux à votre besoin.",
+        "options": {
+          "showcase": "Site vitrine",
+          "showcaseDesc": "Présenter votre activité et vos services en ligne",
+          "ecommerce": "E-Commerce",
+          "ecommerceDesc": "Vendre vos produits en ligne avec une boutique optimisée",
+          "webapp": "Application Web",
+          "webappDesc": "Dashboard, SaaS, outil métier sur mesure",
+          "redesign": "Refonte de site",
+          "redesignDesc": "Moderniser et optimiser un site existant",
+          "other": "Autre projet",
+          "otherDesc": "Un projet qui ne rentre pas dans ces catégories"
+        }
+      },
+      "budget": {
+        "title": "Quel est votre budget ?",
+        "subtitle": "Cela nous aide à vous proposer une solution adaptée à vos moyens.",
+        "options": {
+          "small": "Moins de 2 000 €",
+          "medium": "2 000 € — 5 000 €",
+          "large": "5 000 € — 10 000 €",
+          "enterprise": "Plus de 10 000 €",
+          "unsure": "Pas encore défini"
+        }
+      },
+      "timeline": {
+        "title": "Quand souhaitez-vous lancer ?",
+        "subtitle": "Indiquez-nous votre deadline idéale.",
+        "options": {
+          "urgent": "Dès que possible",
+          "month": "Dans 1 mois",
+          "quarter": "Dans 2-3 mois",
+          "flexible": "Pas de deadline précise"
+        }
+      },
+      "details": {
+        "title": "Parlez-nous de votre projet",
+        "subtitle": "Plus vous nous en dites, mieux nous pourrons vous accompagner.",
+        "placeholder": "Décrivez votre projet, vos objectifs, vos inspirations...",
+        "currentSite": "URL de votre site actuel (optionnel)",
+        "inspiration": "Sites qui vous inspirent (optionnel)"
+      },
+      "success": {
+        "title": "Demande envoyée !",
+        "subtitle": "Merci pour votre confiance. Nous reviendrons vers vous dans les 24 heures.",
+        "backHome": "Retour à l'accueil"
+      }
+    }
+  },
   "footer": {
     "description": "Agence digitale premium. Nous créons des sites web qui convertissent.",
     "navigation": "Navigation",
