@@ -91,10 +91,30 @@
           "duration": "Weeks of dev"
         }
       },
-      "project3": {
-        "title": "FitPro App",
-        "category": "Web Application",
-        "description": "Fitness coaching SaaS platform with personalized dashboard and real-time tracking."
+      "duo2mc": {
+        "title": "Duo2MC",
+        "category": "Showcase Website & Online Booking",
+        "description": "Complete website for a Master of Ceremonies & DJ duo: premium showcase, booking system, online payment, marketing funnel and 21 optimized pages.",
+        "heroSubtitle": "Two voices. One vision. An experience that leaves its mark.",
+        "sections": {
+          "website": {
+            "title": "The Showcase Website",
+            "description": "A dark & gold premium website presenting wedding and corporate services. Smooth navigation, dedicated pages for weddings, corporate events, pricing plans and client testimonials."
+          },
+          "booking": {
+            "title": "The Booking System",
+            "description": "A complete booking journey with Calendly scheduling, inquiry form, secure payment system and automatic confirmation."
+          },
+          "results": {
+            "title": "Results",
+            "description": "A complete digital ecosystem with conversion funnel, webinar, client onboarding and offer management — turning every visit into a booking."
+          }
+        },
+        "stats": {
+          "pages": "Pages created",
+          "features": "Features",
+          "duration": "Weeks of dev"
+        }
       }
     }
   },

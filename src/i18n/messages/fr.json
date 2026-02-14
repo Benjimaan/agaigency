@@ -91,10 +91,30 @@
           "duration": "Semaines de dev"
         }
       },
-      "project3": {
-        "title": "FitPro App",
-        "category": "Application Web",
-        "description": "Plateforme SaaS de coaching fitness avec dashboard personnalisé et suivi en temps réel."
+      "duo2mc": {
+        "title": "Duo2MC",
+        "category": "Site Vitrine & Réservation en ligne",
+        "description": "Site complet pour un duo de Maîtres de Cérémonies & DJ : vitrine premium, système de réservation, paiement en ligne, funnel marketing et 21 pages optimisées.",
+        "heroSubtitle": "Deux voix. Une vision. Une expérience qui marque.",
+        "sections": {
+          "website": {
+            "title": "Le Site Vitrine",
+            "description": "Un site dark & gold premium présentant les services mariage et corporate. Navigation fluide, pages dédiées mariages, corporate, offres tarifaires et témoignages clients."
+          },
+          "booking": {
+            "title": "Le Système de Réservation",
+            "description": "Un parcours de réservation complet avec prise de rendez-vous Calendly, formulaire de demande, système de paiement sécurisé et confirmation automatique."
+          },
+          "results": {
+            "title": "Résultats",
+            "description": "Un écosystème digital complet avec funnel de conversion, webinaire, onboarding client et gestion des offres — transformant chaque visite en réservation."
+          }
+        },
+        "stats": {
+          "pages": "Pages créées",
+          "features": "Fonctionnalités",
+          "duration": "Semaines de dev"
+        }
       }
     }
   },

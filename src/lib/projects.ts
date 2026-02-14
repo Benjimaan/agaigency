@@ -63,6 +63,28 @@ export const projects: ProjectData[] = [
       },
     ],
   },
+  {
+    slug: "duo2mc",
+    translationKey: "duo2mc",
+    color: "#d4a84a",
+    liveUrl: "duo2mc.fr",
+    heroImage: "/images/projects/duo2mc/homepage.png",
+    carouselSectionKey: "website",
+    pages: [
+      { label: "Accueil", image: "/images/projects/duo2mc/homepage.png" },
+      { label: "Mariages", image: "/images/projects/duo2mc/mariages.png" },
+      { label: "Corporate", image: "/images/projects/duo2mc/corporate.png" },
+      { label: "Offres", image: "/images/projects/duo2mc/offres.png" },
+      { label: "Booking", image: "/images/projects/duo2mc/booking.png" },
+    ],
+    sections: [
+      {
+        key: "booking",
+        images: ["/images/projects/duo2mc/booking.png"],
+        reverse: true,
+      },
+    ],
+  },
 ];
 
 export function getProjectBySlug(slug: string): ProjectData | undefined {

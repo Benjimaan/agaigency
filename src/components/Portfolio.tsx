@@ -28,10 +28,10 @@ const projects: Project[] = [
     color: "#e74c3c",
   },
   {
-    key: "project3",
-    slug: null,
-    image: null,
-    color: "#a8d5ba",
+    key: "duo2mc",
+    slug: "duo2mc",
+    image: "/images/projects/duo2mc/homepage.png",
+    color: "#d4a84a",
   },
 ];
 
