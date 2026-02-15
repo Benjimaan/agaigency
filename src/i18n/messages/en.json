@@ -149,6 +149,10 @@
     "badge": "About us",
     "title": "Digital excellence, our signature.",
     "description": "AgaiGency was born from the belief that a website can be both a design masterpiece and a powerful growth tool. We push the boundaries of the web to create experiences that leave lasting impressions.",
+    "founder": {
+      "name": "Ben",
+      "role": "Founder & Developer, AgaiGency"
+    },
     "values": {
       "innovation": {
         "title": "Innovation",

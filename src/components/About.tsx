@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { useRef } from "react";
 import ScrollReveal from "./ui/ScrollReveal";
 
@@ -51,6 +52,23 @@ export default function About() {
               <p className="text-lg leading-relaxed text-muted">
                 {t("description")}
               </p>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
+              <div className="mt-8 flex items-center gap-4">
+                <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-accent/30">
+                  <Image
+                    src="/images/founder.png"
+                    alt="Ben — Fondateur AgaiGency"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-semibold">{t("founder.name")}</p>
+                  <p className="text-sm text-muted">{t("founder.role")}</p>
+                </div>
+              </div>
             </ScrollReveal>
           </div>
 
