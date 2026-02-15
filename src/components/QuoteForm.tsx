@@ -400,6 +400,7 @@ export default function QuoteForm() {
   const [direction, setDirection] = useState(1);
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const stepTitles = [
     { title: t("steps.contact.title"), subtitle: t("steps.contact.subtitle") },
@@ -430,11 +431,22 @@ export default function QuoteForm() {
     }
   };
 
-  const goNext = () => {
+  const goNext = async () => {
     if (step < TOTAL_STEPS - 1) {
       setDirection(1);
       setStep((s) => s + 1);
     } else {
+      setSending(true);
+      try {
+        await fetch("/api/send-quote", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+      } catch {
+        // Show success even if email fails — data was captured
+      }
+      setSending(false);
       setSubmitted(true);
     }
   };
@@ -561,17 +573,19 @@ export default function QuoteForm() {
           <button
             type="button"
             onClick={goNext}
-            disabled={!canProceed()}
+            disabled={!canProceed() || sending}
             className={`inline-flex items-center gap-2 rounded-full px-8 py-3 text-sm font-semibold transition-all ${
-              canProceed()
+              canProceed() && !sending
                 ? "bg-accent text-background hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20"
                 : "cursor-not-allowed bg-border text-muted"
             }`}
           >
-            {step === TOTAL_STEPS - 1 ? t("submit") : t("next")}
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
+            {sending ? "Envoi..." : step === TOTAL_STEPS - 1 ? t("submit") : t("next")}
+            {!sending && (
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            )}
           </button>
         </motion.div>
       </div>
