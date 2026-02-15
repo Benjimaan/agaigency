@@ -200,7 +200,7 @@ function ScreenshotCarousel({ project }: { project: ProjectData }) {
                   src={page.image}
                   alt={`${t(`items.${k}.title`)} - ${page.label}`}
                   fill
-                  className="object-cover object-top transition-[object-position] duration-[3s] ease-in-out group-hover/img:object-bottom"
+                  className="object-cover object-top transition-[object-position] duration-[8s] ease-in-out group-hover/img:object-bottom"
                   sizes="(max-width: 768px) 80vw, 700px"
                 />
               </div>
@@ -264,7 +264,7 @@ function StickySection({
                   src={img}
                   alt={`Screenshot ${i + 1}`}
                   fill
-                  className="object-cover object-top transition-[object-position] duration-[3s] ease-in-out group-hover/img:object-bottom"
+                  className="object-cover object-top transition-[object-position] duration-[8s] ease-in-out group-hover/img:object-bottom"
                   sizes="(max-width: 1024px) 100vw, 60vw"
                 />
               </div>

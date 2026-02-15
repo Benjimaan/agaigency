@@ -107,7 +107,7 @@ function ProjectCard({ project }: { project: Project }) {
                 src={project.image}
                 alt={t(`items.${project.key}.title`)}
                 fill
-                className="object-cover object-top transition-[object-position] duration-[3s] ease-in-out group-hover:object-bottom"
+                className="object-cover object-top transition-[object-position] duration-[8s] ease-in-out group-hover:object-bottom"
                 sizes="(max-width: 768px) 100vw, 1200px"
               />
             ) : (
