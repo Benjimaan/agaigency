@@ -96,6 +96,7 @@ export const projects: ProjectData[] = [
       { label: "Leads", image: "/images/projects/prospectpro/leads.png" },
       { label: "Scraping", image: "/images/projects/prospectpro/scraping.png" },
       { label: "Campagnes", image: "/images/projects/prospectpro/campagnes.png" },
+      { label: "Templates", image: "/images/projects/prospectpro/templates.png" },
       { label: "Statistiques", image: "/images/projects/prospectpro/statistiques.png" },
     ],
     sections: [
