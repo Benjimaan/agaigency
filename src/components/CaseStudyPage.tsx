@@ -195,12 +195,12 @@ function ScreenshotCarousel({ project }: { project: ProjectData }) {
             className="w-[80vw] max-w-[700px] flex-shrink-0 snap-center"
           >
             <BrowserFrame url={project.liveUrl ? `${project.liveUrl}/${page.label.toLowerCase().replace(/\s|à/g, "-")}` : undefined}>
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="group/img relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={page.image}
                   alt={`${t(`items.${k}.title`)} - ${page.label}`}
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top transition-[object-position] duration-[3s] ease-in-out group-hover/img:object-bottom"
                   sizes="(max-width: 768px) 80vw, 700px"
                 />
               </div>
@@ -259,12 +259,12 @@ function StickySection({
         {images.map((img, i) => (
           <ScrollReveal key={i} delay={i * 0.1}>
             <BrowserFrame>
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="group/img relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={img}
                   alt={`Screenshot ${i + 1}`}
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top transition-[object-position] duration-[3s] ease-in-out group-hover/img:object-bottom"
                   sizes="(max-width: 1024px) 100vw, 60vw"
                 />
               </div>

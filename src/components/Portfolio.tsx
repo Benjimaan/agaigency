@@ -99,7 +99,7 @@ function ProjectCard({ project }: { project: Project }) {
       <motion.div style={{ y }}>
         <BrowserFrame url={project.slug ? `${t(`items.${project.key}.title`).toLowerCase().replace(/\s/g, "")}.com` : undefined}>
           <div
-            className="relative aspect-[16/9] overflow-hidden transition-transform duration-700 group-hover:scale-[1.02]"
+            className="relative aspect-[16/9] overflow-hidden"
             style={!project.image ? { backgroundColor: `${project.color}12` } : undefined}
           >
             {project.image ? (
@@ -107,7 +107,7 @@ function ProjectCard({ project }: { project: Project }) {
                 src={project.image}
                 alt={t(`items.${project.key}.title`)}
                 fill
-                className="object-cover object-top"
+                className="object-cover object-top transition-[object-position] duration-[3s] ease-in-out group-hover:object-bottom"
                 sizes="(max-width: 768px) 100vw, 1200px"
               />
             ) : (
