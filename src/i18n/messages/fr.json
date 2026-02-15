@@ -70,7 +70,7 @@
         "title": "Nisware",
         "category": "Application Mobile & Landing Page",
         "description": "Réseau social de proximité : contenu éphémère 24h, événements live, alertes et bons plans partagés par les gens autour de vous. Landing page responsive + application Android.",
-        "heroSubtitle": "Le réseau social du monde réel — voyez ce qui se passe autour de vous en temps réel",
+        "heroSubtitle": "Le réseau social du monde réel voyez ce qui se passe autour de vous en temps réel",
         "sections": {
           "landing": {
             "title": "La Landing Page",
@@ -82,7 +82,7 @@
           },
           "results": {
             "title": "Fonctionnalités",
-            "description": "Marchés & rencontres, concerts & événements, promos & bons plans, alertes & incidents, vie de quartier, tourisme local — le tout visible pendant 24h dans un rayon de 3km."
+            "description": "Marchés & rencontres, concerts & événements, promos & bons plans, alertes & incidents, vie de quartier, tourisme local le tout visible pendant 24h dans un rayon de 3km."
           }
         },
         "stats": {
@@ -107,7 +107,7 @@
           },
           "results": {
             "title": "Résultats",
-            "description": "Un écosystème digital complet avec funnel de conversion, webinaire, onboarding client et gestion des offres — transformant chaque visite en réservation."
+            "description": "Un écosystème digital complet avec funnel de conversion, webinaire, onboarding client et gestion des offres transformant chaque visite en réservation."
           }
         },
         "stats": {
@@ -163,6 +163,43 @@
         "description": "Des sites qui performent et génèrent du ROI"
       }
     }
+  },
+  "testimonials": {
+    "badge": "Témoignages",
+    "title": "Ce que disent nos clients",
+    "subtitle": "La satisfaction de nos clients est notre meilleure publicité.",
+    "items": {
+      "client1": {
+        "name": "Moussa D.",
+        "role": "Fondateur, Dakar Eat",
+        "quote": "AgaiGency a parfaitement compris notre vision. Le site et le dashboard admin ont transformé notre façon de gérer le restaurant. Résultat : +40% de commandes en ligne dès le premier mois."
+      },
+      "client2": {
+        "name": "Kévin & Marvin",
+        "role": "Co-fondateurs, Duo2MC",
+        "quote": "Un travail exceptionnel. Notre site reflète exactement l'image premium que nous voulions. Le système de réservation fonctionne parfaitement et nos clients adorent l'expérience."
+      },
+      "client3": {
+        "name": "Amadou S.",
+        "role": "CEO, Nisware",
+        "quote": "Professionnalisme, réactivité et créativité. L'équipe a livré une landing page et une application qui dépassent nos attentes. Je recommande à 100%."
+      }
+    }
+  },
+  "legal": {
+    "title": "Mentions légales",
+    "editor": "Éditeur du site",
+    "editorText": "AgaiGency — Agence digitale premium\nEmail : contact@agaigency.com\nSite : www.agaigency.com",
+    "hosting": "Hébergement",
+    "hostingText": "Ce site est hébergé par Vercel Inc.\n440 N Barranca Ave #4133\nCovina, CA 91723, USA\nhttps://vercel.com",
+    "intellectual": "Propriété intellectuelle",
+    "intellectualText": "L'ensemble du contenu de ce site (textes, images, graphismes, logo, icônes, etc.) est la propriété exclusive d'AgaiGency, sauf mention contraire. Toute reproduction, représentation, modification, publication, transmission ou dénaturation, totale ou partielle, du site ou de son contenu, par quelque procédé que ce soit, et sur quelque support que ce soit est interdite sans l'autorisation écrite préalable d'AgaiGency.",
+    "data": "Données personnelles",
+    "dataText": "Les informations recueillies via le formulaire de contact sont destinées uniquement à AgaiGency pour le traitement de votre demande. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez-nous à contact@agaigency.com.",
+    "cookies": "Cookies",
+    "cookiesText": "Ce site n'utilise pas de cookies de suivi ou publicitaires. Seuls des cookies techniques essentiels au fonctionnement du site peuvent être utilisés.",
+    "law": "Droit applicable",
+    "lawText": "Les présentes mentions légales sont régies par le droit français. En cas de litige, les tribunaux français seront seuls compétents."
   },
   "contact": {
     "badge": "Contact",

@@ -164,6 +164,43 @@
       }
     }
   },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "What our clients say",
+    "subtitle": "Client satisfaction is our best advertisement.",
+    "items": {
+      "client1": {
+        "name": "Moussa D.",
+        "role": "Founder, Dakar Eat",
+        "quote": "AgaiGency perfectly understood our vision. The website and admin dashboard transformed how we manage the restaurant. Result: +40% online orders in the first month."
+      },
+      "client2": {
+        "name": "Kévin & Marvin",
+        "role": "Co-founders, Duo2MC",
+        "quote": "Exceptional work. Our website perfectly reflects the premium image we wanted. The booking system works flawlessly and our clients love the experience."
+      },
+      "client3": {
+        "name": "Amadou S.",
+        "role": "CEO, Nisware",
+        "quote": "Professionalism, responsiveness, and creativity. The team delivered a landing page and application that exceeded our expectations. I recommend 100%."
+      }
+    }
+  },
+  "legal": {
+    "title": "Legal notice",
+    "editor": "Website publisher",
+    "editorText": "AgaiGency — Premium digital agency\nEmail: contact@agaigency.com\nWebsite: www.agaigency.com",
+    "hosting": "Hosting",
+    "hostingText": "This site is hosted by Vercel Inc.\n440 N Barranca Ave #4133\nCovina, CA 91723, USA\nhttps://vercel.com",
+    "intellectual": "Intellectual property",
+    "intellectualText": "All content on this site (texts, images, graphics, logo, icons, etc.) is the exclusive property of AgaiGency, unless otherwise stated. Any reproduction, representation, modification, publication, transmission, or distortion, in whole or in part, of the site or its content, by any means and on any medium, is prohibited without the prior written consent of AgaiGency.",
+    "data": "Personal data",
+    "dataText": "Information collected through the contact form is intended solely for AgaiGency to process your request. In accordance with GDPR, you have the right to access, rectify, and delete your data. To exercise these rights, contact us at contact@agaigency.com.",
+    "cookies": "Cookies",
+    "cookiesText": "This site does not use tracking or advertising cookies. Only essential technical cookies necessary for the site's operation may be used.",
+    "law": "Applicable law",
+    "lawText": "These legal notices are governed by French law. In the event of a dispute, the French courts shall have sole jurisdiction."
+  },
   "contact": {
     "badge": "Contact",
     "title": "Ready to transform your digital presence?",

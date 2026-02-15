@@ -1,10 +1,12 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 
 export default function Footer() {
   const t = useTranslations("footer");
   const nav = useTranslations("nav");
+  const locale = useLocale();
 
   const currentYear = new Date().getFullYear();
 
@@ -66,14 +68,14 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-sm text-muted transition-colors hover:text-foreground">
+                <Link href={`/${locale}/legal`} className="text-sm text-muted transition-colors hover:text-foreground">
                   {t("legal")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-sm text-muted transition-colors hover:text-foreground">
+                <Link href={`/${locale}/legal`} className="text-sm text-muted transition-colors hover:text-foreground">
                   {t("privacy")}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -84,18 +86,12 @@ export default function Footer() {
           <p className="text-xs text-muted">
             &copy; {currentYear} AgaiGency. {t("rights")}
           </p>
-          <div className="flex gap-4">
-            {/* Social placeholders */}
-            {["LinkedIn", "Twitter", "Instagram"].map((social) => (
-              <a
-                key={social}
-                href="#"
-                className="text-xs text-muted transition-colors hover:text-foreground"
-              >
-                {social}
-              </a>
-            ))}
-          </div>
+          <a
+            href="mailto:contact@agaigency.com"
+            className="text-xs text-muted transition-colors hover:text-foreground"
+          >
+            contact@agaigency.com
+          </a>
         </div>
       </div>
     </footer>
