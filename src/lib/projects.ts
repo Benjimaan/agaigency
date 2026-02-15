@@ -85,6 +85,31 @@ export const projects: ProjectData[] = [
       },
     ],
   },
+  {
+    slug: "prospect-pro",
+    translationKey: "prospectPro",
+    color: "#3b82f6",
+    heroImage: "/images/projects/prospectpro/dashboard.png",
+    carouselSectionKey: "dashboard",
+    pages: [
+      { label: "Dashboard", image: "/images/projects/prospectpro/dashboard.png" },
+      { label: "Leads", image: "/images/projects/prospectpro/leads.png" },
+      { label: "Scraping", image: "/images/projects/prospectpro/scraping.png" },
+      { label: "Campagnes", image: "/images/projects/prospectpro/campagnes.png" },
+      { label: "Statistiques", image: "/images/projects/prospectpro/statistiques.png" },
+    ],
+    sections: [
+      {
+        key: "scraping",
+        images: ["/images/projects/prospectpro/scraping.png"],
+      },
+      {
+        key: "campaigns",
+        images: ["/images/projects/prospectpro/campagnes.png"],
+        reverse: true,
+      },
+    ],
+  },
 ];
 
 export function getProjectBySlug(slug: string): ProjectData | undefined {

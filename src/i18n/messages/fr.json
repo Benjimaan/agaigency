@@ -115,6 +115,35 @@
           "features": "Fonctionnalités",
           "duration": "Semaines de dev"
         }
+      },
+      "prospectPro": {
+        "title": "ProspectPro",
+        "category": "Application Web & SaaS",
+        "description": "Outil de prospection commerciale tout-en-un : scraping Google Maps & Pappers, gestion des leads avec scoring automatique, campagnes d'emailing et statistiques de performance en temps réel.",
+        "heroSubtitle": "L'outil de prospection intelligent qui transforme vos recherches en clients",
+        "sections": {
+          "dashboard": {
+            "title": "Le Dashboard",
+            "description": "Vue d'ensemble complète de votre prospection : total leads, leads qualifiés, campagnes actives et taux d'ouverture. Actions rapides pour lancer un scraping, gérer vos leads ou créer une campagne."
+          },
+          "scraping": {
+            "title": "Le Scraping",
+            "description": "Extraction automatisée de leads depuis Google Maps et Pappers. Configuration par type d'activité, localisation et nombre de résultats. Enrichissement automatique des données collectées."
+          },
+          "campaigns": {
+            "title": "Les Campagnes",
+            "description": "Gestion complète de campagnes d'emailing avec suivi en temps réel : destinataires, envois, ouvertures, clics, réponses et rebonds. Création de templates personnalisés."
+          },
+          "results": {
+            "title": "Résultats",
+            "description": "Statistiques détaillées avec distribution des scores, leads par source et par statut. Un tableau de bord analytique complet pour optimiser votre prospection."
+          }
+        },
+        "stats": {
+          "pages": "Écrans créés",
+          "features": "Fonctionnalités",
+          "duration": "Semaines de dev"
+        }
       }
     }
   },

@@ -33,6 +33,12 @@ const projects: Project[] = [
     image: "/images/projects/duo2mc/homepage.png",
     color: "#d4a84a",
   },
+  {
+    key: "prospectPro",
+    slug: "prospect-pro",
+    image: "/images/projects/prospectpro/dashboard.png",
+    color: "#3b82f6",
+  },
 ];
 
 function BrowserFrame({
