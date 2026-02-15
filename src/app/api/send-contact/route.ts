@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const TO_EMAILS = ["contact@agaigency.com", "devcorp97@gmail.com"];
+const TO_EMAILS = ["contact@agaigency.com"];
 
 export async function POST(request: Request) {
   try {
@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     }
 
     const { error } = await resend.emails.send({
-      from: "AgaiGency <onboarding@resend.dev>",
+      from: "AgaiGency <noreply@agaigency.com>",
       to: TO_EMAILS,
       replyTo: email,
       subject: `Nouveau message de contact — ${name}`,

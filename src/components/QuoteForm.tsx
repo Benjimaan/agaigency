@@ -425,7 +425,7 @@ export default function QuoteForm() {
       case 3:
         return formData.timeline !== "";
       case 4:
-        return true;
+        return formData.details.trim() !== "";
       default:
         return false;
     }

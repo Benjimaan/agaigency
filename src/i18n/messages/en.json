@@ -262,10 +262,10 @@
       "contact": {
         "title": "Let's get acquainted",
         "subtitle": "Tell us a bit about yourself.",
-        "name": "Your full name",
-        "email": "Your email address",
-        "company": "Your company name",
-        "phone": "Your phone number"
+        "name": "Your full name *",
+        "email": "Your email address *",
+        "company": "Your company name (optional)",
+        "phone": "Your phone number *"
       },
       "projectType": {
         "title": "What type of project?",
@@ -307,7 +307,7 @@
       "details": {
         "title": "Tell us about your project",
         "subtitle": "The more you tell us, the better we can help.",
-        "placeholder": "Describe your project, goals, inspirations...",
+        "placeholder": "Describe your project, goals, inspirations... *",
         "currentSite": "URL of your current website (optional)",
         "inspiration": "Websites that inspire you (optional)"
       },

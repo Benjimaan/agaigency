@@ -262,10 +262,10 @@
       "contact": {
         "title": "Faisons connaissance",
         "subtitle": "Parlez-nous un peu de vous.",
-        "name": "Votre nom complet",
-        "email": "Votre adresse email",
-        "company": "Nom de votre entreprise",
-        "phone": "Votre numéro de téléphone"
+        "name": "Votre nom complet *",
+        "email": "Votre adresse email *",
+        "company": "Nom de votre entreprise (optionnel)",
+        "phone": "Votre numéro de téléphone *"
       },
       "projectType": {
         "title": "Quel type de projet ?",
@@ -307,7 +307,7 @@
       "details": {
         "title": "Parlez-nous de votre projet",
         "subtitle": "Plus vous nous en dites, mieux nous pourrons vous accompagner.",
-        "placeholder": "Décrivez votre projet, vos objectifs, vos inspirations...",
+        "placeholder": "Décrivez votre projet, vos objectifs, vos inspirations... *",
         "currentSite": "URL de votre site actuel (optionnel)",
         "inspiration": "Sites qui vous inspirent (optionnel)"
       },
