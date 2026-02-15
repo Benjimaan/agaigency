@@ -8,6 +8,7 @@ const testimonials = [
   { key: "client1", avatar: "/images/founder.png", hasAvatar: false },
   { key: "client2", avatar: null, hasAvatar: false },
   { key: "client3", avatar: null, hasAvatar: false },
+  { key: "client4", avatar: null, hasAvatar: false },
 ];
 
 function StarIcon() {
@@ -36,7 +37,7 @@ export default function Testimonials() {
           </p>
         </ScrollReveal>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {testimonials.map((item, i) => (
             <ScrollReveal key={item.key} delay={i * 0.15}>
               <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-8">
