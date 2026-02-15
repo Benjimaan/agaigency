@@ -40,6 +40,14 @@ export default function Contact() {
               />
             </svg>
           </Link>
+          <p className="mt-8 text-sm text-muted">
+            <a
+              href="mailto:contact@agaigency.com"
+              className="transition-colors hover:text-accent"
+            >
+              contact@agaigency.com
+            </a>
+          </p>
         </ScrollReveal>
       </div>
     </section>

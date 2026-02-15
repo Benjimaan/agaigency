@@ -32,6 +32,12 @@ export default function Footer() {
             <p className="max-w-xs text-sm leading-relaxed text-muted">
               {t("description")}
             </p>
+            <a
+              href="mailto:contact@agaigency.com"
+              className="mt-3 inline-block text-sm text-muted transition-colors hover:text-foreground"
+            >
+              contact@agaigency.com
+            </a>
           </div>
 
           {/* Navigation */}
