@@ -9,10 +9,18 @@ export default function Contact() {
   const locale = useLocale();
 
   return (
-    <section id="contact" className="px-6 py-32">
-      <div className="mx-auto max-w-4xl">
+    <section id="contact" className="relative px-6 py-32">
+      {/* Subtle radial gold glow behind CTA */}
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+        <div className="h-[400px] w-[400px] rounded-full bg-gold/5 blur-[120px]" />
+      </div>
+
+      <div className="relative mx-auto max-w-4xl">
+        {/* Decorative gold line */}
+        <div className="mx-auto mb-16 h-px w-32 bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
+
         <ScrollReveal className="text-center">
-          <span className="mb-4 inline-block rounded-full border border-border px-4 py-1.5 text-xs font-medium tracking-wider text-accent uppercase">
+          <span className="mb-4 inline-block rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium tracking-wider text-gold uppercase">
             {t("badge")}
           </span>
           <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -23,7 +31,7 @@ export default function Contact() {
           </p>
           <Link
             href={`/${locale}/request-quote`}
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-10 py-4 text-sm font-semibold text-background transition-all hover:bg-accent-hover hover:shadow-lg hover:shadow-accent/20"
+            className="inline-flex items-center gap-2 rounded-full bg-gold px-10 py-4 text-sm font-semibold text-background transition-all hover:bg-gold-dark hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)]"
           >
             {t("cta")}
             <svg
@@ -43,7 +51,7 @@ export default function Contact() {
           <p className="mt-8 text-sm text-muted">
             <a
               href="mailto:contact@agaigency.com"
-              className="transition-colors hover:text-accent"
+              className="transition-colors hover:text-gold"
             >
               contact@agaigency.com
             </a>

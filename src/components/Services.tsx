@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import ScrollReveal from "./ui/ScrollReveal";
 
+const EASE = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
+
 const serviceIcons = [
   // Design UI/UX
   <svg key="design" className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -25,6 +27,9 @@ const serviceIcons = [
 
 const serviceKeys = ["design", "development", "seo", "ecommerce"] as const;
 
+/* Bento grid: design(span2) + dev(span1) on row 1, seo(span1) + ecommerce(span2) on row 2 */
+const bentoSpans = [2, 1, 1, 2] as const;
+
 export default function Services() {
   const t = useTranslations("services");
 
@@ -32,7 +37,7 @@ export default function Services() {
     <section id="services" className="px-6 py-32">
       <div className="mx-auto max-w-7xl">
         <ScrollReveal className="mb-16 text-center">
-          <span className="mb-4 inline-block rounded-full border border-border px-4 py-1.5 text-xs font-medium tracking-wider text-accent uppercase">
+          <span className="mb-4 inline-block rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium tracking-wider text-gold uppercase">
             {t("badge")}
           </span>
           <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -43,31 +48,56 @@ export default function Services() {
           </p>
         </ScrollReveal>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {serviceKeys.map((key, i) => (
-            <motion.div
-              key={key}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{
-                delay: i * 0.1,
-                duration: 0.5,
-                ease: [0.25, 0.1, 0.25, 1],
-              }}
-              className="group rounded-2xl border border-border bg-card p-8 transition-all hover:border-accent/30 hover:bg-card-hover"
-            >
-              <div className="mb-6 inline-flex rounded-xl bg-accent/10 p-3 text-accent transition-colors group-hover:bg-accent/20">
-                {serviceIcons[i]}
-              </div>
-              <h3 className="mb-3 text-lg font-semibold">
-                {t(`items.${key}.title`)}
-              </h3>
-              <p className="text-sm leading-relaxed text-muted">
-                {t(`items.${key}.description`)}
-              </p>
-            </motion.div>
-          ))}
+        {/* Bento Grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {serviceKeys.map((key, i) => {
+            const span = bentoSpans[i];
+            return (
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{
+                  delay: i * 0.1,
+                  duration: 0.5,
+                  ease: EASE,
+                }}
+                className={`gold-glow-hover group relative overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all hover:border-gold/30 hover:bg-card-hover ${
+                  span === 2 ? "lg:col-span-2" : "lg:col-span-1"
+                } ${span === 2 ? "min-h-[240px]" : "min-h-[200px]"}`}
+              >
+                {/* Watermark number */}
+                <span className="pointer-events-none absolute top-4 right-6 text-7xl font-extrabold text-gold/[0.06] select-none">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+
+                <div className="relative z-10">
+                  <div className="mb-6 inline-flex rounded-xl bg-gold/10 p-3 text-gold transition-colors group-hover:bg-gold/20">
+                    {serviceIcons[i]}
+                  </div>
+                  <h3 className="mb-3 text-xl font-semibold">
+                    {t(`items.${key}.title`)}
+                  </h3>
+                  <p className={`leading-relaxed text-muted ${span === 2 ? "max-w-md text-base" : "text-sm"}`}>
+                    {t(`items.${key}.description`)}
+                  </p>
+                </div>
+
+                {/* Decorative grid pattern for large cards */}
+                {span === 2 && (
+                  <div
+                    className="pointer-events-none absolute right-0 bottom-0 h-32 w-48 opacity-[0.04]"
+                    style={{
+                      backgroundImage:
+                        "radial-gradient(circle, rgba(212,175,55,1) 1px, transparent 1px)",
+                      backgroundSize: "12px 12px",
+                    }}
+                  />
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

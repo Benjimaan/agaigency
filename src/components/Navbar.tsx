@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 import LangSwitcher from "./ui/LangSwitcher";
 
 const navLinks = [
@@ -16,8 +17,11 @@ const navLinks = [
 
 export default function Navbar() {
   const t = useTranslations("nav");
+  const tContact = useTranslations("hero");
+  const locale = useLocale();
   const { scrollY } = useScroll();
   const [isOpen, setIsOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
   const bgOpacity = useTransform(scrollY, [0, 100], [0, 0.8]);
   const backdropBlur = useTransform(scrollY, [0, 100], [0, 20]);
@@ -65,11 +69,30 @@ export default function Navbar() {
             <a
               key={link.key}
               href={link.href}
-              className="text-sm font-medium text-muted transition-colors hover:text-foreground"
+              onMouseEnter={() => setHoveredLink(link.key)}
+              onMouseLeave={() => setHoveredLink(null)}
+              className="relative text-sm font-medium text-muted transition-colors hover:text-foreground"
             >
               {t(link.key)}
+              {/* Gold underline on hover */}
+              {hoveredLink === link.key && (
+                <motion.div
+                  layoutId="nav-underline"
+                  className="absolute -bottom-1 left-0 right-0 h-px bg-gold"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
             </a>
           ))}
+
+          {/* CTA button */}
+          <Link
+            href={`/${locale}/request-quote`}
+            className="rounded-full border border-gold/20 bg-gold/10 px-5 py-2 text-sm font-medium text-gold transition-all hover:bg-gold/20"
+          >
+            {tContact("cta")}
+          </Link>
+
           <LangSwitcher />
         </div>
 
@@ -107,11 +130,18 @@ export default function Navbar() {
               key={link.key}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-2xl font-medium text-foreground transition-colors hover:text-accent"
+              className="text-2xl font-medium text-foreground transition-colors hover:text-gold"
             >
               {t(link.key)}
             </a>
           ))}
+          <Link
+            href={`/${locale}/request-quote`}
+            onClick={() => setIsOpen(false)}
+            className="rounded-full border border-gold/20 bg-gold/10 px-8 py-3 text-lg font-medium text-gold transition-all hover:bg-gold/20"
+          >
+            {tContact("cta")}
+          </Link>
           <LangSwitcher />
         </div>
       </motion.div>

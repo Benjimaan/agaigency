@@ -49,7 +49,7 @@ function BrowserFrame({
   url?: string;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-black/40">
+    <div className="gold-glow-hover overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-black/40 transition-all group-hover:border-gold/20">
       <div className="flex items-center gap-3 border-b border-border bg-[#1a1a1a] px-4 py-3">
         <div className="flex gap-1.5">
           <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
@@ -67,7 +67,7 @@ function BrowserFrame({
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project, index, total }: { project: Project; index: number; total: number }) {
   const t = useTranslations("portfolio");
   const locale = useLocale();
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -82,16 +82,25 @@ function ProjectCard({ project }: { project: Project }) {
       {/* Project header */}
       <ScrollReveal className="mb-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <span className="mb-3 inline-block text-xs font-medium tracking-wider text-accent uppercase">
-              {t(`items.${project.key}.category`)}
-            </span>
-            <h3 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              {t(`items.${project.key}.title`)}
-            </h3>
+          <div className="flex items-start gap-4">
+            {/* Gold accent line */}
+            <div className="mt-1 hidden h-12 w-[3px] rounded-full bg-gold/40 sm:block" />
+            <div>
+              <div className="mb-3 flex items-center gap-3">
+                <span className="text-xs font-medium tracking-wider text-gold uppercase">
+                  {t(`items.${project.key}.category`)}
+                </span>
+                <span className="text-xs text-muted">
+                  {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+                </span>
+              </div>
+              <h3 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                {t(`items.${project.key}.title`)}
+              </h3>
+            </div>
           </div>
           {project.slug && (
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors group-hover:text-accent-hover">
+            <span className="inline-flex items-center gap-2 text-sm font-medium text-gold transition-colors group-hover:text-gold-light">
               {t("viewProject")}
               <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -109,13 +118,17 @@ function ProjectCard({ project }: { project: Project }) {
             style={!project.image ? { backgroundColor: `${project.color}12` } : undefined}
           >
             {project.image ? (
-              <Image
-                src={project.image}
-                alt={t(`items.${project.key}.title`)}
-                fill
-                className="object-cover object-top transition-[object-position] duration-[8s] ease-in-out group-hover:object-bottom"
-                sizes="(max-width: 768px) 100vw, 1200px"
-              />
+              <>
+                <Image
+                  src={project.image}
+                  alt={t(`items.${project.key}.title`)}
+                  fill
+                  className="object-cover object-top transition-[object-position] duration-[8s] ease-in-out group-hover:object-bottom"
+                  sizes="(max-width: 768px) 100vw, 1200px"
+                />
+                {/* Bottom gradient overlay */}
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
+              </>
             ) : (
               <div className="flex h-full items-center justify-center">
                 <div
@@ -155,7 +168,7 @@ export default function Portfolio() {
     <section id="portfolio" className="px-6 py-32">
       <div className="mx-auto max-w-5xl">
         <ScrollReveal className="mb-20 text-center">
-          <span className="mb-4 inline-block rounded-full border border-border px-4 py-1.5 text-xs font-medium tracking-wider text-accent uppercase">
+          <span className="mb-4 inline-block rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium tracking-wider text-gold uppercase">
             {t("badge")}
           </span>
           <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -166,8 +179,8 @@ export default function Portfolio() {
           </p>
         </ScrollReveal>
 
-        {projects.map((project) => (
-          <ProjectCard key={project.key} project={project} />
+        {projects.map((project, i) => (
+          <ProjectCard key={project.key} project={project} index={i} total={projects.length} />
         ))}
       </div>
     </section>

@@ -9,6 +9,9 @@
   --color-card: #141414;
   --color-card-hover: #1a1a1a;
   --color-border: #262626;
+  --color-gold: #D4AF37;
+  --color-gold-light: #E8D48B;
+  --color-gold-dark: #B8960C;
   --font-sans: "Inter", sans-serif;
 }
 
@@ -22,9 +25,38 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Grain texture overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+  mix-blend-mode: overlay;
+}
+
 ::selection {
-  background: var(--color-accent);
+  background: var(--color-gold);
   color: var(--color-background);
+}
+
+/* Golden glow utilities */
+.gold-glow {
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.08),
+              0 0 60px rgba(212, 175, 55, 0.04);
+}
+
+.gold-glow-hover {
+  transition: box-shadow 0.4s ease;
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.15),
+              0 0 80px rgba(212, 175, 55, 0.08);
 }
 
 /* Scrollbar styling */

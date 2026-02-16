@@ -32,10 +32,10 @@ export default function About() {
 
   return (
     <section id="about" ref={sectionRef} className="relative overflow-hidden px-6 py-32">
-      {/* Parallax background element */}
+      {/* Parallax background element — gold */}
       <motion.div
         style={{ y }}
-        className="pointer-events-none absolute top-0 right-0 h-[500px] w-[500px] translate-x-1/3 rounded-full bg-accent/5 blur-[100px]"
+        className="pointer-events-none absolute top-0 right-0 h-[500px] w-[500px] translate-x-1/3 rounded-full bg-gold/5 blur-[100px]"
       />
 
       <div className="relative mx-auto max-w-7xl">
@@ -43,7 +43,7 @@ export default function About() {
           {/* Left: text */}
           <div>
             <ScrollReveal>
-              <span className="mb-4 inline-block rounded-full border border-border px-4 py-1.5 text-xs font-medium tracking-wider text-accent uppercase">
+              <span className="mb-4 inline-block rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium tracking-wider text-gold uppercase">
                 {t("badge")}
               </span>
               <h2 className="mb-8 text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl">
@@ -56,7 +56,7 @@ export default function About() {
 
             <ScrollReveal delay={0.2}>
               <div className="mt-8 flex items-center gap-4">
-                <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-accent/30">
+                <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-gold/50">
                   <Image
                     src="/images/founder.png"
                     alt="Ben — Fondateur AgaiGency"
@@ -76,8 +76,8 @@ export default function About() {
           <div className="space-y-6">
             {valueKeys.map((key, i) => (
               <ScrollReveal key={key} delay={i * 0.15}>
-                <div className="flex items-start gap-5 rounded-2xl border border-border bg-card p-6 transition-all hover:border-accent/30 hover:bg-card-hover">
-                  <div className="flex-shrink-0 rounded-xl bg-accent/10 p-3 text-accent">
+                <div className="gold-glow-hover flex items-start gap-5 rounded-2xl border border-border bg-card p-6 transition-all hover:border-gold/30 hover:bg-card-hover">
+                  <div className="flex-shrink-0 rounded-xl bg-gold/10 p-3 text-gold">
                     {valueIcons[i]}
                   </div>
                   <div>

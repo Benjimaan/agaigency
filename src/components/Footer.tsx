@@ -19,12 +19,12 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="border-t border-border px-6 py-16">
+    <footer className="border-t border-gold/10 px-6 py-16">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <a href="#" className="mb-4 inline-block">
+            <a href="#" className="gold-glow-hover mb-4 inline-block rounded-lg p-1 transition-all">
               <img
                 src="/images/logo.svg"
                 alt="AgaiGency"
@@ -36,7 +36,7 @@ export default function Footer() {
             </p>
             <a
               href="mailto:contact@agaigency.com"
-              className="mt-3 inline-block text-sm text-muted transition-colors hover:text-foreground"
+              className="mt-3 inline-block text-sm text-muted transition-colors hover:text-gold"
             >
               contact@agaigency.com
             </a>
@@ -52,7 +52,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted transition-colors hover:text-foreground"
+                    className="text-sm text-muted transition-colors hover:text-gold"
                   >
                     {link.label}
                   </a>
@@ -68,12 +68,12 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href={`/${locale}/legal`} className="text-sm text-muted transition-colors hover:text-foreground">
+                <Link href={`/${locale}/legal`} className="text-sm text-muted transition-colors hover:text-gold">
                   {t("legal")}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/legal`} className="text-sm text-muted transition-colors hover:text-foreground">
+                <Link href={`/${locale}/legal`} className="text-sm text-muted transition-colors hover:text-gold">
                   {t("privacy")}
                 </Link>
               </li>
@@ -82,13 +82,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-gold/10 pt-8 sm:flex-row">
           <p className="text-xs text-muted">
             &copy; {currentYear} AgaiGency. {t("rights")}
           </p>
           <a
             href="mailto:contact@agaigency.com"
-            className="text-xs text-muted transition-colors hover:text-foreground"
+            className="text-xs text-muted transition-colors hover:text-gold"
           >
             contact@agaigency.com
           </a>
