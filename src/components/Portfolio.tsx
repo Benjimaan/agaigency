@@ -142,11 +142,14 @@ function ProjectCard({ project, index, total }: { project: Project; index: numbe
       </motion.div>
 
       {/* Description */}
-      <ScrollReveal delay={0.15} className="mt-6 max-w-2xl">
+      <ScrollReveal delay={0.15} className="mt-6 mb-16 max-w-2xl md:mb-20">
         <p className="text-lg leading-relaxed text-muted">
           {t(`items.${project.key}.description`)}
         </p>
       </ScrollReveal>
+
+      {/* Separator between projects */}
+      <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
     </div>
   );
 
