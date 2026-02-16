@@ -5,6 +5,7 @@ import Portfolio from "@/components/Portfolio";
 import Process from "@/components/Process";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
+import SeoAuditTeaser from "@/components/SeoAuditTeaser";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Process />
         <About />
         <Testimonials />
+        <SeoAuditTeaser />
         <Contact />
       </main>
       <Footer />

@@ -318,6 +318,45 @@
       }
     }
   },
+  "seoAudit": {
+    "teaser": {
+      "badge": "Audit SEO Gratuit",
+      "title": "Découvrez votre potentiel SEO caché",
+      "subtitle": "Analysez votre site en 30 secondes et découvrez les opportunités que vos concurrents exploitent déjà.",
+      "cta": "Analyser mon site"
+    },
+    "page": {
+      "title": "Audit SEO Gratuit",
+      "subtitle": "Entrez l'URL de votre site pour découvrir vos opportunités de croissance.",
+      "urlPlaceholder": "https://votresite.com *",
+      "emailPlaceholder": "Votre adresse email *",
+      "cta": "Lancer l'audit",
+      "scanning": {
+        "title": "Analyse en cours",
+        "step1": "Analyse de la structure du site...",
+        "step2": "Scan des mots-clés stratégiques...",
+        "step3": "Analyse concurrentielle...",
+        "step4": "Calcul du potentiel de croissance..."
+      },
+      "results": {
+        "title": "Résultats de votre audit",
+        "scoreLabel": "Score de visibilité",
+        "scoreOut": "/ 100",
+        "keywordsTitle": "Opportunités de mots-clés manquées",
+        "keywordsSubtitle": "Mots-clés que vos concurrents utilisent mais pas vous",
+        "volume": "vol. mensuel",
+        "difficulty": "difficulté",
+        "financialTitle": "Manque à gagner estimé",
+        "financialPerMonth": "/mois",
+        "financialDesc": "Revenus potentiels que vous laissez à vos concurrents",
+        "competitors": "Concurrents actifs",
+        "missingPages": "Pages manquantes",
+        "ctaTitle": "Passez à l'action",
+        "ctaSubtitle": "Nos experts SEO peuvent vous aider à récupérer ce potentiel perdu.",
+        "ctaButton": "Obtenir l'audit complet"
+      }
+    }
+  },
   "footer": {
     "description": "Agence digitale premium. Nous créons des sites web qui convertissent.",
     "navigation": "Navigation",

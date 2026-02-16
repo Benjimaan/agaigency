@@ -318,6 +318,45 @@
       }
     }
   },
+  "seoAudit": {
+    "teaser": {
+      "badge": "Free SEO Audit",
+      "title": "Discover your hidden SEO potential",
+      "subtitle": "Analyze your website in 30 seconds and uncover the opportunities your competitors are already exploiting.",
+      "cta": "Analyze my site"
+    },
+    "page": {
+      "title": "Free SEO Audit",
+      "subtitle": "Enter your website URL to discover your growth opportunities.",
+      "urlPlaceholder": "https://yoursite.com *",
+      "emailPlaceholder": "Your email address *",
+      "cta": "Launch audit",
+      "scanning": {
+        "title": "Analysis in progress",
+        "step1": "Analyzing site structure...",
+        "step2": "Scanning strategic keywords...",
+        "step3": "Competitive analysis...",
+        "step4": "Calculating growth potential..."
+      },
+      "results": {
+        "title": "Your audit results",
+        "scoreLabel": "Visibility Score",
+        "scoreOut": "/ 100",
+        "keywordsTitle": "Missed keyword opportunities",
+        "keywordsSubtitle": "Keywords your competitors use but you don't",
+        "volume": "monthly vol.",
+        "difficulty": "difficulty",
+        "financialTitle": "Estimated revenue loss",
+        "financialPerMonth": "/month",
+        "financialDesc": "Potential revenue you're leaving to your competitors",
+        "competitors": "Active competitors",
+        "missingPages": "Missing pages",
+        "ctaTitle": "Take action",
+        "ctaSubtitle": "Our SEO experts can help you recover this lost potential.",
+        "ctaButton": "Get the full audit"
+      }
+    }
+  },
   "footer": {
     "description": "Premium digital agency. We craft websites that convert.",
     "navigation": "Navigation",
