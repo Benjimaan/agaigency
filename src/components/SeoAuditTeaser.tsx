@@ -30,7 +30,7 @@ export default function SeoAuditTeaser() {
     "w-full rounded-xl border border-border bg-background px-5 py-4 text-sm text-foreground placeholder-muted outline-none transition-all focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/20";
 
   return (
-    <section className="px-6 py-32">
+    <section id="seo-audit" className="px-6 py-32">
       <div className="mx-auto max-w-3xl">
         <ScrollReveal className="text-center">
           <span className="mb-4 inline-block rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-4 py-1.5 text-xs font-medium tracking-wider text-[#D4AF37] uppercase">

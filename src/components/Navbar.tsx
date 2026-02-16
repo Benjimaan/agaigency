@@ -10,6 +10,7 @@ const navLinks = [
   { href: "#portfolio", key: "portfolio" },
   { href: "#process", key: "process" },
   { href: "#about", key: "about" },
+  { href: "#seo-audit", key: "seoAudit" },
   { href: "#contact", key: "contact" },
 ] as const;
 
