@@ -78,7 +78,7 @@ function ProjectCard({ project, index, total }: { project: Project; index: numbe
   const y = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
   const content = (
-    <div ref={sectionRef} className="group mb-32 cursor-pointer last:mb-0">
+    <div ref={sectionRef} className="group mb-40 cursor-pointer last:mb-0 md:mb-48">
       {/* Project header */}
       <ScrollReveal className="mb-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
