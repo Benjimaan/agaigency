@@ -36,7 +36,7 @@ const projects: Project[] = [
   {
     key: "prospectPro",
     slug: "prospect-pro",
-    image: "/images/projects/prospectpro/dashboard.png",
+    image: "/images/projects/prospectpro/02-dashboard.png",
     color: "#3b82f6",
   },
 ];
