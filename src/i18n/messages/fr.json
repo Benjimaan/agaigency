@@ -329,7 +329,7 @@
     "page": {
       "title": "Audit SEO Gratuit",
       "subtitle": "Entrez l'URL de votre site pour découvrir vos opportunités de croissance.",
-      "urlPlaceholder": "https://votresite.com *",
+      "urlPlaceholder": "votresite.com *",
       "emailPlaceholder": "Votre adresse email *",
       "cta": "Lancer l'audit",
       "scanning": {

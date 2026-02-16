@@ -92,13 +92,17 @@ async function fetchRealData(domain: string): Promise<ScanResults> {
     getCompetitors(domain, auth),
   ]);
 
+  console.log("DataForSEO ranked response:", JSON.stringify(rankedRes?.tasks?.[0]?.status_code), rankedRes?.tasks?.[0]?.status_message);
+  console.log("DataForSEO competitors response:", JSON.stringify(competitorsRes?.tasks?.[0]?.status_code));
+
   // Parse ranked keywords
   const rankedItems =
     rankedRes?.tasks?.[0]?.result?.[0]?.items || [];
   const totalRankedKeywords = rankedRes?.tasks?.[0]?.result?.[0]?.total_count || 0;
 
+  console.log("Ranked items count:", rankedItems.length, "Total:", totalRankedKeywords);
+
   // Calculate visibility score based on rankings
-  // More keywords in top positions = higher score
   let visibilityScore = 0;
   let totalEtv = 0;
 
@@ -116,8 +120,16 @@ async function fetchRealData(domain: string): Promise<ScanResults> {
 
   // Get keyword suggestions (opportunities the domain may be missing)
   const topKeyword = rankedItems[0]?.keyword_data?.keyword || domain.split(".")[0];
+  console.log("Using seed keyword for suggestions:", topKeyword);
+
   const suggestionsRes = await getKeywordSuggestions(topKeyword, auth);
   const suggestionItems = suggestionsRes?.tasks?.[0]?.result?.[0]?.items || [];
+
+  console.log("Suggestion items count:", suggestionItems.length);
+  if (suggestionItems[0]) {
+    console.log("First suggestion structure:", JSON.stringify(Object.keys(suggestionItems[0])));
+    console.log("First suggestion sample:", JSON.stringify(suggestionItems[0]).slice(0, 500));
+  }
 
   // Find keywords the domain is NOT ranking for (these are the gaps)
   const rankedKeywordSet = new Set(
@@ -126,43 +138,52 @@ async function fetchRealData(domain: string): Promise<ScanResults> {
     )
   );
 
+  // DataForSEO keyword_suggestions returns items with direct keyword_info or nested keyword_data
   const keywordGaps = suggestionItems
     .filter(
-      (item: { keyword_data?: { keyword?: string } }) =>
-        !rankedKeywordSet.has(item.keyword_data?.keyword?.toLowerCase())
+      (item: { keyword_data?: { keyword?: string }; keyword?: string }) => {
+        const kw = item.keyword_data?.keyword || item.keyword;
+        return kw && !rankedKeywordSet.has(kw.toLowerCase());
+      }
     )
-    .slice(0, 5)
+    .slice(0, 3) // Max 3 keywords for free audit
     .map((item: {
       keyword_data?: {
         keyword?: string;
         keyword_info?: { search_volume?: number; keyword_difficulty?: number };
       };
+      keyword?: string;
+      keyword_info?: { search_volume?: number; keyword_difficulty?: number };
+      search_volume?: number;
+      keyword_difficulty?: number;
     }) => ({
-      keyword: item.keyword_data?.keyword || "",
-      volume: item.keyword_data?.keyword_info?.search_volume || 0,
-      difficulty: item.keyword_data?.keyword_info?.keyword_difficulty || 0,
-      position: 0, // not ranking
+      keyword: item.keyword_data?.keyword || item.keyword || "",
+      volume: item.keyword_data?.keyword_info?.search_volume || item.keyword_info?.search_volume || item.search_volume || 0,
+      difficulty: item.keyword_data?.keyword_info?.keyword_difficulty || item.keyword_info?.keyword_difficulty || item.keyword_difficulty || 0,
+      position: 0,
     }));
+
+  console.log("Keyword gaps found:", keywordGaps.length, keywordGaps);
 
   // Parse competitors count
   const competitorItems = competitorsRes?.tasks?.[0]?.result?.[0]?.items || [];
   const competitors = competitorItems.length || 3;
 
   // Estimate financial loss based on missed keyword traffic
-  // Use average CPC of 1.5€ and estimated CTR for first page
   const missedVolume = keywordGaps.reduce(
     (sum: number, kw: { volume: number }) => sum + kw.volume,
     0
   );
-  const financialLoss = Math.round(missedVolume * 0.03 * 1.5); // 3% CTR * 1.5€ CPC
+  // Use average CPC of 2€ and estimated CTR of 5% for first page
+  const financialLoss = Math.max(Math.round(missedVolume * 0.05 * 2), 350);
 
-  // Estimate missing pages (keywords without ranking = potential pages to create)
+  // Estimate missing pages
   const missingPages = Math.max(keywordGaps.length, 3);
 
   return {
     visibilityScore: Math.max(visibilityScore, 5),
     keywords: keywordGaps.length > 0 ? keywordGaps : getFallbackKeywords(domain),
-    financialLoss: Math.max(financialLoss, 200),
+    financialLoss,
     competitors,
     missingPages,
   };

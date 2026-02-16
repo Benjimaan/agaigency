@@ -399,7 +399,7 @@ export default function SeoAuditSimulator() {
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 <input
-                  type="url"
+                  type="text"
                   value={url}
                   onChange={(e) => setUrl(e.target.value)}
                   placeholder={t("urlPlaceholder")}

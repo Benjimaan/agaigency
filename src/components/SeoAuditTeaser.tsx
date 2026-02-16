@@ -54,7 +54,7 @@ export default function SeoAuditTeaser() {
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <input
-              type="url"
+              type="text"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               placeholder={tPage("urlPlaceholder")}
