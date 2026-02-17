@@ -34,16 +34,16 @@ export default function Services() {
   const t = useTranslations("services");
 
   return (
-    <section id="services" className="px-6 py-32">
+    <section id="services" className="bg-[#F5F5F7] px-6 py-32">
       <div className="mx-auto max-w-7xl">
         <ScrollReveal className="mb-16 text-center">
           <span className="mb-4 inline-block rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium tracking-wider text-gold uppercase">
             {t("badge")}
           </span>
-          <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          <h2 className="mb-6 text-3xl font-bold tracking-tight text-[#1d1d1f] sm:text-4xl md:text-5xl">
             {t("title")}
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted">
+          <p className="mx-auto max-w-2xl text-lg text-[#6e6e73]">
             {t("subtitle")}
           </p>
         </ScrollReveal>
@@ -63,12 +63,12 @@ export default function Services() {
                   duration: 0.5,
                   ease: EASE,
                 }}
-                className={`gold-glow-hover group relative overflow-hidden rounded-2xl border border-border bg-card p-8 transition-all hover:border-gold/30 hover:bg-card-hover ${
+                className={`group relative overflow-hidden rounded-3xl bg-[#FAFAFA] p-8 shadow-[0_2px_20px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] ${
                   span === 2 ? "lg:col-span-2" : "lg:col-span-1"
                 } ${span === 2 ? "min-h-[240px]" : "min-h-[200px]"}`}
               >
                 {/* Watermark number */}
-                <span className="pointer-events-none absolute top-4 right-6 text-7xl font-extrabold text-gold/[0.06] select-none">
+                <span className="pointer-events-none absolute top-4 right-6 text-7xl font-extrabold text-[#D4AF37]/[0.05] select-none">
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
@@ -76,10 +76,10 @@ export default function Services() {
                   <div className="mb-6 inline-flex rounded-xl bg-gold/10 p-3 text-gold transition-colors group-hover:bg-gold/20">
                     {serviceIcons[i]}
                   </div>
-                  <h3 className="mb-3 text-xl font-semibold">
+                  <h3 className="mb-3 text-xl font-semibold text-[#1d1d1f]">
                     {t(`items.${key}.title`)}
                   </h3>
-                  <p className={`leading-relaxed text-muted ${span === 2 ? "max-w-md text-base" : "text-sm"}`}>
+                  <p className={`leading-relaxed text-[#6e6e73] ${span === 2 ? "max-w-md text-base" : "text-sm"}`}>
                     {t(`items.${key}.description`)}
                   </p>
                 </div>
@@ -87,7 +87,7 @@ export default function Services() {
                 {/* Decorative grid pattern for large cards */}
                 {span === 2 && (
                   <div
-                    className="pointer-events-none absolute right-0 bottom-0 h-32 w-48 opacity-[0.04]"
+                    className="pointer-events-none absolute right-0 bottom-0 h-32 w-48 opacity-[0.03]"
                     style={{
                       backgroundImage:
                         "radial-gradient(circle, rgba(212,175,55,1) 1px, transparent 1px)",
