@@ -112,6 +112,33 @@ export const projects: ProjectData[] = [
       },
     ],
   },
+  {
+    slug: "villa-angelie",
+    translationKey: "villaAngelie",
+    color: "#C5A55A",
+    heroImage: "/images/projects/villaangelie/02-accueil-hero.png",
+    carouselSectionKey: "website",
+    pages: [
+      { label: "Accueil", image: "/images/projects/villaangelie/01-accueil.png" },
+      { label: "Hero", image: "/images/projects/villaangelie/02-accueil-hero.png" },
+      { label: "La Villa", image: "/images/projects/villaangelie/03-la-villa.png" },
+      { label: "Prestations", image: "/images/projects/villaangelie/04-prestations.png" },
+      { label: "Pré-réservation", image: "/images/projects/villaangelie/05-pre-reservation.png" },
+      { label: "Contact", image: "/images/projects/villaangelie/06-contact.png" },
+      { label: "Mobile", image: "/images/projects/villaangelie/07-mobile-accueil.png" },
+    ],
+    sections: [
+      {
+        key: "villa",
+        images: ["/images/projects/villaangelie/03-la-villa.png"],
+      },
+      {
+        key: "prestations",
+        images: ["/images/projects/villaangelie/04-prestations.png"],
+        reverse: true,
+      },
+    ],
+  },
 ];
 
 export function getProjectBySlug(slug: string): ProjectData | undefined {

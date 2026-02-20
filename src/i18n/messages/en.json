@@ -146,6 +146,35 @@
           "features": "Features",
           "duration": "Weeks of dev"
         }
+      },
+      "villaAngelie": {
+        "title": "La Villa Angélie",
+        "category": "Showcase Website & Venue",
+        "description": "Elegant website for a prestigious reception venue in Oise, France: villa presentation, photo gallery, wedding & event packages, pre-booking form and refined design.",
+        "heroSubtitle": "Your perfect day starts here — an exceptional reception venue between Senlis and Chantilly",
+        "sections": {
+          "website": {
+            "title": "The Showcase Website",
+            "description": "A refined website with serif typography and a gold & cream palette, showcasing the charm and elegance of this unique reception venue. Smooth navigation and immersive experience."
+          },
+          "villa": {
+            "title": "The Villa",
+            "description": "Detailed presentation with filtered photo gallery, virtual tour of indoor and outdoor spaces, guest capacity and premium amenities for unforgettable events."
+          },
+          "prestations": {
+            "title": "The Services",
+            "description": "Bespoke packages for weddings, receptions and private events. Detailed offerings, customization options and dedicated support for every celebration."
+          },
+          "results": {
+            "title": "Results",
+            "description": "A premium showcase website that reflects the venue's prestige and facilitates contact with a smooth and intuitive pre-booking journey."
+          }
+        },
+        "stats": {
+          "pages": "Pages created",
+          "features": "Features",
+          "duration": "Weeks of dev"
+        }
       }
     }
   },

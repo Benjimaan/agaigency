@@ -146,6 +146,35 @@
           "features": "Fonctionnalités",
           "duration": "Semaines de dev"
         }
+      },
+      "villaAngelie": {
+        "title": "La Villa Angélie",
+        "category": "Site Vitrine & Lieu de Réception",
+        "description": "Site élégant pour un lieu de réception de prestige dans l'Oise : présentation de la villa, galerie photo, prestations mariages & événements, formulaire de pré-réservation et design raffiné.",
+        "heroSubtitle": "Votre jour parfait commence ici — lieu de réception d'exception entre Senlis et Chantilly",
+        "sections": {
+          "website": {
+            "title": "Le Site Vitrine",
+            "description": "Un site au design raffiné avec typographie serif et palette or & crème, mettant en valeur le charme et l'élégance de ce lieu de réception unique. Navigation fluide et expérience immersive."
+          },
+          "villa": {
+            "title": "La Villa",
+            "description": "Présentation détaillée du lieu avec galerie photo filtrée, visite virtuelle des espaces intérieurs et extérieurs, capacité d'accueil et équipements premium pour des événements inoubliables."
+          },
+          "prestations": {
+            "title": "Les Prestations",
+            "description": "Offres sur mesure pour mariages, réceptions et événements privés. Packages détaillés, options de personnalisation et accompagnement dédié pour chaque célébration."
+          },
+          "results": {
+            "title": "Résultats",
+            "description": "Un site vitrine premium qui reflète le standing du lieu et facilite la prise de contact avec un parcours de pré-réservation fluide et intuitif."
+          }
+        },
+        "stats": {
+          "pages": "Pages créées",
+          "features": "Fonctionnalités",
+          "duration": "Semaines de dev"
+        }
       }
     }
   },
