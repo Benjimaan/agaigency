@@ -9,10 +9,30 @@
   },
   "hero": {
     "badge": "Agence Digitale Premium",
-    "title": "Nous créons des sites qui convertissent.",
-    "subtitle": "Agence digitale premium spécialisée dans la conception de sites web performants, élégants et orientés résultats.",
+    "title": "Nous créons des sites qui convertissent pour les entrepreneurs ambitieux.",
+    "subtitle": "Agence digitale premium spécialisée dans la conception de sites web performants, élégants et orientés résultats pour les entreprises de services.",
+    "trustProof": "Plus de 20 projets livrés avec succès",
     "cta": "Démarrer un projet",
     "scroll": "Découvrir"
+  },
+  "painPoints": {
+    "badge": "Le constat",
+    "title": "Votre site actuel est-il un moteur de croissance ou un simple coût ?",
+    "subtitle": "Si vous vous reconnaissez dans l'une de ces situations, il est temps d'agir.",
+    "items": {
+      "visibility": {
+        "title": "Invisible sur Google",
+        "description": "Vos clients potentiels ne vous trouvent pas. Votre site est enterré dans les résultats de recherche et vous perdez du business chaque jour."
+      },
+      "speed": {
+        "title": "Un site lent qui fait fuir",
+        "description": "Chaque seconde de chargement en plus, c'est 7% de conversions en moins. Un site lent coûte cher en opportunités manquées."
+      },
+      "leads": {
+        "title": "Zéro lead généré",
+        "description": "Votre site est une vitrine passive. Il ne convertit pas les visiteurs en prospects et ne génère aucun retour sur investissement."
+      }
+    }
   },
   "services": {
     "badge": "Nos expertises",
@@ -226,7 +246,8 @@
         "title": "Résultats",
         "description": "Des sites qui performent et génèrent du ROI"
       }
-    }
+    },
+    "videoPlaceholder": "Vidéo de présentation bientôt disponible"
   },
   "testimonials": {
     "badge": "Témoignages",
@@ -236,7 +257,8 @@
       "client1": {
         "name": "Salif",
         "role": "Fondateur, Dakar Eat",
-        "quote": "AgaiGency a parfaitement compris notre vision. Le site et le dashboard admin ont transformé notre façon de gérer le restaurant. Résultat : +40% de commandes en ligne dès le premier mois."
+        "quote": "AgaiGency a parfaitement compris notre vision. Le site et le dashboard admin ont transformé notre façon de gérer le restaurant. Résultat : +40% de commandes en ligne dès le premier mois.",
+        "highlight": "+40% de commandes en ligne"
       },
       "client2": {
         "name": "Kévin & Mathieu",
@@ -252,6 +274,29 @@
         "name": "Ben",
         "role": "CEO, ProspectPro",
         "quote": "AgaiGency a développé notre plateforme SaaS de A à Z : scraping, gestion des leads, campagnes emailing et analytics. Un outil sur mesure qui a révolutionné notre prospection commerciale."
+      }
+    }
+  },
+  "faq": {
+    "badge": "Questions fréquentes",
+    "title": "Vos questions, nos réponses",
+    "subtitle": "Tout ce que vous devez savoir avant de démarrer votre projet.",
+    "items": {
+      "price": {
+        "question": "Combien coûte un site web professionnel ?",
+        "answer": "Chaque projet est unique. Nos tarifs dépendent de la complexité, du nombre de pages et des fonctionnalités souhaitées. Un site vitrine démarre à partir de 2 000€, tandis qu'une application web sur mesure peut aller au-delà de 10 000€. Nous établissons toujours un devis détaillé et transparent avant de commencer."
+      },
+      "timeline": {
+        "question": "Quels sont les délais de réalisation ?",
+        "answer": "Un site vitrine est généralement livré en 3 à 5 semaines. Une application web plus complexe peut nécessiter 6 à 12 semaines. Nous définissons ensemble un calendrier précis dès le début du projet avec des points d'étape réguliers."
+      },
+      "maintenance": {
+        "question": "Proposez-vous un service de maintenance ?",
+        "answer": "Oui, nous proposons des forfaits de maintenance mensuelle incluant les mises à jour de sécurité, les sauvegardes, le monitoring de performance et le support technique. Votre site reste performant et sécurisé dans le temps."
+      },
+      "seo": {
+        "question": "Mon site sera-t-il optimisé pour le référencement (SEO) ?",
+        "answer": "Absolument. Le SEO est intégré dès la conception : structure technique optimisée, temps de chargement ultra-rapides, balisage sémantique, métadonnées et bonnes pratiques Google. Nous pouvons également proposer un accompagnement SEO continu pour améliorer votre positionnement."
       }
     }
   },

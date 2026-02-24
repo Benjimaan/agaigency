@@ -9,10 +9,30 @@
   },
   "hero": {
     "badge": "Premium Digital Agency",
-    "title": "We craft websites that convert.",
-    "subtitle": "Premium digital agency specializing in high-performance, elegant, and results-driven web design.",
+    "title": "We craft websites that convert for ambitious entrepreneurs.",
+    "subtitle": "Premium digital agency specializing in high-performance, elegant, and results-driven web design for service businesses.",
+    "trustProof": "Over 20 projects successfully delivered",
     "cta": "Start a project",
     "scroll": "Discover"
+  },
+  "painPoints": {
+    "badge": "The reality",
+    "title": "Is your current website a growth engine or just an expense?",
+    "subtitle": "If any of these sound familiar, it's time to take action.",
+    "items": {
+      "visibility": {
+        "title": "Invisible on Google",
+        "description": "Your potential clients can't find you. Your site is buried in search results and you're losing business every single day."
+      },
+      "speed": {
+        "title": "A slow site that drives people away",
+        "description": "Every extra second of loading time costs 7% in conversions. A slow site means missed opportunities and lost revenue."
+      },
+      "leads": {
+        "title": "Zero leads generated",
+        "description": "Your website is a passive storefront. It doesn't convert visitors into prospects and generates no return on investment."
+      }
+    }
   },
   "services": {
     "badge": "Our expertise",
@@ -226,7 +246,8 @@
         "title": "Results",
         "description": "Sites that perform and generate ROI"
       }
-    }
+    },
+    "videoPlaceholder": "Presentation video coming soon"
   },
   "testimonials": {
     "badge": "Testimonials",
@@ -236,7 +257,8 @@
       "client1": {
         "name": "Moussa D.",
         "role": "Founder, Dakar Eat",
-        "quote": "AgaiGency perfectly understood our vision. The website and admin dashboard transformed how we manage the restaurant. Result: +40% online orders in the first month."
+        "quote": "AgaiGency perfectly understood our vision. The website and admin dashboard transformed how we manage the restaurant. Result: +40% online orders in the first month.",
+        "highlight": "+40% online orders"
       },
       "client2": {
         "name": "Kévin & Marvin",
@@ -252,6 +274,29 @@
         "name": "Ben",
         "role": "CEO, ProspectPro",
         "quote": "AgaiGency built our SaaS platform from scratch: scraping, lead management, email campaigns and analytics. A custom tool that revolutionized our sales prospecting."
+      }
+    }
+  },
+  "faq": {
+    "badge": "Frequently asked questions",
+    "title": "Your questions, answered",
+    "subtitle": "Everything you need to know before starting your project.",
+    "items": {
+      "price": {
+        "question": "How much does a professional website cost?",
+        "answer": "Every project is unique. Our pricing depends on complexity, number of pages, and desired features. A showcase website starts from $2,000, while a custom web application can go beyond $10,000. We always provide a detailed and transparent quote before starting."
+      },
+      "timeline": {
+        "question": "What are the delivery timelines?",
+        "answer": "A showcase website is typically delivered in 3 to 5 weeks. A more complex web application can take 6 to 12 weeks. We define a precise schedule together from the start with regular milestone check-ins."
+      },
+      "maintenance": {
+        "question": "Do you offer maintenance services?",
+        "answer": "Yes, we offer monthly maintenance packages including security updates, backups, performance monitoring, and technical support. Your website stays performant and secure over time."
+      },
+      "seo": {
+        "question": "Will my site be optimized for SEO?",
+        "answer": "Absolutely. SEO is built in from the design phase: optimized technical structure, ultra-fast load times, semantic markup, metadata, and Google best practices. We can also offer ongoing SEO support to improve your rankings."
       }
     }
   },

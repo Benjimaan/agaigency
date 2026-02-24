@@ -4,10 +4,10 @@ import { useTranslations } from "next-intl";
 import ScrollReveal from "./ui/ScrollReveal";
 
 const testimonials = [
-  { key: "client1", avatar: "/images/founder.png", hasAvatar: false },
-  { key: "client2", avatar: null, hasAvatar: false },
-  { key: "client3", avatar: null, hasAvatar: false },
-  { key: "client4", avatar: null, hasAvatar: false },
+  { key: "client1", avatar: "/images/founder.png", hasAvatar: false, hasHighlight: true },
+  { key: "client2", avatar: null, hasAvatar: false, hasHighlight: false },
+  { key: "client3", avatar: null, hasAvatar: false, hasHighlight: false },
+  { key: "client4", avatar: null, hasAvatar: false, hasHighlight: false },
 ];
 
 function StarIcon() {
@@ -36,7 +36,7 @@ export default function Testimonials() {
           </p>
         </ScrollReveal>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2">
           {testimonials.map((item, i) => (
             <ScrollReveal key={item.key} delay={i * 0.15}>
               <div className="gold-glow-hover relative flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-all hover:border-gold/20">
@@ -44,6 +44,18 @@ export default function Testimonials() {
                 <span className="pointer-events-none absolute top-4 right-6 text-5xl font-serif text-gold/[0.08] leading-none select-none">
                   &ldquo;
                 </span>
+
+                {/* Quantified result highlight */}
+                {item.hasHighlight && (
+                  <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/10 px-3 py-1">
+                    <svg className="h-4 w-4 text-gold" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                    </svg>
+                    <span className="text-xs font-bold text-gold">
+                      {t(`items.${item.key}.highlight`)}
+                    </span>
+                  </div>
+                )}
 
                 <div className="mb-4 flex gap-1">
                   {[...Array(5)].map((_, j) => (

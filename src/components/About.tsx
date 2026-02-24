@@ -70,6 +70,30 @@ export default function About() {
                 </div>
               </div>
             </ScrollReveal>
+
+            {/* Video placeholder */}
+            <ScrollReveal delay={0.3}>
+              <div className="gold-glow-hover group relative mt-8 flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-gold/20">
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-[0.03]"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(circle, rgba(212,175,55,1) 1px, transparent 1px)",
+                    backgroundSize: "20px 20px",
+                  }}
+                />
+                <div className="relative flex flex-col items-center gap-3">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold transition-all group-hover:scale-110 group-hover:bg-gold/20">
+                    <svg className="ml-1 h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                  <span className="text-sm text-muted">
+                    {t("videoPlaceholder")}
+                  </span>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Right: values */}

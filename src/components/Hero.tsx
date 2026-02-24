@@ -94,11 +94,35 @@ export default function Hero() {
           {t("subtitle")}
         </motion.p>
 
+        {/* Trust proof */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.15, duration: 0.6, ease: EASE }}
+          className="mb-12 flex items-center justify-center gap-3"
+        >
+          <div className="flex -space-x-2">
+            {[...Array(3)].map((_, i) => (
+              <div
+                key={i}
+                className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-background bg-gold/20"
+              >
+                <svg className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              </div>
+            ))}
+          </div>
+          <span className="text-sm font-medium text-muted">
+            {t("trustProof")}
+          </span>
+        </motion.div>
+
         {/* CTA — Gold */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.3, duration: 0.6, ease: EASE }}
+          transition={{ delay: 1.4, duration: 0.6, ease: EASE }}
         >
           <Link
             href={`/${locale}/request-quote`}
