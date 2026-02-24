@@ -54,7 +54,7 @@ export default function Hero() {
         </motion.span>
 
         {/* Animated title — last word gets gold gradient */}
-        <h1 className="mb-8 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-7xl lg:text-8xl">
+        <h1 className="mb-8 text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
           {words.map((word, i) => {
             const isLast = i === words.length - 1;
             return (
