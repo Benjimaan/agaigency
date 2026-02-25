@@ -394,6 +394,11 @@
       }
     }
   },
+  "booking": {
+    "title": "Choisissez votre créneau pour votre consultation stratégique",
+    "subtitle": "30 minutes pour analyser votre projet et définir la meilleure stratégie digitale.",
+    "skip": "Vous préférez qu'on vous recontacte ? Nous reviendrons vers vous sous 24h."
+  },
   "seoAudit": {
     "teaser": {
       "badge": "Audit SEO Gratuit",

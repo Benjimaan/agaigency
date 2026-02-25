@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
+import BookingView from "./BookingView";
 
 const TOTAL_STEPS = 5;
 
@@ -333,50 +334,56 @@ function StepDetails({
 }
 
 /* ─── Success Screen ─── */
-function SuccessScreen() {
+function SuccessScreen({ name, email }: { name: string; email: string }) {
   const t = useTranslations("quote");
   const locale = useLocale();
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
-      className="py-12 text-center"
-    >
+    <div className="py-12">
       <motion.div
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 15 }}
-        className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-accent/20"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
+        className="mb-16 text-center"
       >
-        <svg className="h-10 w-10 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-        </svg>
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 200, damping: 15 }}
+          className="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-accent/20"
+        >
+          <svg className="h-10 w-10 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+          </svg>
+        </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl"
+        >
+          {t("steps.success.title")}
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          className="mx-auto mb-10 max-w-md text-lg text-muted"
+        >
+          {t("steps.success.subtitle")}
+        </motion.p>
       </motion.div>
 
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.5 }}
-        className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl"
-      >
-        {t("steps.success.title")}
-      </motion.h2>
-
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.5 }}
-        className="mx-auto mb-10 max-w-md text-lg text-muted"
-      >
-        {t("steps.success.subtitle")}
-      </motion.p>
+      {/* Booking calendar */}
+      <BookingView name={name} email={email} />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        className="mt-12 text-center"
       >
         <Link
           href={`/${locale}`}
@@ -388,7 +395,7 @@ function SuccessScreen() {
           {t("steps.success.backHome")}
         </Link>
       </motion.div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -463,8 +470,8 @@ export default function QuoteForm() {
   if (submitted) {
     return (
       <div className="min-h-screen bg-background px-6 pt-32 pb-20">
-        <div className="mx-auto max-w-2xl">
-          <SuccessScreen />
+        <div className="mx-auto max-w-3xl">
+          <SuccessScreen name={formData.name} email={formData.email} />
         </div>
       </div>
     );

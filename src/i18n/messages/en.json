@@ -394,6 +394,11 @@
       }
     }
   },
+  "booking": {
+    "title": "Choose your slot for a strategic consultation",
+    "subtitle": "30 minutes to analyze your project and define the best digital strategy.",
+    "skip": "Prefer us to call you back? We'll get in touch within 24 hours."
+  },
   "seoAudit": {
     "teaser": {
       "badge": "Free SEO Audit",
