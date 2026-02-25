@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-const CALENDAR_URL = "https://calendly.com/agaigency";
+const CALENDAR_URL = "https://calendly.com/benjaminferment/30min";
 
 const EASE = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
 
