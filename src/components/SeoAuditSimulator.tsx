@@ -16,12 +16,27 @@ interface KeywordData {
   position: number;
 }
 
+interface OnPageData {
+  title: { text: string; length: number; status: "good" | "warning" | "error" };
+  metaDescription: { text: string; length: number; status: "good" | "warning" | "error" };
+  h1: { text: string; count: number; status: "good" | "warning" | "error" };
+  h2Count: number;
+  images: { total: number; withoutAlt: number };
+  hasViewport: boolean;
+  hasCanonical: boolean;
+  hasOpenGraph: boolean;
+  technicalScore: number;
+}
+
 interface ScanResults {
   visibilityScore: number;
+  positioningScore: number;
+  technicalScore: number;
   keywords: KeywordData[];
   financialLoss: number;
   competitors: number;
   missingPages: number;
+  onPageData: OnPageData;
 }
 
 /* ─── Radar Animation ─── */
@@ -236,6 +251,77 @@ function KeywordCard({
   );
 }
 
+/* ─── On-Page Audit Row ─── */
+function OnPageRow({
+  label,
+  value,
+  status,
+  detail,
+  index,
+}: {
+  label: string;
+  value: string;
+  status: "good" | "warning" | "error" | "info";
+  detail?: string;
+  index: number;
+}) {
+  const statusIcon = {
+    good: { color: "text-green-400", bg: "bg-green-400/10", icon: "✓" },
+    warning: { color: "text-yellow-400", bg: "bg-yellow-400/10", icon: "!" },
+    error: { color: "text-red-400", bg: "bg-red-400/10", icon: "✗" },
+    info: { color: "text-blue-400", bg: "bg-blue-400/10", icon: "i" },
+  }[status];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 0.8 + index * 0.08, duration: 0.4, ease: EASE }}
+      className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
+    >
+      <div className={`mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold ${statusIcon.bg} ${statusIcon.color}`}>
+        {statusIcon.icon}
+      </div>
+      <div className="min-w-0 flex-1">
+        <div className="flex items-center justify-between gap-2">
+          <span className="text-sm font-medium text-foreground">{label}</span>
+          <span className={`text-xs font-medium ${statusIcon.color}`}>{value}</span>
+        </div>
+        {detail && (
+          <p className="mt-1 truncate text-xs text-muted">{detail}</p>
+        )}
+      </div>
+    </motion.div>
+  );
+}
+
+/* ─── Score Bar (positioning vs technical) ─── */
+function ScoreBar({ label, score, delay }: { label: string; score: number; delay: number }) {
+  const color = score < 30 ? "#ef4444" : score < 50 ? "#f59e0b" : score < 70 ? "#D4AF37" : "#22c55e";
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay, duration: 0.5, ease: EASE }}
+    >
+      <div className="mb-1 flex items-center justify-between text-xs">
+        <span className="text-muted">{label}</span>
+        <span className="font-semibold" style={{ color }}>{score}/100</span>
+      </div>
+      <div className="h-2 overflow-hidden rounded-full bg-border">
+        <motion.div
+          className="h-full rounded-full"
+          style={{ backgroundColor: color }}
+          initial={{ width: "0%" }}
+          animate={{ width: `${score}%` }}
+          transition={{ delay: delay + 0.2, duration: 1, ease: EASE }}
+        />
+      </div>
+    </motion.div>
+  );
+}
+
 /* ─── Main SeoAuditSimulator ─── */
 export default function SeoAuditSimulator() {
   const t = useTranslations("seoAudit.page");
@@ -287,6 +373,8 @@ export default function SeoAuditSimulator() {
           // Fallback mock data
           setResults({
             visibilityScore: 28,
+            positioningScore: 20,
+            technicalScore: 36,
             keywords: [
               { keyword: "votre mot-clé", volume: 5400, difficulty: 45, position: 0 },
               { keyword: "mot-clé stratégique", volume: 3200, difficulty: 55, position: 0 },
@@ -297,6 +385,17 @@ export default function SeoAuditSimulator() {
             financialLoss: 2350,
             competitors: 5,
             missingPages: 7,
+            onPageData: {
+              title: { text: "", length: 0, status: "error" },
+              metaDescription: { text: "", length: 0, status: "error" },
+              h1: { text: "", count: 0, status: "error" },
+              h2Count: 0,
+              images: { total: 0, withoutAlt: 0 },
+              hasViewport: false,
+              hasCanonical: false,
+              hasOpenGraph: false,
+              technicalScore: 0,
+            },
           });
           setPhase("results");
         }, 4500);
@@ -479,8 +578,14 @@ export default function SeoAuditSimulator() {
               <p className="mb-10 text-center text-sm text-muted">{url}</p>
 
               {/* Score */}
-              <div className="mb-12 flex justify-center">
+              <div className="mb-8 flex justify-center">
                 <ScoreCircle score={results.visibilityScore} />
+              </div>
+
+              {/* Score breakdown bars */}
+              <div className="mb-10 space-y-3">
+                <ScoreBar label={t("results.positioningLabel")} score={results.positioningScore} delay={0.3} />
+                <ScoreBar label={t("results.technicalLabel")} score={results.technicalScore} delay={0.45} />
               </div>
 
               {/* Stats row */}
@@ -533,6 +638,76 @@ export default function SeoAuditSimulator() {
                   {t("results.financialDesc")}
                 </p>
               </motion.div>
+
+              {/* On-Page Audit */}
+              {results.onPageData && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.7, duration: 0.5 }}
+                  className="mb-10"
+                >
+                  <h3 className="mb-1 text-lg font-semibold">
+                    {t("results.onPageTitle")}
+                  </h3>
+                  <p className="mb-4 text-sm text-muted">
+                    {t("results.onPageSubtitle")}
+                  </p>
+                  <div className="space-y-2">
+                    <OnPageRow
+                      label="Title"
+                      value={results.onPageData.title.length > 0 ? `${results.onPageData.title.length} car.` : t("results.missing")}
+                      status={results.onPageData.title.status}
+                      detail={results.onPageData.title.text || undefined}
+                      index={0}
+                    />
+                    <OnPageRow
+                      label="Meta Description"
+                      value={results.onPageData.metaDescription.length > 0 ? `${results.onPageData.metaDescription.length} car.` : t("results.missing")}
+                      status={results.onPageData.metaDescription.status}
+                      detail={results.onPageData.metaDescription.text?.slice(0, 100) || undefined}
+                      index={1}
+                    />
+                    <OnPageRow
+                      label="H1"
+                      value={results.onPageData.h1.count === 1 ? "1 H1" : results.onPageData.h1.count === 0 ? t("results.missing") : `${results.onPageData.h1.count} H1`}
+                      status={results.onPageData.h1.status}
+                      detail={results.onPageData.h1.text || undefined}
+                      index={2}
+                    />
+                    <OnPageRow
+                      label={t("results.h2Structure")}
+                      value={`${results.onPageData.h2Count} H2`}
+                      status={results.onPageData.h2Count >= 3 ? "good" : results.onPageData.h2Count >= 1 ? "warning" : "error"}
+                      index={3}
+                    />
+                    <OnPageRow
+                      label={t("results.imagesAlt")}
+                      value={results.onPageData.images.total > 0 ? `${results.onPageData.images.withoutAlt} / ${results.onPageData.images.total}` : "—"}
+                      status={results.onPageData.images.withoutAlt === 0 ? "good" : results.onPageData.images.withoutAlt <= 3 ? "warning" : "error"}
+                      index={4}
+                    />
+                    <OnPageRow
+                      label="Mobile (viewport)"
+                      value={results.onPageData.hasViewport ? "OK" : t("results.missing")}
+                      status={results.onPageData.hasViewport ? "good" : "error"}
+                      index={5}
+                    />
+                    <OnPageRow
+                      label="Canonical"
+                      value={results.onPageData.hasCanonical ? "OK" : t("results.missing")}
+                      status={results.onPageData.hasCanonical ? "good" : "warning"}
+                      index={6}
+                    />
+                    <OnPageRow
+                      label="Open Graph"
+                      value={results.onPageData.hasOpenGraph ? "OK" : t("results.missing")}
+                      status={results.onPageData.hasOpenGraph ? "good" : "warning"}
+                      index={7}
+                    />
+                  </div>
+                </motion.div>
+              )}
 
               {/* Keywords */}
               <motion.div

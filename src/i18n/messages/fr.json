@@ -448,7 +448,14 @@
         "missingPages": "Pages manquantes",
         "ctaTitle": "Passez à l'action",
         "ctaSubtitle": "Nos experts SEO peuvent vous aider à récupérer ce potentiel perdu.",
-        "ctaButton": "Obtenir l'audit complet"
+        "ctaButton": "Obtenir l'audit complet",
+        "positioningLabel": "Positionnement Google",
+        "technicalLabel": "Santé technique On-Page",
+        "onPageTitle": "Audit technique On-Page",
+        "onPageSubtitle": "Analyse en temps réel du code HTML de votre site",
+        "missing": "Absent",
+        "h2Structure": "Structure H2",
+        "imagesAlt": "Images sans alt"
       }
     }
   },
