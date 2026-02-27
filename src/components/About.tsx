@@ -5,8 +5,10 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useRef } from "react";
 import ScrollReveal from "./ui/ScrollReveal";
+import RevealText from "./ui/RevealText";
 
 const valueKeys = ["innovation", "excellence", "results"] as const;
+const EASE = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
 
 const valueIcons = [
   <svg key="inno" className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
@@ -31,7 +33,7 @@ export default function About() {
   const y = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
   return (
-    <section id="about" ref={sectionRef} className="relative overflow-hidden px-6 py-32">
+    <section id="about" ref={sectionRef} className="relative overflow-hidden bg-[#FAFAFA] px-6 py-32">
       {/* Parallax background element — gold */}
       <motion.div
         style={{ y }}
@@ -46,10 +48,10 @@ export default function About() {
               <span className="mb-4 inline-block rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium tracking-wider text-gold uppercase">
                 {t("badge")}
               </span>
-              <h2 className="mb-8 text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl">
+              <RevealText as="h2" className="mb-8 text-3xl font-bold leading-tight tracking-tight text-[#121212] sm:text-4xl md:text-5xl">
                 {t("title")}
-              </h2>
-              <p className="text-lg leading-relaxed text-muted">
+              </RevealText>
+              <p className="text-lg leading-relaxed text-gray-500">
                 {t("description")}
               </p>
             </ScrollReveal>
@@ -65,15 +67,15 @@ export default function About() {
                   />
                 </div>
                 <div>
-                  <p className="font-semibold">{t("founder.name")}</p>
-                  <p className="text-sm text-muted">{t("founder.role")}</p>
+                  <p className="font-semibold text-[#121212]">{t("founder.name")}</p>
+                  <p className="text-sm text-gray-500">{t("founder.role")}</p>
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Video placeholder */}
             <ScrollReveal delay={0.3}>
-              <div className="gold-glow-hover group relative mt-8 flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-gold/20">
+              <div className="group relative mt-8 flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all hover:border-gold/20 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                 <div
                   className="pointer-events-none absolute inset-0 opacity-[0.03]"
                   style={{
@@ -88,7 +90,7 @@ export default function About() {
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   </div>
-                  <span className="text-sm text-muted">
+                  <span className="text-sm text-gray-500">
                     {t("videoPlaceholder")}
                   </span>
                 </div>
@@ -99,21 +101,31 @@ export default function About() {
           {/* Right: values */}
           <div className="space-y-6">
             {valueKeys.map((key, i) => (
-              <ScrollReveal key={key} delay={i * 0.15}>
-                <div className="gold-glow-hover flex items-start gap-5 rounded-2xl border border-border bg-card p-6 transition-all hover:border-gold/30 hover:bg-card-hover">
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{
+                  duration: 0.6,
+                  delay: i * 0.15,
+                  ease: EASE,
+                }}
+              >
+                <div className="flex items-start gap-5 rounded-2xl border border-gray-100 bg-white p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all hover:border-gold/30 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                   <div className="flex-shrink-0 rounded-xl bg-gold/10 p-3 text-gold">
                     {valueIcons[i]}
                   </div>
                   <div>
-                    <h3 className="mb-1 text-lg font-semibold">
+                    <h3 className="mb-1 text-lg font-semibold text-[#121212]">
                       {t(`values.${key}.title`)}
                     </h3>
-                    <p className="text-sm text-muted">
+                    <p className="text-sm text-gray-500">
                       {t(`values.${key}.description`)}
                     </p>
                   </div>
                 </div>
-              </ScrollReveal>
+              </motion.div>
             ))}
           </div>
         </div>
