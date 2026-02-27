@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
+import { track } from "@vercel/analytics/react";
 import LangSwitcher from "./ui/LangSwitcher";
 
 const navLinks = [
@@ -88,6 +89,7 @@ export default function Navbar() {
           {/* CTA button */}
           <Link
             href={`/${locale}/request-quote`}
+            onClick={() => track("Click_Demarrer_Projet", { location: "navbar" })}
             className="rounded-full border border-gold/20 bg-gold/10 px-5 py-2 text-sm font-medium text-gold transition-all hover:bg-gold/20"
           >
             {tContact("cta")}
@@ -138,7 +140,7 @@ export default function Navbar() {
           ))}
           <Link
             href={`/${locale}/request-quote`}
-            onClick={() => setIsOpen(false)}
+            onClick={() => { track("Click_Demarrer_Projet", { location: "navbar_mobile" }); setIsOpen(false); }}
             className="rounded-full border border-gold/20 bg-gold/10 px-8 py-3 text-lg font-medium text-gold transition-all hover:bg-gold/20"
           >
             {tContact("cta")}

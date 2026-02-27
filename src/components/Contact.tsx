@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
+import { track } from "@vercel/analytics/react";
 import ScrollReveal from "./ui/ScrollReveal";
 
 export default function Contact() {
@@ -31,6 +32,7 @@ export default function Contact() {
           </p>
           <Link
             href={`/${locale}/request-quote`}
+            onClick={() => track("Click_Demarrer_Projet", { location: "contact" })}
             className="inline-flex items-center gap-2 rounded-full bg-gold px-10 py-4 text-sm font-semibold text-background transition-all hover:bg-gold-dark hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)]"
           >
             {t("cta")}

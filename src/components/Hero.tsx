@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
+import { track } from "@vercel/analytics/react";
 import { splitTextIntoLines } from "@/lib/splitText";
 
 export default function Hero() {
@@ -211,6 +212,7 @@ export default function Hero() {
         >
           <Link
             href={`/${locale}/request-quote`}
+            onClick={() => track("Click_Demarrer_Projet", { location: "hero" })}
             className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-semibold text-background transition-all hover:bg-gold-dark hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)]"
           >
             {t("cta")}
