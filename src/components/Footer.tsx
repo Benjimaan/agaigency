@@ -44,9 +44,9 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
               {t("navigation")}
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -63,17 +63,17 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider">
+            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
               Legal
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li>
-                <Link href={`/${locale}/legal`} className="text-sm text-muted transition-colors hover:text-gold">
+                <Link href={`/${locale}/legal#mentions`} className="text-sm text-muted transition-colors hover:text-gold">
                   {t("legal")}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/legal`} className="text-sm text-muted transition-colors hover:text-gold">
+                <Link href={`/${locale}/legal#confidentialite`} className="text-sm text-muted transition-colors hover:text-gold">
                   {t("privacy")}
                 </Link>
               </li>

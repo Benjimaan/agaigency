@@ -13,6 +13,7 @@
     "subtitle": "Agence digitale premium spécialisée dans la conception de sites web performants, élégants et orientés résultats pour les entreprises de services.",
     "trustProof": "Plus de 20 projets livrés avec succès",
     "cta": "Démarrer un projet",
+    "ctaSecondary": "Voir nos réalisations",
     "scroll": "Découvrir"
   },
   "painPoints": {
@@ -59,13 +60,26 @@
   },
   "portfolio": {
     "badge": "Portfolio",
-    "title": "Nos réalisations",
-    "subtitle": "Découvrez une sélection de projets qui illustrent notre expertise et notre exigence qualité.",
+    "title": "Nos études de cas",
+    "subtitle": "Des résultats concrets pour des clients ambitieux.",
     "viewProject": "Voir le projet",
+    "viewSite": "Voir le site live",
+    "otherProjects": "Nos autres réalisations",
+    "otherProjectsSubtitle": "Découvrez d'autres projets sur lesquels nous avons travaillé.",
+    "challengeTitle": "Le Défi",
+    "solutionTitle": "Notre Solution",
     "items": {
       "dkrEat": {
         "title": "Dakar Eat",
+        "sector": "FoodTech",
         "category": "Outil Digital & Commande en ligne",
+        "stat": "+40%",
+        "statLabel": "de commandes en ligne",
+        "challenge": "Dakar Eat avait besoin de digitaliser son service de commande. Leur processus était 100% téléphonique, générant des erreurs et des pertes de clients aux heures de pointe.",
+        "solutionTags": "UX Design, Commande en ligne, Dashboard Admin, SEO Local",
+        "quote": "AgaiGency a transformé notre business. En 3 mois, nos commandes en ligne ont explosé.",
+        "quoteAuthor": "Amadou D.",
+        "quoteRole": "Fondateur, Dakar Eat",
         "description": "Plateforme complète pour un restaurant sénégalais : site vitrine, commande en ligne, dashboard admin avec suivi clients, gestion des influenceurs et commissions en temps réel.",
         "heroSubtitle": "Un outil digital complet pour la restauration sénégalaise authentique",
         "sections": {

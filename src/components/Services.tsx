@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import ScrollReveal from "./ui/ScrollReveal";
+import RevealText from "./ui/RevealText";
 
 const EASE = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
 
@@ -34,16 +35,16 @@ export default function Services() {
   const t = useTranslations("services");
 
   return (
-    <section id="services" className="bg-[#F5F5F7] px-6 py-32">
+    <section id="services" className="bg-[#FAFAFA] px-6 py-32">
       <div className="mx-auto max-w-7xl">
         <ScrollReveal className="mb-16 text-center">
           <span className="mb-4 inline-block rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium tracking-wider text-gold uppercase">
             {t("badge")}
           </span>
-          <h2 className="mb-6 text-3xl font-bold tracking-tight text-[#1d1d1f] sm:text-4xl md:text-5xl">
+          <RevealText as="h2" className="mb-6 text-3xl font-bold tracking-tight text-[#121212] sm:text-4xl md:text-5xl">
             {t("title")}
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg text-[#6e6e73]">
+          </RevealText>
+          <p className="mx-auto max-w-2xl text-lg text-gray-500">
             {t("subtitle")}
           </p>
         </ScrollReveal>
@@ -63,12 +64,12 @@ export default function Services() {
                   duration: 0.5,
                   ease: EASE,
                 }}
-                className={`group relative overflow-hidden rounded-3xl bg-[#FAFAFA] p-8 shadow-[0_2px_20px_rgba(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] ${
+                className={`group relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/30 hover:shadow-[0_4px_30px_rgba(212,175,55,0.08)] ${
                   span === 2 ? "lg:col-span-2" : "lg:col-span-1"
                 } ${span === 2 ? "min-h-[240px]" : "min-h-[200px]"}`}
               >
                 {/* Watermark number */}
-                <span className="pointer-events-none absolute top-4 right-6 text-7xl font-extrabold text-[#D4AF37]/[0.05] select-none">
+                <span className="pointer-events-none absolute top-4 right-6 text-7xl font-extrabold text-[#D4AF37]/[0.1] select-none">
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
@@ -76,10 +77,10 @@ export default function Services() {
                   <div className="mb-6 inline-flex rounded-xl bg-gold/10 p-3 text-gold transition-colors group-hover:bg-gold/20">
                     {serviceIcons[i]}
                   </div>
-                  <h3 className="mb-3 text-xl font-semibold text-[#1d1d1f]">
+                  <h3 className="mb-3 text-xl font-semibold text-[#121212]">
                     {t(`items.${key}.title`)}
                   </h3>
-                  <p className={`leading-relaxed text-[#6e6e73] ${span === 2 ? "max-w-md text-base" : "text-sm"}`}>
+                  <p className={`leading-relaxed text-gray-500 ${span === 2 ? "max-w-md text-base" : "text-sm"}`}>
                     {t(`items.${key}.description`)}
                   </p>
                 </div>

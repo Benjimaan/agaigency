@@ -13,6 +13,7 @@
     "subtitle": "Premium digital agency specializing in high-performance, elegant, and results-driven web design for service businesses.",
     "trustProof": "Over 20 projects successfully delivered",
     "cta": "Start a project",
+    "ctaSecondary": "See our work",
     "scroll": "Discover"
   },
   "painPoints": {
@@ -59,13 +60,26 @@
   },
   "portfolio": {
     "badge": "Portfolio",
-    "title": "Our work",
-    "subtitle": "Explore a selection of projects that showcase our expertise and commitment to quality.",
+    "title": "Our case studies",
+    "subtitle": "Real results for ambitious clients.",
     "viewProject": "View project",
+    "viewSite": "View live site",
+    "otherProjects": "More projects",
+    "otherProjectsSubtitle": "Discover other projects we've worked on.",
+    "challengeTitle": "The Challenge",
+    "solutionTitle": "Our Solution",
     "items": {
       "dkrEat": {
         "title": "Dakar Eat",
+        "sector": "FoodTech",
         "category": "Digital Tool & Online Ordering",
+        "stat": "+40%",
+        "statLabel": "online orders",
+        "challenge": "Dakar Eat needed to digitize their ordering process. It was 100% phone-based, causing errors and lost customers during peak hours.",
+        "solutionTags": "UX Design, Online Ordering, Admin Dashboard, Local SEO",
+        "quote": "AgaiGency transformed our business. In 3 months, our online orders skyrocketed.",
+        "quoteAuthor": "Amadou D.",
+        "quoteRole": "Founder, Dakar Eat",
         "description": "Complete platform for a Senegalese restaurant: showcase site, online ordering, admin dashboard with client tracking, influencer management and real-time commissions.",
         "heroSubtitle": "A complete digital tool for authentic Senegalese dining",
         "sections": {

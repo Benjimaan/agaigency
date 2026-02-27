@@ -53,15 +53,15 @@ export default function Navbar() {
         ),
       }}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <nav aria-label="Navigation principale" className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
-        <a href="#" className="block">
+        <Link href={`/${locale}`} className="block">
           <img
             src="/images/logo.svg"
             alt="AgaiGency"
             className="h-12 w-auto"
           />
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 md:flex">
@@ -99,8 +99,9 @@ export default function Navbar() {
         {/* Mobile burger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex flex-col gap-1.5 md:hidden"
+          className="flex min-h-11 min-w-11 flex-col items-center justify-center gap-1.5 md:hidden"
           aria-label="Toggle menu"
+          aria-expanded={isOpen}
         >
           <motion.span
             animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}

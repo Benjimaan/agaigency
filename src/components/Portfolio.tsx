@@ -1,26 +1,50 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
 import ScrollReveal from "./ui/ScrollReveal";
+import RevealText from "./ui/RevealText";
 
-interface Project {
+/* ─── Data ──────────────────────────────────────────── */
+
+interface CaseImage {
+  src: string;
+  type: "desktop" | "mobile";
+}
+
+interface CaseStudy {
   key: string;
-  slug: string | null;
-  image: string | null;
+  liveUrl: string;
+  color: string;
+  images: CaseImage[];
+}
+
+const caseStudies: CaseStudy[] = [
+  {
+    key: "dkrEat",
+    liveUrl: "https://dakareat.com",
+    color: "#e87435",
+    images: [
+      { src: "/images/projects/dkr-eat/accueil.png", type: "desktop" },
+      { src: "/images/projects/dkr-eat/menu.png", type: "desktop" },
+      { src: "/images/projects/dkr-eat/admin-login.png", type: "desktop" },
+      { src: "/images/projects/dkr-eat/contact.png", type: "desktop" },
+    ],
+  },
+];
+
+/* ─── Other Projects (grid) ─────────────────────────── */
+
+interface OtherProject {
+  key: string;
+  slug: string;
+  image: string;
   color: string;
 }
 
-const projects: Project[] = [
-  {
-    key: "dkrEat",
-    slug: "dakar-eat",
-    image: "/images/projects/dkr-eat/accueil.png",
-    color: "#e87435",
-  },
+const otherProjects: OtherProject[] = [
   {
     key: "villaAngelie",
     slug: "villa-angelie",
@@ -41,6 +65,10 @@ const projects: Project[] = [
   },
 ];
 
+const EASE = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
+
+/* ─── Frames ────────────────────────────────────────── */
+
 function BrowserFrame({
   children,
   url,
@@ -49,16 +77,16 @@ function BrowserFrame({
   url?: string;
 }) {
   return (
-    <div className="gold-glow-hover overflow-hidden rounded-xl border border-border bg-card shadow-2xl shadow-black/40 transition-all group-hover:border-gold/20">
-      <div className="flex items-center gap-3 border-b border-border bg-[#1a1a1a] px-4 py-3">
+    <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-[#141414] shadow-2xl shadow-black/50">
+      <div className="flex items-center gap-3 border-b border-white/[0.06] bg-[#1a1a1a] px-4 py-3">
         <div className="flex gap-1.5">
           <div className="h-3 w-3 rounded-full bg-[#ff5f57]" />
           <div className="h-3 w-3 rounded-full bg-[#febc2e]" />
           <div className="h-3 w-3 rounded-full bg-[#28c840]" />
         </div>
         {url && (
-          <div className="ml-2 flex-1 rounded-md bg-background/50 px-3 py-1 text-center">
-            <span className="text-[11px] text-muted">{url}</span>
+          <div className="ml-2 flex-1 rounded-md bg-white/5 px-3 py-1 text-center">
+            <span className="text-[11px] text-white/40">{url}</span>
           </div>
         )}
       </div>
@@ -67,124 +95,205 @@ function BrowserFrame({
   );
 }
 
-function ProjectCard({ project, index, total }: { project: Project; index: number; total: number }) {
+/* ─── Other Project Card ────────────────────────────── */
+
+function ProjectCard({ project }: { project: OtherProject }) {
   const t = useTranslations("portfolio");
   const locale = useLocale();
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [30, -30]);
 
-  const content = (
-    <div ref={sectionRef} className="group mb-40 cursor-pointer last:mb-0 md:mb-48">
-      {/* Project header */}
-      <ScrollReveal className="mb-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div className="flex items-start gap-4">
-            {/* Gold accent line */}
-            <div className="mt-1 hidden h-12 w-[3px] rounded-full bg-gold/40 sm:block" />
-            <div>
-              <div className="mb-3 flex items-center gap-3">
-                <span className="text-xs font-medium tracking-wider text-gold uppercase">
-                  {t(`items.${project.key}.category`)}
-                </span>
-                <span className="text-xs text-muted">
-                  {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-                </span>
-              </div>
-              <h3 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                {t(`items.${project.key}.title`)}
-              </h3>
-            </div>
-          </div>
-          {project.slug && (
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-gold transition-colors group-hover:text-gold-light">
-              {t("viewProject")}
-              <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
-              </svg>
-            </span>
-          )}
-        </div>
-      </ScrollReveal>
-
-      {/* Screenshot in browser frame */}
-      <motion.div style={{ y }}>
-        <BrowserFrame url={project.slug ? `${t(`items.${project.key}.title`).toLowerCase().replace(/\s/g, "")}.com` : undefined}>
-          <div
-            className="relative aspect-[16/9] overflow-hidden"
-            style={!project.image ? { backgroundColor: `${project.color}12` } : undefined}
-          >
-            {project.image ? (
-              <>
-                <Image
-                  src={project.image}
-                  alt={t(`items.${project.key}.title`)}
-                  fill
-                  className="object-cover object-top transition-[object-position] duration-[8s] ease-in-out group-hover:object-bottom"
-                  sizes="(max-width: 768px) 100vw, 1200px"
-                />
-                {/* Bottom gradient overlay */}
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent" />
-              </>
-            ) : (
-              <div className="flex h-full items-center justify-center">
-                <div
-                  className="h-16 w-16 rounded-2xl opacity-20"
-                  style={{ backgroundColor: project.color }}
-                />
-              </div>
-            )}
+  return (
+    <Link href={`/${locale}/projects/${project.slug}`} className="group block">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.6, ease: EASE }}
+      >
+        <BrowserFrame>
+          <div className="relative aspect-[16/10] overflow-hidden">
+            <Image
+              src={project.image}
+              alt={t(`items.${project.key}.title`)}
+              fill
+              className="object-cover object-top transition-[object-position] duration-[6s] ease-in-out group-hover:object-bottom"
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/50 to-transparent" />
           </div>
         </BrowserFrame>
+        <div className="mt-4">
+          <div className="mb-1 flex items-center gap-2">
+            <span className="text-xs font-medium tracking-wider text-gold uppercase">
+              {t(`items.${project.key}.category`)}
+            </span>
+          </div>
+          <h3 className="mb-1 text-lg font-semibold text-white transition-colors group-hover:text-gold">
+            {t(`items.${project.key}.title`)}
+          </h3>
+          <p className="line-clamp-2 text-sm leading-relaxed text-white/50">
+            {t(`items.${project.key}.description`)}
+          </p>
+        </div>
       </motion.div>
+    </Link>
+  );
+}
 
-      {/* Description */}
-      <ScrollReveal delay={0.15} className="mt-6 mb-16 max-w-2xl md:mb-20">
-        <p className="text-lg leading-relaxed text-muted">
-          {t(`items.${project.key}.description`)}
-        </p>
-      </ScrollReveal>
+/* ─── Case Study Block ──────────────────────────────── */
 
-      {/* Separator between projects */}
-      <div className="mx-auto h-px w-24 bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+function CaseStudyBlock({ study }: { study: CaseStudy }) {
+  const t = useTranslations("portfolio");
+  const locale = useLocale();
+
+  const solutionTags = t(`items.${study.key}.solutionTags`)
+    .split(",")
+    .map((tag) => tag.trim());
+
+  return (
+    <div className="flex flex-col gap-12 lg:flex-row lg:gap-16">
+      {/* Left — Sticky copy */}
+      <div className="lg:sticky lg:top-32 lg:w-2/5 lg:self-start">
+        <ScrollReveal>
+          {/* Client & sector */}
+          <div className="mb-6">
+            <span className="text-sm font-medium tracking-wider text-gold uppercase">
+              {t(`items.${study.key}.title`)}
+            </span>
+            <span className="mx-2 text-white/20">&middot;</span>
+            <span className="text-sm text-white/50">
+              {t(`items.${study.key}.sector`)}
+            </span>
+          </div>
+
+          {/* Big stat */}
+          <p
+            className="mb-1 text-7xl font-extrabold tracking-tight"
+            style={{ color: study.color }}
+          >
+            {t(`items.${study.key}.stat`)}
+          </p>
+          <p className="mb-10 text-sm text-white/50">
+            {t(`items.${study.key}.statLabel`)}
+          </p>
+
+          {/* Challenge */}
+          <h3 className="mb-3 text-lg font-semibold text-white">
+            {t("challengeTitle")}
+          </h3>
+          <p className="mb-8 leading-relaxed text-white/60">
+            {t(`items.${study.key}.challenge`)}
+          </p>
+
+          {/* Solution tags */}
+          <h4 className="mb-3 text-sm font-semibold text-white">
+            {t("solutionTitle")}
+          </h4>
+          <div className="mb-8 flex flex-wrap gap-2">
+            {solutionTags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-gold/20 bg-gold/5 px-3 py-1 text-xs font-medium text-gold"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Quote */}
+          <blockquote className="mb-8 border-l-2 border-gold/30 pl-4">
+            <p className="mb-2 text-sm italic leading-relaxed text-white/70">
+              &ldquo;{t(`items.${study.key}.quote`)}&rdquo;
+            </p>
+            <footer className="text-xs text-white/40">
+              <span className="font-medium text-white/60">
+                {t(`items.${study.key}.quoteAuthor`)}
+              </span>{" "}
+              &mdash; {t(`items.${study.key}.quoteRole`)}
+            </footer>
+          </blockquote>
+        </ScrollReveal>
+      </div>
+
+      {/* Right — Scrollable mockups */}
+      <div className="space-y-8 lg:w-3/5">
+        {study.images.map((img, i) => (
+          <motion.div
+            key={img.src}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, delay: 0.1, ease: EASE }}
+          >
+            <BrowserFrame url={i === 0 ? "dakareat.com" : undefined}>
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={img.src}
+                  alt={`${t(`items.${study.key}.title`)} - screenshot ${i + 1}`}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 60vw"
+                />
+              </div>
+            </BrowserFrame>
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
-
-  if (project.slug) {
-    return (
-      <Link href={`/${locale}/projects/${project.slug}`} className="block">
-        {content}
-      </Link>
-    );
-  }
-
-  return content;
 }
+
+/* ─── Main Section ──────────────────────────────────── */
 
 export default function Portfolio() {
   const t = useTranslations("portfolio");
 
   return (
-    <section id="portfolio" className="px-6 py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="portfolio" className="bg-[#0A0A0A] px-6 py-32">
+      <div className="mx-auto max-w-7xl">
+        {/* Header */}
         <ScrollReveal className="mb-20 text-center">
           <span className="mb-4 inline-block rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium tracking-wider text-gold uppercase">
             {t("badge")}
           </span>
-          <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          <RevealText
+            as="h2"
+            className="mb-6 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl"
+          >
             {t("title")}
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted">
+          </RevealText>
+          <p className="mx-auto max-w-2xl text-lg text-white/50">
             {t("subtitle")}
           </p>
         </ScrollReveal>
 
-        {projects.map((project, i) => (
-          <ProjectCard key={project.key} project={project} index={i} total={projects.length} />
+        {/* Case Studies */}
+        {caseStudies.map((study, i) => (
+          <div key={study.key}>
+            <CaseStudyBlock study={study} />
+            {i < caseStudies.length - 1 && (
+              <div className="my-24 mx-auto h-px w-40 bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+            )}
+          </div>
         ))}
+
+        {/* Separator */}
+        <div className="my-24 mx-auto h-px w-40 bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+
+        {/* Other Projects Grid */}
+        <ScrollReveal className="mb-12 text-center">
+          <h3 className="mb-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            {t("otherProjects")}
+          </h3>
+          <p className="mx-auto max-w-xl text-sm text-white/50">
+            {t("otherProjectsSubtitle")}
+          </p>
+        </ScrollReveal>
+
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {otherProjects.map((project) => (
+            <ProjectCard key={project.key} project={project} />
+          ))}
+        </div>
       </div>
     </section>
   );
