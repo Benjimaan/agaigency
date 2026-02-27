@@ -454,6 +454,17 @@
         "onPageTitle": "On-Page technical audit",
         "onPageSubtitle": "Real-time analysis of your website's HTML code",
         "missing": "Missing",
+        "chars": "chars",
+        "criticalMissing": "Critical Error: Tag missing",
+        "criticalVerdict": "Your website is currently losing clients due to fundamental technical errors. These issues directly impact your Google visibility.",
+        "titleError": "Title tag missing — Google cannot index your page",
+        "titleWarning": "Non-optimal length — aim for 30 to 60 characters",
+        "metaError": "Meta Description missing — you're losing clicks in Google results",
+        "metaWarning": "Non-optimal length — aim for 70 to 160 characters",
+        "h1Error": "H1 tag missing — critical error for SEO",
+        "h1Warning": "Multiple H1 detected — only one H1 tag is recommended",
+        "h2Error": "No H2 tags — your content is not structured",
+        "h2Warning": "Few H2 tags — structure your content more",
         "h2Structure": "H2 Structure",
         "imagesAlt": "Images without alt"
       }

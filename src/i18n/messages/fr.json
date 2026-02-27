@@ -454,6 +454,17 @@
         "onPageTitle": "Audit technique On-Page",
         "onPageSubtitle": "Analyse en temps réel du code HTML de votre site",
         "missing": "Absent",
+        "chars": "caractères",
+        "criticalMissing": "Erreur Critique : Balise manquante",
+        "criticalVerdict": "Votre site perd actuellement des clients à cause d'erreurs techniques fondamentales. Ces problèmes impactent directement votre visibilité sur Google.",
+        "titleError": "Balise Title absente — Google ne peut pas référencer votre page",
+        "titleWarning": "Longueur non optimale — visez entre 30 et 60 caractères",
+        "metaError": "Meta Description absente — vous perdez des clics dans les résultats Google",
+        "metaWarning": "Longueur non optimale — visez entre 70 et 160 caractères",
+        "h1Error": "Balise H1 absente — erreur critique pour le référencement",
+        "h1Warning": "Plusieurs H1 détectés — une seule balise H1 est recommandée",
+        "h2Error": "Aucune balise H2 — votre contenu n'est pas structuré",
+        "h2Warning": "Peu de H2 — structurez davantage votre contenu",
         "h2Structure": "Structure H2",
         "imagesAlt": "Images sans alt"
       }

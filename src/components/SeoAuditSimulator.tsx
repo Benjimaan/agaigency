@@ -251,45 +251,123 @@ function KeywordCard({
   );
 }
 
-/* ─── On-Page Audit Row ─── */
-function OnPageRow({
+/* ─── SVG Icons ─── */
+function CheckIcon() {
+  return (
+    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
+function AlertIcon() {
+  return (
+    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+    </svg>
+  );
+}
+
+function CriticalIcon() {
+  return (
+    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
+/* ─── On-Page Tech Card (Dark Luxury) ─── */
+function TechCard({
   label,
   value,
   status,
   detail,
+  message,
   index,
 }: {
   label: string;
   value: string;
-  status: "good" | "warning" | "error" | "info";
+  status: "good" | "warning" | "error";
   detail?: string;
+  message?: string;
   index: number;
 }) {
-  const statusIcon = {
-    good: { color: "text-green-400", bg: "bg-green-400/10", icon: "✓" },
-    warning: { color: "text-yellow-400", bg: "bg-yellow-400/10", icon: "!" },
-    error: { color: "text-red-400", bg: "bg-red-400/10", icon: "✗" },
-    info: { color: "text-blue-400", bg: "bg-blue-400/10", icon: "i" },
-  }[status];
+  const isError = status === "error";
+  const isWarning = status === "warning";
+
+  const borderClass = isError
+    ? "border-red-500/40"
+    : isWarning
+      ? "border-yellow-500/30"
+      : "border-[#D4AF37]/20";
+
+  const shadowClass = isError
+    ? "shadow-[0_0_20px_rgba(239,68,68,0.15)]"
+    : "";
+
+  const iconColor = isError
+    ? "text-red-400"
+    : isWarning
+      ? "text-yellow-400"
+      : "text-[#D4AF37]";
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: 0.8 + index * 0.08, duration: 0.4, ease: EASE }}
-      className="flex items-start gap-3 rounded-xl border border-border bg-card p-4"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.8 + index * 0.12, duration: 0.5, ease: EASE }}
+      className={`rounded-xl border bg-[#121212] p-5 ${borderClass} ${shadowClass}`}
     >
-      <div className={`mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold ${statusIcon.bg} ${statusIcon.color}`}>
-        {statusIcon.icon}
-      </div>
-      <div className="min-w-0 flex-1">
-        <div className="flex items-center justify-between gap-2">
-          <span className="text-sm font-medium text-foreground">{label}</span>
-          <span className={`text-xs font-medium ${statusIcon.color}`}>{value}</span>
+      {/* Header */}
+      <div className="mb-3 flex items-center justify-between">
+        <span className="text-xs font-semibold tracking-wider text-white/40 uppercase">{label}</span>
+        <div className={iconColor}>
+          {isError ? <CriticalIcon /> : isWarning ? <AlertIcon /> : <CheckIcon />}
         </div>
-        {detail && (
-          <p className="mt-1 truncate text-xs text-muted">{detail}</p>
-        )}
+      </div>
+
+      {/* Value */}
+      <p className={`text-lg font-bold ${isError ? "text-red-400" : isWarning ? "text-yellow-400" : "text-[#D4AF37]"}`}>
+        {value}
+      </p>
+
+      {/* Detail (the actual content found) */}
+      {detail && (
+        <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-white/50">
+          {detail}
+        </p>
+      )}
+
+      {/* Status message */}
+      {message && (
+        <p className={`mt-3 text-xs font-medium ${isError ? "text-red-400/80" : isWarning ? "text-yellow-400/80" : "text-white/40"}`}>
+          {message}
+        </p>
+      )}
+    </motion.div>
+  );
+}
+
+/* ─── Small Check Row (for secondary checks) ─── */
+function MiniCheck({
+  label,
+  passed,
+  index,
+}: {
+  label: string;
+  passed: boolean;
+  index: number;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -15 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 1.4 + index * 0.06, duration: 0.35, ease: EASE }}
+      className="flex items-center justify-between rounded-lg border border-white/[0.06] bg-[#121212] px-4 py-3"
+    >
+      <span className="text-sm text-white/60">{label}</span>
+      <div className={passed ? "text-[#D4AF37]" : "text-red-400"}>
+        {passed ? <CheckIcon /> : <CriticalIcon />}
       </div>
     </motion.div>
   );
@@ -639,74 +717,135 @@ export default function SeoAuditSimulator() {
                 </p>
               </motion.div>
 
-              {/* On-Page Audit */}
+              {/* On-Page Audit — Dark Luxury */}
               {results.onPageData && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.7, duration: 0.5 }}
-                  className="mb-10"
-                >
-                  <h3 className="mb-1 text-lg font-semibold">
-                    {t("results.onPageTitle")}
-                  </h3>
-                  <p className="mb-4 text-sm text-muted">
-                    {t("results.onPageSubtitle")}
-                  </p>
-                  <div className="space-y-2">
-                    <OnPageRow
+                <div className="mb-10">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.7, duration: 0.5 }}
+                  >
+                    <h3 className="mb-1 text-lg font-semibold">
+                      {t("results.onPageTitle")}
+                    </h3>
+                    <p className="mb-6 text-sm text-muted">
+                      {t("results.onPageSubtitle")}
+                    </p>
+                  </motion.div>
+
+                  {/* Verdict banner if score < 50 */}
+                  {results.technicalScore < 50 && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.75, duration: 0.5, ease: EASE }}
+                      className="mb-6 rounded-xl border border-red-500/30 bg-red-500/5 p-4 shadow-[0_0_30px_rgba(239,68,68,0.1)]"
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="mt-0.5 text-red-400">
+                          <AlertIcon />
+                        </div>
+                        <p className="text-sm font-medium leading-relaxed text-red-300/90">
+                          {t("results.criticalVerdict")}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  {/* Main tech cards grid — Title, Meta, H1 */}
+                  <div className="mb-4 grid gap-4 sm:grid-cols-3">
+                    <TechCard
                       label="Title"
-                      value={results.onPageData.title.length > 0 ? `${results.onPageData.title.length} car.` : t("results.missing")}
+                      value={
+                        results.onPageData.title.length > 0
+                          ? `${results.onPageData.title.length} ${t("results.chars")}`
+                          : t("results.criticalMissing")
+                      }
                       status={results.onPageData.title.status}
                       detail={results.onPageData.title.text || undefined}
+                      message={
+                        results.onPageData.title.status === "error"
+                          ? t("results.titleError")
+                          : results.onPageData.title.status === "warning"
+                            ? t("results.titleWarning")
+                            : undefined
+                      }
                       index={0}
                     />
-                    <OnPageRow
+                    <TechCard
                       label="Meta Description"
-                      value={results.onPageData.metaDescription.length > 0 ? `${results.onPageData.metaDescription.length} car.` : t("results.missing")}
+                      value={
+                        results.onPageData.metaDescription.length > 0
+                          ? `${results.onPageData.metaDescription.length} ${t("results.chars")}`
+                          : t("results.criticalMissing")
+                      }
                       status={results.onPageData.metaDescription.status}
-                      detail={results.onPageData.metaDescription.text?.slice(0, 100) || undefined}
+                      detail={results.onPageData.metaDescription.text?.slice(0, 120) || undefined}
+                      message={
+                        results.onPageData.metaDescription.status === "error"
+                          ? t("results.metaError")
+                          : results.onPageData.metaDescription.status === "warning"
+                            ? t("results.metaWarning")
+                            : undefined
+                      }
                       index={1}
                     />
-                    <OnPageRow
+                    <TechCard
                       label="H1"
-                      value={results.onPageData.h1.count === 1 ? "1 H1" : results.onPageData.h1.count === 0 ? t("results.missing") : `${results.onPageData.h1.count} H1`}
+                      value={
+                        results.onPageData.h1.count === 1
+                          ? "1 H1"
+                          : results.onPageData.h1.count === 0
+                            ? t("results.criticalMissing")
+                            : `${results.onPageData.h1.count} H1`
+                      }
                       status={results.onPageData.h1.status}
                       detail={results.onPageData.h1.text || undefined}
+                      message={
+                        results.onPageData.h1.status === "error"
+                          ? t("results.h1Error")
+                          : results.onPageData.h1.status === "warning"
+                            ? t("results.h1Warning")
+                            : undefined
+                      }
                       index={2}
                     />
-                    <OnPageRow
+                  </div>
+
+                  {/* H2 + Images row */}
+                  <div className="mb-4 grid gap-4 sm:grid-cols-2">
+                    <TechCard
                       label={t("results.h2Structure")}
                       value={`${results.onPageData.h2Count} H2`}
                       status={results.onPageData.h2Count >= 3 ? "good" : results.onPageData.h2Count >= 1 ? "warning" : "error"}
+                      message={
+                        results.onPageData.h2Count === 0
+                          ? t("results.h2Error")
+                          : results.onPageData.h2Count < 3
+                            ? t("results.h2Warning")
+                            : undefined
+                      }
                       index={3}
                     />
-                    <OnPageRow
+                    <TechCard
                       label={t("results.imagesAlt")}
-                      value={results.onPageData.images.total > 0 ? `${results.onPageData.images.withoutAlt} / ${results.onPageData.images.total}` : "—"}
+                      value={
+                        results.onPageData.images.total > 0
+                          ? `${results.onPageData.images.withoutAlt}/${results.onPageData.images.total} ${t("results.missing").toLowerCase()}`
+                          : "—"
+                      }
                       status={results.onPageData.images.withoutAlt === 0 ? "good" : results.onPageData.images.withoutAlt <= 3 ? "warning" : "error"}
                       index={4}
                     />
-                    <OnPageRow
-                      label="Mobile (viewport)"
-                      value={results.onPageData.hasViewport ? "OK" : t("results.missing")}
-                      status={results.onPageData.hasViewport ? "good" : "error"}
-                      index={5}
-                    />
-                    <OnPageRow
-                      label="Canonical"
-                      value={results.onPageData.hasCanonical ? "OK" : t("results.missing")}
-                      status={results.onPageData.hasCanonical ? "good" : "warning"}
-                      index={6}
-                    />
-                    <OnPageRow
-                      label="Open Graph"
-                      value={results.onPageData.hasOpenGraph ? "OK" : t("results.missing")}
-                      status={results.onPageData.hasOpenGraph ? "good" : "warning"}
-                      index={7}
-                    />
                   </div>
-                </motion.div>
+
+                  {/* Secondary checks */}
+                  <div className="space-y-2">
+                    <MiniCheck label="Mobile (viewport)" passed={results.onPageData.hasViewport} index={0} />
+                    <MiniCheck label="Canonical URL" passed={results.onPageData.hasCanonical} index={1} />
+                    <MiniCheck label="Open Graph (partage social)" passed={results.onPageData.hasOpenGraph} index={2} />
+                  </div>
+                </div>
               )}
 
               {/* Keywords */}
