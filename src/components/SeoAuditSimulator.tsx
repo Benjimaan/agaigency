@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Logo from "./ui/Logo";
 
 const EASE = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
 const GOLD = "#D4AF37";
@@ -530,11 +531,7 @@ export default function SeoAuditSimulator() {
                 d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
               />
             </svg>
-            <img
-              src="/images/logo.svg"
-              alt="AgaiGency"
-              className="h-10 w-auto"
-            />
+            <Logo className="h-10 w-auto" showSubtitle={false} />
           </Link>
         </motion.div>
 

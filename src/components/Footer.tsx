@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
+import Logo from "./ui/Logo";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -24,12 +25,8 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <a href="#" className="gold-glow-hover mb-4 inline-block rounded-lg p-1 transition-all">
-              <img
-                src="/images/logo.svg"
-                alt="AgaiGency"
-                className="h-12 w-auto"
-              />
+            <a href="#" className="gold-glow-hover mb-4 inline-block rounded-lg p-1 text-white transition-all hover:text-[#D4AF37]">
+              <Logo className="h-12 w-auto" showSubtitle={false} />
             </a>
             <p className="max-w-xs text-sm leading-relaxed text-muted">
               {t("description")}
