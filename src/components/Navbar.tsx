@@ -6,6 +6,7 @@ import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { track } from "@vercel/analytics/react";
 import LangSwitcher from "./ui/LangSwitcher";
+import Logo from "./ui/Logo";
 
 const navLinks = [
   { href: "#services", key: "services" },
@@ -56,12 +57,8 @@ export default function Navbar() {
     >
       <nav aria-label="Navigation principale" className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         {/* Logo */}
-        <Link href={`/${locale}`} className="block">
-          <img
-            src="/images/logo.svg"
-            alt="AgaiGency"
-            className="h-12 w-auto"
-          />
+        <Link href={`/${locale}`} className="block text-white transition-colors duration-300 hover:text-[#D4AF37]">
+          <Logo className="h-10 w-auto md:h-12" showSubtitle={false} />
         </Link>
 
         {/* Desktop nav */}
