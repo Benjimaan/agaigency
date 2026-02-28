@@ -1,6 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" fill="#0a0a0a"/>
-  <rect x="16" y="16" width="480" height="480" rx="80" fill="none" stroke="#c9baac" stroke-width="4" opacity="0.3"/>
-  <text x="196" y="310" text-anchor="middle" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="260" letter-spacing="-10" fill="#fafafa">A</text>
-  <text x="340" y="310" text-anchor="middle" dominant-baseline="central" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="800" font-size="200" letter-spacing="-10" fill="#c9baac">G</text>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F5D76E"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#B8902C"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="#0A0A0A"/>
+  <g fill="url(#g)" transform="translate(131,56) scale(0.5)">
+    <polygon points="300,750 480,250 520,250 360,750"/>
+    <polygon points="520,250 700,750 640,750 480,250"/>
+    <polygon points="400,560 500,460 600,560 570,600 500,530 430,600"/>
+  </g>
 </svg>

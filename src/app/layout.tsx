@@ -9,6 +9,7 @@ export const metadata: Metadata = {
     "Nous créons des sites web premium qui convertissent. Design, développement et stratégie digitale sur mesure.",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/images/ASSET PNG/AGAIGENCY_app_icon_512.png", sizes: "512x512" }],
   },
   alternates: {
     canonical: "https://www.agaigency.com",

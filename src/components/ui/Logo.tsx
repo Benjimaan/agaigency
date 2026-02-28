@@ -6,13 +6,11 @@ interface LogoProps extends SVGProps<SVGSVGElement> {
 }
 
 /**
- * AgaiGency inline SVG logo — crisp on all screens (Retina, mobile).
+ * AgaiGency official inline SVG logo — crisp on all screens.
  *
- * Color behaviour:
- *  - Monogram "A", "Gency" text, separator & subtitle use the gold gradient.
- *  - "Agai" text uses `currentColor` so it adapts to parent text color.
+ * Monogram: "A" with upward-arrow crossbar in satin gold gradient.
+ * Text "AGAIGENCY": uses `currentColor` so it adapts to parent text-color.
  *
- * Apply Tailwind color utilities on the wrapper to control currentColor:
  *   <Logo className="text-white hover:text-[#D4AF37]" />
  */
 export default function Logo({
@@ -23,7 +21,7 @@ export default function Logo({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 400 100"
+      viewBox="0 0 460 100"
       fill="none"
       role="img"
       aria-label="AgaiGency"
@@ -31,77 +29,60 @@ export default function Logo({
       {...props}
     >
       <defs>
-        <linearGradient id="logo-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#d4b87a" />
-          <stop offset="50%" stopColor="#c9a96e" />
-          <stop offset="100%" stopColor="#b8944f" />
-        </linearGradient>
-        <linearGradient id="logo-gold-light" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="#d4b87a" />
-          <stop offset="100%" stopColor="#b8944f" />
+        <linearGradient id="logo-gold" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#F5D76E" />
+          <stop offset="50%" stopColor="#D4AF37" />
+          <stop offset="100%" stopColor="#B8902C" />
         </linearGradient>
       </defs>
 
-      {/* Monogram A */}
-      <g transform="translate(10, 8)">
-        <path
-          d="M38 4 L68 76 L60 76 L52 58 L24 58 L16 76 L8 76 L38 4Z"
-          fill="url(#logo-gold)"
-          opacity="0.9"
-        />
-        <path d="M38 22 L50 52 L26 52 L38 22Z" fill="#0a0a0a" />
-        <line x1="22" y1="52" x2="54" y2="52" stroke="url(#logo-gold-light)" strokeWidth="2" />
-        {/* Tech circuit lines — left leg */}
-        <line x1="20" y1="64" x2="28" y2="64" stroke="#0a0a0a" strokeWidth="1.5" opacity="0.6" />
-        <circle cx="28" cy="64" r="1.5" fill="#0a0a0a" opacity="0.6" />
-        <line x1="14" y1="70" x2="24" y2="70" stroke="#0a0a0a" strokeWidth="1.5" opacity="0.6" />
-        <circle cx="24" cy="70" r="1.5" fill="#0a0a0a" opacity="0.6" />
-        {/* Tech circuit lines — right leg */}
-        <line x1="48" y1="64" x2="56" y2="64" stroke="#0a0a0a" strokeWidth="1.5" opacity="0.6" />
-        <circle cx="48" cy="64" r="1.5" fill="#0a0a0a" opacity="0.6" />
-        <line x1="52" y1="70" x2="62" y2="70" stroke="#0a0a0a" strokeWidth="1.5" opacity="0.6" />
-        <circle cx="52" cy="70" r="1.5" fill="#0a0a0a" opacity="0.6" />
-        {/* Highlight flare */}
-        <circle cx="38" cy="8" r="3" fill="#d4b87a" opacity="0.4" />
+      {/* Monogram A — upward arrow crossbar */}
+      <g fill="url(#logo-gold)">
+        {/* Left pillar */}
+        <polygon points="8,95 40,5 48,5 19,95" />
+        {/* Right pillar */}
+        <polygon points="48,5 80,95 69,95 40,5" />
+        {/* Arrow crossbar */}
+        <polygon points="26,61 44,43 62,61 57,68 44,55 31,68" />
       </g>
 
-      {/* Text: AgaiGency */}
+      {/* Wordmark */}
       <text
-        x="95"
-        y="52"
-        fontFamily="Inter, system-ui, sans-serif"
-        fontSize="38"
+        x="100"
+        y="60"
+        fill="currentColor"
+        fontFamily="Montserrat, Inter, system-ui, sans-serif"
+        fontSize="34"
         fontWeight="700"
-        letterSpacing="-0.5"
+        letterSpacing="3"
       >
-        <tspan fill="currentColor">Agai</tspan>
-        <tspan fill="url(#logo-gold)">Gency</tspan>
+        AGAIGENCY
       </text>
 
       {/* Separator line */}
       <line
-        x1="95"
-        y1="62"
-        x2="330"
-        y2="62"
-        stroke="url(#logo-gold-light)"
-        strokeWidth="1.5"
-        opacity="0.6"
+        x1="100"
+        y1="70"
+        x2="350"
+        y2="70"
+        stroke="url(#logo-gold)"
+        strokeWidth="1.2"
+        opacity="0.5"
       />
 
       {/* Subtitle */}
       {showSubtitle && (
         <text
-          x="95"
-          y="80"
-          fontFamily="Inter, system-ui, sans-serif"
-          fontSize="14"
+          x="100"
+          y="86"
+          fontFamily="Montserrat, Inter, system-ui, sans-serif"
+          fontSize="11"
           fontWeight="400"
           fill="url(#logo-gold)"
           letterSpacing="2"
-          opacity="0.85"
+          opacity="0.8"
         >
-          Agence Digitale Premium
+          AGENCE DIGITALE PREMIUM
         </text>
       )}
     </svg>
