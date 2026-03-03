@@ -2,72 +2,72 @@
   "nav": {
     "services": "Services",
     "portfolio": "Portfolio",
-    "process": "Process",
+    "process": "Method",
     "about": "About",
     "seoAudit": "SEO Audit",
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Premium Digital Agency",
-    "title": "We craft websites that convert for ambitious entrepreneurs.",
-    "subtitle": "Premium digital agency specializing in high-performance, elegant, and results-driven web design for service businesses.",
-    "trustProof": "Over 20 projects successfully delivered",
-    "cta": "Start a project",
-    "ctaSecondary": "See our work",
+    "badge": "Digital Strategy & Performance",
+    "title": "Ambitious leaders don't look for a vendor. They look for a growth partner.",
+    "subtitle": "We build digital ecosystems that generate leads, credibility, and revenue. For entrepreneurs who refuse mediocrity.",
+    "trustProof": "20+ projects delivered — millions generated for our clients",
+    "cta": "Accelerate my growth",
+    "ctaSecondary": "See the results",
     "scroll": "Discover"
   },
   "painPoints": {
     "badge": "The reality",
-    "title": "Is your current website a growth engine or just an expense?",
-    "subtitle": "If any of these sound familiar, it's time to take action.",
+    "title": "Your website is costing you money. Every single day.",
+    "subtitle": "These 3 signals indicate your digital presence is sabotaging your growth.",
     "items": {
       "visibility": {
-        "title": "Invisible on Google",
-        "description": "Your potential clients can't find you. Your site is buried in search results and you're losing business every single day."
+        "title": "Invisible where your clients search",
+        "description": "Your competitors are capturing the traffic you deserve. Every day without Google visibility means prospects signing with someone else."
       },
       "speed": {
-        "title": "A slow site that drives people away",
-        "description": "Every extra second of loading time costs 7% in conversions. A slow site means missed opportunities and lost revenue."
+        "title": "3 seconds. That's all you get.",
+        "description": "Beyond that, 53% of visitors leave. A slow site doesn't just lose visitors — it loses revenue."
       },
       "leads": {
-        "title": "Zero leads generated",
-        "description": "Your website is a passive storefront. It doesn't convert visitors into prospects and generates no return on investment."
+        "title": "A website that generates nothing",
+        "description": "You're paying for hosting, domain, maintenance. For zero return. That's not an investment — it's an expense."
       }
     }
   },
   "services": {
-    "badge": "Our expertise",
-    "title": "Tailored digital solutions",
-    "subtitle": "Every project is unique. We combine design, technology, and strategy to create exceptional digital experiences.",
+    "badge": "Growth Levers",
+    "title": "4 levers. One objective: your growth.",
+    "subtitle": "We don't sell websites. We build systems that generate measurable results for your business.",
     "items": {
       "design": {
         "title": "UI/UX Design",
-        "description": "Elegant and intuitive interfaces designed to maximize user engagement and conversion."
+        "description": "Design that doesn't just look good. It guides, convinces, and converts. Every screen is engineered to turn visitors into clients."
       },
       "development": {
         "title": "Web Development",
-        "description": "High-performance sites built with cutting-edge technologies. Fast, secure, and scalable."
+        "description": "Fast, secure sites built to scale. Technology serving your ambition, not the other way around."
       },
       "seo": {
         "title": "SEO & Performance",
-        "description": "Advanced search engine optimization and ultra-fast loading times for maximum visibility."
+        "description": "Looking good isn't enough. You need to be found. We position your site where your clients search, turning traffic into revenue."
       },
       "ecommerce": {
         "title": "E-Commerce",
-        "description": "Premium online stores with optimized purchase journeys to maximize your sales."
+        "description": "Stores that don't just display products. They sell. Optimized purchase journeys, maximized average cart, rising conversions."
       }
     }
   },
   "portfolio": {
     "badge": "Portfolio",
-    "title": "Our case studies",
-    "subtitle": "Real results for ambitious clients.",
+    "title": "Results, not promises.",
+    "subtitle": "Every project below transformed a business. Yours is next.",
     "viewProject": "View project",
     "viewSite": "View live site",
-    "otherProjects": "More projects",
-    "otherProjectsSubtitle": "Discover other projects we've worked on.",
+    "otherProjects": "More transformations",
+    "otherProjectsSubtitle": "Projects. Results. Satisfied partners.",
     "challengeTitle": "The Challenge",
-    "solutionTitle": "Our Solution",
+    "solutionTitle": "The Strategy Deployed",
     "items": {
       "dkrEat": {
         "title": "Dakar Eat",
@@ -214,59 +214,59 @@
   },
   "process": {
     "badge": "Our method",
-    "title": "A proven process",
-    "subtitle": "From idea to launch, every step is designed to deliver results that match your ambitions.",
+    "title": "5 steps. Zero improvisation.",
+    "subtitle": "Every step is designed to minimize risk and maximize return on investment.",
     "steps": {
       "discovery": {
-        "title": "Discovery",
-        "description": "We analyze your needs, market, and goals to define a clear digital strategy."
+        "title": "Strategic Diagnosis",
+        "description": "Before we code, we understand. Your market, your competitors, your growth objectives. No superficial brief — a thorough business diagnosis."
       },
       "design": {
-        "title": "Design",
-        "description": "Custom mockups that reflect your identity and optimize the user experience."
+        "title": "Concept & Design",
+        "description": "Every mockup is validated by conversion principles, not just aesthetics. Beautiful and high-performing."
       },
       "development": {
         "title": "Development",
-        "description": "Pixel-perfect integration with top-tier technologies and industry best practices."
+        "description": "Clean code, cutting-edge technology, obsessive performance. Your site loads fast, ranks well, and scales without friction."
       },
       "testing": {
-        "title": "Testing & QA",
-        "description": "Rigorous testing across all browsers and devices to ensure a flawless experience."
+        "title": "Validation & Optimization",
+        "description": "Rigorous cross-device testing, journey optimization, performance audits. Nothing ships without being flawless."
       },
       "launch": {
-        "title": "Launch",
-        "description": "Go-live, training, and support to ensure the success of your digital project."
+        "title": "Launch & Acceleration",
+        "description": "Go-live, training, KPI monitoring. Your site doesn't stop at launch — that's where growth begins."
       }
     }
   },
   "about": {
-    "badge": "About us",
-    "title": "Digital excellence, our signature.",
-    "description": "AgaiGency was born from the belief that a website can be both a design masterpiece and a powerful growth tool. We push the boundaries of the web to create experiences that leave lasting impressions.",
+    "badge": "About",
+    "title": "Not an agency. A growth partner.",
+    "description": "AgaiGency is named after the person who inspires me every day: my wife. From that inspiration came an obsession — that every euro invested in digital should deliver concrete results. Too many leaders pay a premium for websites that generate nothing. Our mission: build digital tools that produce measurable returns. No empty promises. Verifiable performance.",
     "founder": {
       "name": "Ben",
-      "role": "Founder & Developer, AgaiGency"
+      "role": "Founder & Digital Strategist"
     },
     "values": {
       "innovation": {
         "title": "Innovation",
-        "description": "Cutting-edge technologies and creative approach"
+        "description": "The most performant technologies in service of your business goals."
       },
       "excellence": {
         "title": "Excellence",
-        "description": "Every pixel matters, every detail is crafted"
+        "description": "No compromises. Every detail is engineered for performance and credibility."
       },
       "results": {
-        "title": "Results",
-        "description": "Sites that perform and generate ROI"
+        "title": "Measurable ROI",
+        "description": "Every project is measured. Every euro invested must deliver returns."
       }
     },
     "videoPlaceholder": "Presentation video coming soon"
   },
   "testimonials": {
-    "badge": "Testimonials",
-    "title": "What our clients say",
-    "subtitle": "Client satisfaction is our best advertisement.",
+    "badge": "Client Results",
+    "title": "They trusted us. Here's what happened.",
+    "subtitle": "We don't promise results. We deliver them.",
     "items": {
       "client1": {
         "name": "Moussa D.",
@@ -293,24 +293,24 @@
   },
   "faq": {
     "badge": "Frequently asked questions",
-    "title": "Your questions, answered",
-    "subtitle": "Everything you need to know before starting your project.",
+    "title": "Before we work together",
+    "subtitle": "Answers to the questions serious leaders ask before investing.",
     "items": {
       "price": {
         "question": "How much does a professional website cost?",
-        "answer": "Every project is unique. Our pricing depends on complexity, number of pages, and desired features. A showcase website starts from $2,000, while a custom web application can go beyond $10,000. We always provide a detailed and transparent quote before starting."
+        "answer": "We don't size a cost — we size an investment. Our projects start from $2,000 for a strategic showcase website. For custom business applications, expect $10,000+. Every dollar is justified by a clear performance objective. We establish a detailed investment plan before we begin."
       },
       "timeline": {
         "question": "What are the delivery timelines?",
-        "answer": "A showcase website is typically delivered in 3 to 5 weeks. A more complex web application can take 6 to 12 weeks. We define a precise schedule together from the start with regular milestone check-ins."
+        "answer": "A strategic showcase site: 3 to 5 weeks. A custom application: 6 to 12 weeks. We prioritize quality and performance over speed. A precise timeline with milestones is defined from day one."
       },
       "maintenance": {
         "question": "Do you offer maintenance services?",
-        "answer": "Yes, we offer monthly maintenance packages including security updates, backups, performance monitoring, and technical support. Your website stays performant and secure over time."
+        "answer": "A high-performing site today can become obsolete tomorrow. Our maintenance plans guarantee security, performance, and continuous evolution. Your investment is protected over time."
       },
       "seo": {
         "question": "Will my site be optimized for SEO?",
-        "answer": "Absolutely. SEO is built in from the design phase: optimized technical structure, ultra-fast load times, semantic markup, metadata, and Google best practices. We can also offer ongoing SEO support to improve your rankings."
+        "answer": "This isn't optional — it's a prerequisite. Every site we deliver is optimized for search: technical architecture, load times, semantic markup, metadata. We can also manage your SEO strategy long-term for compounding results."
       }
     }
   },
@@ -331,9 +331,9 @@
   },
   "contact": {
     "badge": "Contact",
-    "title": "Ready to transform your digital presence?",
-    "subtitle": "Let's discuss your project and see how we can bring it to life together.",
-    "cta": "Start a project",
+    "title": "Your growth starts with a conversation.",
+    "subtitle": "Book 30 minutes. We'll analyze your situation and show you exactly how to accelerate.",
+    "cta": "Schedule a strategy call",
     "form": {
       "name": "Your name",
       "email": "Your email",
@@ -342,8 +342,8 @@
     }
   },
   "quote": {
-    "title": "Start a project",
-    "subtitle": "Answer a few questions so we can understand your needs and offer you the best solution.",
+    "title": "Accelerate your growth",
+    "subtitle": "A few questions to understand your ambition and design the ideal strategy.",
     "back": "Back",
     "next": "Continue",
     "submit": "Send my request",
@@ -351,7 +351,7 @@
     "steps": {
       "contact": {
         "title": "Let's get acquainted",
-        "subtitle": "Tell us a bit about yourself.",
+        "subtitle": "The essentials to propose a tailored strategy.",
         "name": "Your full name *",
         "email": "Your email address *",
         "company": "Your company name (optional)",
@@ -359,7 +359,7 @@
       },
       "projectType": {
         "title": "What type of project?",
-        "subtitle": "Select the project type that best matches your needs.",
+        "subtitle": "Which digital lever do you want to activate?",
         "options": {
           "showcase": "Showcase Website",
           "showcaseDesc": "Present your business and services online",
@@ -375,7 +375,7 @@
       },
       "budget": {
         "title": "What's your budget?",
-        "subtitle": "This helps us propose a solution that fits your resources.",
+        "subtitle": "To size a realistic and profitable investment plan.",
         "options": {
           "small": "Under $2,000",
           "medium": "$2,000 — $5,000",
@@ -396,7 +396,7 @@
       },
       "details": {
         "title": "Tell us about your project",
-        "subtitle": "The more you tell us, the better we can help.",
+        "subtitle": "The clearer your vision, the sharper our strategy.",
         "placeholder": "Describe your project, goals, inspirations... *",
         "currentSite": "URL of your current website (optional)",
         "inspiration": "Websites that inspire you (optional)"
@@ -409,16 +409,16 @@
     }
   },
   "booking": {
-    "title": "Choose your slot for a strategic consultation",
-    "subtitle": "30 minutes to analyze your project and define the best digital strategy.",
+    "title": "Book your strategy session",
+    "subtitle": "30 minutes to identify your growth levers and define an action plan.",
     "skip": "Prefer us to call you back? We'll get in touch within 24 hours."
   },
   "seoAudit": {
     "teaser": {
       "badge": "Free SEO Audit",
-      "title": "Discover your hidden SEO potential",
-      "subtitle": "Analyze your website in 30 seconds and uncover the opportunities your competitors are already exploiting.",
-      "cta": "Analyze my site"
+      "title": "How many clients are you losing each month?",
+      "subtitle": "Your site may have invisible leaks. 30 seconds is all it takes to discover what your competitors are already exploiting.",
+      "cta": "Diagnose my site"
     },
     "page": {
       "title": "Free SEO Audit",
@@ -471,7 +471,7 @@
     }
   },
   "footer": {
-    "description": "Premium digital agency. We craft websites that convert.",
+    "description": "Digital growth partner for leaders who refuse mediocrity.",
     "navigation": "Navigation",
     "legal": "Legal notice",
     "privacy": "Privacy policy",

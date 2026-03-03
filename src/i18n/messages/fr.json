@@ -2,72 +2,72 @@
   "nav": {
     "services": "Services",
     "portfolio": "Portfolio",
-    "process": "Processus",
+    "process": "Méthode",
     "about": "À propos",
     "seoAudit": "Audit SEO",
     "contact": "Contact"
   },
   "hero": {
-    "badge": "Agence Digitale Premium",
-    "title": "Nous créons des sites qui convertissent pour les entrepreneurs ambitieux.",
-    "subtitle": "Agence digitale premium spécialisée dans la conception de sites web performants, élégants et orientés résultats pour les entreprises de services.",
-    "trustProof": "Plus de 20 projets livrés avec succès",
-    "cta": "Démarrer un projet",
-    "ctaSecondary": "Voir nos réalisations",
+    "badge": "Stratégie & Performance Digitale",
+    "title": "Les dirigeants ambitieux ne cherchent pas un prestataire. Ils cherchent un partenaire de croissance.",
+    "subtitle": "Nous concevons des écosystèmes digitaux qui génèrent des leads, de la crédibilité et du chiffre d'affaires. Pour les entrepreneurs qui refusent la médiocrité.",
+    "trustProof": "20+ projets livrés — des millions générés pour nos clients",
+    "cta": "Accélérer ma croissance",
+    "ctaSecondary": "Voir les résultats",
     "scroll": "Découvrir"
   },
   "painPoints": {
-    "badge": "Le constat",
-    "title": "Votre site actuel est-il un moteur de croissance ou un simple coût ?",
-    "subtitle": "Si vous vous reconnaissez dans l'une de ces situations, il est temps d'agir.",
+    "badge": "La réalité",
+    "title": "Votre site vous coûte de l'argent. Chaque jour.",
+    "subtitle": "Ces 3 signaux indiquent que votre présence digitale sabote votre croissance.",
     "items": {
       "visibility": {
-        "title": "Invisible sur Google",
-        "description": "Vos clients potentiels ne vous trouvent pas. Votre site est enterré dans les résultats de recherche et vous perdez du business chaque jour."
+        "title": "Invisible là où vos clients cherchent",
+        "description": "Vos concurrents captent le trafic que vous méritez. Chaque jour sans visibilité Google, ce sont des prospects qui signent ailleurs."
       },
       "speed": {
-        "title": "Un site lent qui fait fuir",
-        "description": "Chaque seconde de chargement en plus, c'est 7% de conversions en moins. Un site lent coûte cher en opportunités manquées."
+        "title": "3 secondes. C'est tout ce que vous avez.",
+        "description": "Au-delà, 53% des visiteurs partent. Un site lent ne fait pas fuir des visiteurs — il fait fuir votre chiffre d'affaires."
       },
       "leads": {
-        "title": "Zéro lead généré",
-        "description": "Votre site est une vitrine passive. Il ne convertit pas les visiteurs en prospects et ne génère aucun retour sur investissement."
+        "title": "Un site qui ne rapporte rien",
+        "description": "Vous payez l'hébergement, le domaine, la maintenance. Pour zéro retour. Ce n'est pas un investissement — c'est une charge."
       }
     }
   },
   "services": {
-    "badge": "Nos expertises",
-    "title": "Des solutions digitales sur mesure",
-    "subtitle": "Chaque projet est unique. Nous combinons design, technologie et stratégie pour créer des expériences digitales exceptionnelles.",
+    "badge": "Leviers de Croissance",
+    "title": "4 leviers. Un seul objectif : votre croissance.",
+    "subtitle": "Nous ne vendons pas des sites. Nous concevons des systèmes qui génèrent des résultats mesurables pour votre entreprise.",
     "items": {
       "design": {
         "title": "Design UI/UX",
-        "description": "Interfaces élégantes et intuitives conçues pour maximiser l'engagement et la conversion de vos utilisateurs."
+        "description": "Un design qui ne se contente pas d'être beau. Il guide, il convainc, il convertit. Chaque écran est conçu pour transformer un visiteur en client."
       },
       "development": {
         "title": "Développement Web",
-        "description": "Sites performants construits avec les technologies les plus modernes. Rapides, sécurisés et évolutifs."
+        "description": "Des sites rapides, sécurisés et bâtis pour scaler. La technologie au service de votre ambition, pas l'inverse."
       },
       "seo": {
         "title": "SEO & Performance",
-        "description": "Optimisation avancée pour les moteurs de recherche et temps de chargement ultra-rapides."
+        "description": "Être beau ne suffit pas. Il faut être trouvé. Nous positionnons votre site là où vos clients cherchent, pour que le trafic devienne du chiffre d'affaires."
       },
       "ecommerce": {
         "title": "E-Commerce",
-        "description": "Boutiques en ligne premium avec des parcours d'achat optimisés pour maximiser vos ventes."
+        "description": "Des boutiques qui ne se contentent pas d'afficher des produits. Elles vendent. Parcours d'achat optimisé, panier moyen maximisé, conversions en hausse."
       }
     }
   },
   "portfolio": {
     "badge": "Portfolio",
-    "title": "Nos études de cas",
-    "subtitle": "Des résultats concrets pour des clients ambitieux.",
+    "title": "Des résultats, pas des promesses.",
+    "subtitle": "Chaque projet ci-dessous a transformé un business. Le vôtre est le prochain.",
     "viewProject": "Voir le projet",
     "viewSite": "Voir le site live",
-    "otherProjects": "Nos autres réalisations",
-    "otherProjectsSubtitle": "Découvrez d'autres projets sur lesquels nous avons travaillé.",
+    "otherProjects": "D'autres transformations",
+    "otherProjectsSubtitle": "Des projets. Des résultats. Des partenaires satisfaits.",
     "challengeTitle": "Le Défi",
-    "solutionTitle": "Notre Solution",
+    "solutionTitle": "La Stratégie Déployée",
     "items": {
       "dkrEat": {
         "title": "Dakar Eat",
@@ -214,59 +214,59 @@
   },
   "process": {
     "badge": "Notre méthode",
-    "title": "Un processus éprouvé",
-    "subtitle": "De l'idée au lancement, chaque étape est pensée pour garantir un résultat à la hauteur de vos ambitions.",
+    "title": "5 étapes. Zéro improvisation.",
+    "subtitle": "Chaque étape est conçue pour minimiser le risque et maximiser le retour sur investissement.",
     "steps": {
       "discovery": {
-        "title": "Découverte",
-        "description": "Nous analysons vos besoins, votre marché et vos objectifs pour définir une stratégie digitale claire."
+        "title": "Diagnostic Stratégique",
+        "description": "Avant de coder, on comprend. Votre marché, vos concurrents, vos objectifs de croissance. Pas de brief superficiel : un diagnostic business approfondi."
       },
       "design": {
-        "title": "Design",
-        "description": "Création de maquettes sur mesure qui reflètent votre identité et optimisent l'expérience utilisateur."
+        "title": "Conception & Design",
+        "description": "Chaque maquette est validée par des principes de conversion, pas seulement par l’esthétique. Beau et performant."
       },
       "development": {
         "title": "Développement",
-        "description": "Intégration pixel-perfect avec les technologies les plus performantes et les meilleures pratiques."
+        "description": "Code propre, technologies de pointe, performance obsessionnelle. Votre site charge vite, se classe bien, et scale sans friction."
       },
       "testing": {
-        "title": "Tests & QA",
-        "description": "Tests rigoureux sur tous les navigateurs et appareils pour garantir une expérience sans faille."
+        "title": "Validation & Optimisation",
+        "description": "Tests rigoureux multi-appareils, optimisation des parcours, audit de performance. Rien ne sort sans être irréprochable."
       },
       "launch": {
-        "title": "Lancement",
-        "description": "Mise en ligne, formation et accompagnement pour assurer le succès de votre projet digital."
+        "title": "Lancement & Accélération",
+        "description": "Mise en ligne, formation, suivi des KPIs. Votre site ne s’arrête pas au lancement : c’est là que la croissance commence."
       }
     }
   },
   "about": {
     "badge": "À propos",
-    "title": "L'excellence digitale, notre signature.",
-    "description": "AgaiGency n’est pas qu’une agence web, c’est un hommage à celle qui m’inspire chaque jour : mon épouse. De cette inspiration est née une conviction : chaque site doit être une œuvre de design unique et un levier de croissance redoutable. Nous repoussons les limites du code pour créer des expériences digitales qui marquent les esprits.",
+    "title": "Pas une agence. Un partenaire de croissance.",
+    "description": "AgaiGency porte le nom de celle qui m’inspire chaque jour : mon épouse. De cette inspiration est née une obsession — que chaque euro investi dans le digital rapporte des résultats concrets. Trop de dirigeants paient cher pour des sites qui ne rapportent rien. Notre mission : concevoir des outils digitaux qui génèrent un retour mesurable. Pas de discours creux. Des performances vérifiables.",
     "founder": {
       "name": "Ben",
-      "role": "Fondateur & Développeur, AgaiGency"
+      "role": "Fondateur & Stratège Digital"
     },
     "values": {
       "innovation": {
         "title": "Innovation",
-        "description": "Technologies de pointe et approche créative"
+        "description": "Les technologies les plus performantes au service de vos objectifs business."
       },
       "excellence": {
         "title": "Excellence",
-        "description": "Chaque pixel compte, chaque détail est soigné"
+        "description": "Aucun compromis. Chaque détail est pensé pour la performance et la crédibilité."
       },
       "results": {
-        "title": "Résultats",
-        "description": "Des sites qui performent et génèrent du ROI"
+        "title": "ROI Mesurable",
+        "description": "Chaque projet est mesuré. Chaque euro investi doit rapporter."
       }
     },
     "videoPlaceholder": "Vidéo de présentation bientôt disponible"
   },
   "testimonials": {
-    "badge": "Témoignages",
-    "title": "Ce que disent nos clients",
-    "subtitle": "La satisfaction de nos clients est notre meilleure publicité.",
+    "badge": "Résultats Clients",
+    "title": "Ils nous ont fait confiance. Voici ce qui s'est passé.",
+    "subtitle": "Nous ne promettons pas des résultats. Nous les livrons.",
     "items": {
       "client1": {
         "name": "Salif",
@@ -293,24 +293,24 @@
   },
   "faq": {
     "badge": "Questions fréquentes",
-    "title": "Vos questions, nos réponses",
-    "subtitle": "Tout ce que vous devez savoir avant de démarrer votre projet.",
+    "title": "Avant de travailler ensemble",
+    "subtitle": "Les réponses aux questions que se posent les dirigeants sérieux avant d'investir.",
     "items": {
       "price": {
         "question": "Combien coûte un site web professionnel ?",
-        "answer": "Chaque projet est unique. Nos tarifs dépendent de la complexité, du nombre de pages et des fonctionnalités souhaitées. Un site vitrine démarre à partir de 2 000€, tandis qu'une application web sur mesure peut aller au-delà de 10 000€. Nous établissons toujours un devis détaillé et transparent avant de commencer."
+        "answer": "Nous ne dimensionnons pas un coût — nous dimensionnons un investissement. Nos projets démarrent à partir de 2 000€ pour un site vitrine stratégique. Pour une application métier sur mesure, comptez 10 000€+. Chaque euro est justifié par un objectif de performance clair. Nous établissons un plan d'investissement détaillé avant de commencer."
       },
       "timeline": {
         "question": "Quels sont les délais de réalisation ?",
-        "answer": "Un site vitrine est généralement livré en 3 à 5 semaines. Une application web plus complexe peut nécessiter 6 à 12 semaines. Nous définissons ensemble un calendrier précis dès le début du projet avec des points d'étape réguliers."
+        "answer": "Un site vitrine stratégique : 3 à 5 semaines. Une application sur mesure : 6 à 12 semaines. Nous privilégions la qualité et la performance à la vitesse. Un calendrier précis avec des jalons est défini dès le premier jour."
       },
       "maintenance": {
         "question": "Proposez-vous un service de maintenance ?",
-        "answer": "Oui, nous proposons des forfaits de maintenance mensuelle incluant les mises à jour de sécurité, les sauvegardes, le monitoring de performance et le support technique. Votre site reste performant et sécurisé dans le temps."
+        "answer": "Un site performant aujourd'hui peut devenir obsolète demain. Nos forfaits de maintenance garantissent sécurité, performance et évolution continue. Votre investissement est protégé dans le temps."
       },
       "seo": {
         "question": "Mon site sera-t-il optimisé pour le référencement (SEO) ?",
-        "answer": "Absolument. Le SEO est intégré dès la conception : structure technique optimisée, temps de chargement ultra-rapides, balisage sémantique, métadonnées et bonnes pratiques Google. Nous pouvons également proposer un accompagnement SEO continu pour améliorer votre positionnement."
+        "answer": "Ce n'est pas une option, c'est un prérequis. Chaque site que nous livrons est optimisé pour le référencement : architecture technique, temps de chargement, balisage sémantique, métadonnées. Nous pouvons également piloter votre stratégie SEO dans la durée pour des résultats croissants."
       }
     }
   },
@@ -331,9 +331,9 @@
   },
   "contact": {
     "badge": "Contact",
-    "title": "Prêt à transformer votre présence digitale ?",
-    "subtitle": "Discutons de votre projet et voyons comment nous pouvons le concrétiser ensemble.",
-    "cta": "Démarrer un projet",
+    "title": "Votre croissance commence par une conversation.",
+    "subtitle": "Réservez 30 minutes. Nous analyserons votre situation et vous montrerons exactement comment accélérer.",
+    "cta": "Planifier un appel stratégique",
     "form": {
       "name": "Votre nom",
       "email": "Votre email",
@@ -342,8 +342,8 @@
     }
   },
   "quote": {
-    "title": "Démarrer un projet",
-    "subtitle": "Répondez à quelques questions pour que nous puissions comprendre vos besoins et vous proposer la meilleure solution.",
+    "title": "Accélérer votre croissance",
+    "subtitle": "Quelques questions pour cerner votre ambition et concevoir la stratégie idéale.",
     "back": "Retour",
     "next": "Continuer",
     "submit": "Envoyer ma demande",
@@ -351,7 +351,7 @@
     "steps": {
       "contact": {
         "title": "Faisons connaissance",
-        "subtitle": "Parlez-nous un peu de vous.",
+        "subtitle": "Les bases pour vous proposer une stratégie sur mesure.",
         "name": "Votre nom complet *",
         "email": "Votre adresse email *",
         "company": "Nom de votre entreprise (optionnel)",
@@ -359,7 +359,7 @@
       },
       "projectType": {
         "title": "Quel type de projet ?",
-        "subtitle": "Sélectionnez le type de projet qui correspond le mieux à votre besoin.",
+        "subtitle": "Quel levier digital souhaitez-vous activer ?",
         "options": {
           "showcase": "Site vitrine",
           "showcaseDesc": "Présenter votre activité et vos services en ligne",
@@ -375,7 +375,7 @@
       },
       "budget": {
         "title": "Quel est votre budget ?",
-        "subtitle": "Cela nous aide à vous proposer une solution adaptée à vos moyens.",
+        "subtitle": "Pour dimensionner un plan d'investissement réaliste et rentable.",
         "options": {
           "small": "Moins de 2 000 €",
           "medium": "2 000 € — 5 000 €",
@@ -396,7 +396,7 @@
       },
       "details": {
         "title": "Parlez-nous de votre projet",
-        "subtitle": "Plus vous nous en dites, mieux nous pourrons vous accompagner.",
+        "subtitle": "Plus votre vision est claire, plus notre stratégie sera précise.",
         "placeholder": "Décrivez votre projet, vos objectifs, vos inspirations... *",
         "currentSite": "URL de votre site actuel (optionnel)",
         "inspiration": "Sites qui vous inspirent (optionnel)"
@@ -409,16 +409,16 @@
     }
   },
   "booking": {
-    "title": "Choisissez votre créneau pour votre consultation stratégique",
-    "subtitle": "30 minutes pour analyser votre projet et définir la meilleure stratégie digitale.",
+    "title": "Réservez votre session stratégie",
+    "subtitle": "30 minutes pour identifier vos leviers de croissance et définir un plan d'action.",
     "skip": "Vous préférez qu'on vous recontacte ? Nous reviendrons vers vous sous 24h."
   },
   "seoAudit": {
     "teaser": {
       "badge": "Audit SEO Gratuit",
-      "title": "Découvrez votre potentiel SEO caché",
-      "subtitle": "Analysez votre site en 30 secondes et découvrez les opportunités que vos concurrents exploitent déjà.",
-      "cta": "Analyser mon site"
+      "title": "Combien de clients perdez-vous chaque mois ?",
+      "subtitle": "Votre site a peut-être des fuites invisibles. 30 secondes suffisent pour découvrir ce que vos concurrents exploitent déjà à votre place.",
+      "cta": "Diagnostiquer mon site"
     },
     "page": {
       "title": "Audit SEO Gratuit",
@@ -471,7 +471,7 @@
     }
   },
   "footer": {
-    "description": "Agence digitale premium. Nous créons des sites web qui convertissent.",
+    "description": "Partenaire de croissance digitale pour les dirigeants qui refusent la médiocrité.",
     "navigation": "Navigation",
     "legal": "Mentions légales",
     "privacy": "Politique de confidentialité",
