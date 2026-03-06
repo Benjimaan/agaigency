@@ -209,6 +209,43 @@
           "features": "Features",
           "duration": "Weeks of dev"
         }
+      },
+      "salleArtdoise": {
+        "title": "L'Art d'Oise",
+        "sector": "Events",
+        "category": "Showcase Website & Event Venue",
+        "stat": "750m²",
+        "statLabel": "of modular spaces for your events",
+        "challenge": "L'Art d'Oise, a premium event venue in Saint-Maximin (Oise), needed a digital presence worthy of its high-end services. No online visibility, contact limited to phone calls, and no way to showcase the diversity of its spaces.",
+        "solutionTags": "Premium Design, Photo Gallery, Multi-step Quote Form, Local SEO, Responsive",
+        "quote": "The website perfectly reflects the elegance of our venue. Quote requests surged from the moment we went live.",
+        "quoteAuthor": "Manager",
+        "quoteRole": "L'Art d'Oise, Saint-Maximin",
+        "description": "Premium showcase website for a 750m² event venue in Oise, France: space presentations, filtered photo gallery, 8-step custom quote form, client testimonials, and refined gold & cream design.",
+        "heroSubtitle": "Where your finest moments come to life — an exceptional event venue in Saint-Maximin",
+        "sections": {
+          "website": {
+            "title": "The Showcase Website",
+            "description": "A refined gold & cream website with serif typography, highlighting the exceptional spaces of this event venue. Smooth navigation with dedicated sections for the venue, gallery, and amenities."
+          },
+          "espaces": {
+            "title": "The Spaces",
+            "description": "Detailed presentation of each space: The Grand Hall (750m², 300 seated, 400 standing), the Salon d'Honneur, and the terrace. Technical specs with guest capacity and immersive photography."
+          },
+          "devis": {
+            "title": "The Quote Form",
+            "description": "A custom 8-step quote request journey: event type, date, number of guests, desired services. A seamless experience that qualifies each prospect before the first contact."
+          },
+          "results": {
+            "title": "Results",
+            "description": "A premium showcase website that reflects the venue's prestige and generates qualified quote requests through an optimized conversion journey."
+          }
+        },
+        "stats": {
+          "pages": "Pages created",
+          "features": "Features",
+          "duration": "Weeks of dev"
+        }
       }
     }
   },

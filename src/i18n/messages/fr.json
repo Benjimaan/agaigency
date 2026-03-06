@@ -209,6 +209,43 @@
           "features": "Fonctionnalités",
           "duration": "Semaines de dev"
         }
+      },
+      "salleArtdoise": {
+        "title": "L'Art d'Oise",
+        "sector": "Événementiel",
+        "category": "Site Vitrine & Salle de Réception",
+        "stat": "750m²",
+        "statLabel": "d'espaces modulables pour vos événements",
+        "challenge": "L'Art d'Oise, salle de réception d'exception à Saint-Maximin, avait besoin d'une présence digitale à la hauteur de ses prestations haut de gamme. Aucune visibilité en ligne, prise de contact uniquement par téléphone et aucun moyen de valoriser la diversité de ses espaces.",
+        "solutionTags": "Design Premium, Galerie Photo, Formulaire de Devis Multi-étapes, SEO Local, Responsive",
+        "quote": "Le site reflète parfaitement l'élégance de notre salle. Les demandes de devis ont explosé dès la mise en ligne.",
+        "quoteAuthor": "Gérant",
+        "quoteRole": "L'Art d'Oise, Saint-Maximin",
+        "description": "Site vitrine premium pour une salle de réception de 750m² dans l'Oise : présentation des espaces, galerie photo filtrée, formulaire de devis personnalisé en 8 étapes, témoignages clients et design or & crème raffiné.",
+        "heroSubtitle": "Là où vos plus beaux instants prennent vie — salle de réception d'exception à Saint-Maximin",
+        "sections": {
+          "website": {
+            "title": "Le Site Vitrine",
+            "description": "Un site au design or & crème raffiné avec typographie serif, mettant en valeur les espaces d'exception de cette salle de réception. Navigation fluide, sections dédiées au lieu, à la galerie et aux avantages."
+          },
+          "espaces": {
+            "title": "Les Espaces",
+            "description": "Présentation détaillée de chaque espace : La Grande Salle (750m², 300 assis, 400 debout), le Salon d'Honneur et la terrasse. Fiches techniques avec capacité d'accueil et photos immersives."
+          },
+          "devis": {
+            "title": "Le Formulaire de Devis",
+            "description": "Un parcours de demande de devis personnalisé en 8 étapes : type d'événement, date, nombre d'invités, prestations souhaitées. Expérience fluide qui qualifie chaque prospect avant le premier contact."
+          },
+          "results": {
+            "title": "Résultats",
+            "description": "Un site vitrine premium qui valorise le standing du lieu et génère des demandes de devis qualifiées grâce à un parcours de conversion optimisé."
+          }
+        },
+        "stats": {
+          "pages": "Pages créées",
+          "features": "Fonctionnalités",
+          "duration": "Semaines de dev"
+        }
       }
     }
   },

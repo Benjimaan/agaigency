@@ -121,6 +121,33 @@ export const projects: ProjectData[] = [
       },
     ],
   },
+  {
+    slug: "salle-artdoise",
+    translationKey: "salleArtdoise",
+    color: "#C5A55A",
+    heroImage: "/images/projects/salle-artdoise/02-hero-desktop.png",
+    carouselSectionKey: "website",
+    pages: [
+      { label: "Accueil", image: "/images/projects/salle-artdoise/01-fullpage-desktop.png" },
+      { label: "Hero", image: "/images/projects/salle-artdoise/02-hero-desktop.png" },
+      { label: "Espaces", image: "/images/projects/salle-artdoise/03-espaces-desktop.png" },
+      { label: "Galerie", image: "/images/projects/salle-artdoise/04-galerie-desktop.png" },
+      { label: "Devis", image: "/images/projects/salle-artdoise/05-devis-desktop.png" },
+      { label: "Témoignages", image: "/images/projects/salle-artdoise/06-temoignages-desktop.png" },
+      { label: "Mobile", image: "/images/projects/salle-artdoise/08-hero-mobile.png" },
+    ],
+    sections: [
+      {
+        key: "espaces",
+        images: ["/images/projects/salle-artdoise/03-espaces-desktop.png"],
+      },
+      {
+        key: "devis",
+        images: ["/images/projects/salle-artdoise/05-devis-desktop.png"],
+        reverse: true,
+      },
+    ],
+  },
 ];
 
 export function getProjectBySlug(slug: string): ProjectData | undefined {

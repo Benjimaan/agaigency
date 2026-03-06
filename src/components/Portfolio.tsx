@@ -63,6 +63,12 @@ const otherProjects: OtherProject[] = [
     image: "/images/projects/prospectpro/02-dashboard.png",
     color: "#3b82f6",
   },
+  {
+    key: "salleArtdoise",
+    slug: "salle-artdoise",
+    image: "/images/projects/salle-artdoise/02-hero-desktop.png",
+    color: "#C5A55A",
+  },
 ];
 
 const EASE = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
