@@ -146,13 +146,20 @@ function ScrollingMockup({ project }: { project: ProjectData }) {
     target: containerRef,
     offset: ["start end", "end start"],
   });
-  const imageY = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "-40%"]);
+  const imageY = useTransform(scrollYProgress, [0.1, 0.9], ["0%", "-30%"]);
 
   return (
-    <div ref={containerRef} className="px-6 py-20">
+    <motion.div
+      ref={containerRef}
+      className="px-6 py-20"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+    >
       <div className="mx-auto max-w-5xl">
         <BrowserFrame url={project.liveUrl}>
-          <div className="relative h-[400px] overflow-hidden sm:h-[500px] md:h-[600px]">
+          <div className="relative h-[450px] overflow-hidden sm:h-[550px] md:h-[650px]">
             <motion.div style={{ y: imageY }} className="absolute inset-x-0 top-0">
               <Image
                 src={project.heroImage}
@@ -163,10 +170,12 @@ function ScrollingMockup({ project }: { project: ProjectData }) {
                 priority
               />
             </motion.div>
+            {/* Smooth fade at the bottom to avoid harsh cut */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#141414] to-transparent" />
           </div>
         </BrowserFrame>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -175,23 +184,39 @@ function ScreenshotCarousel({ project }: { project: ProjectData }) {
   const t = useTranslations("portfolio");
   const k = project.translationKey;
 
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: 60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
+      },
+    },
+  };
+
   return (
     <div className="relative">
-      <div
+      <motion.div
         className="flex gap-6 overflow-x-auto px-6 pb-6 snap-x snap-mandatory"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
       >
         {project.pages.map((page, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{
-              delay: i * 0.1,
-              duration: 0.6,
-              ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-            }}
+            variants={itemVariants}
             className="w-[80vw] max-w-[700px] flex-shrink-0 snap-center"
           >
             <BrowserFrame url={project.liveUrl ? `${project.liveUrl}/${page.label.toLowerCase().replace(/\s|à/g, "-")}` : undefined}>
@@ -208,7 +233,7 @@ function ScreenshotCarousel({ project }: { project: ProjectData }) {
             <p className="mt-3 text-center text-sm font-medium text-muted">{page.label}</p>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <div className="pointer-events-none absolute top-0 left-0 bottom-6 w-10 bg-gradient-to-r from-background to-transparent" />
       <div className="pointer-events-none absolute top-0 right-0 bottom-6 w-20 bg-gradient-to-l from-background to-transparent" />

@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { getProjectBySlug, getAllProjectSlugs } from "@/lib/projects";
 import { routing } from "@/i18n/routing";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import CaseStudyPage from "@/components/CaseStudyPage";
 
 export function generateStaticParams() {
@@ -22,5 +24,11 @@ export default async function ProjectPage({
     notFound();
   }
 
-  return <CaseStudyPage project={project} />;
+  return (
+    <>
+      <Navbar />
+      <CaseStudyPage project={project} />
+      <Footer />
+    </>
+  );
 }

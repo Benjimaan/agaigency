@@ -125,7 +125,7 @@ export const projects: ProjectData[] = [
     slug: "salle-artdoise",
     translationKey: "salleArtdoise",
     color: "#C5A55A",
-    heroImage: "/images/projects/salle-artdoise/02-hero-desktop.png",
+    heroImage: "/images/projects/salle-artdoise/01-fullpage-desktop.png",
     carouselSectionKey: "website",
     pages: [
       { label: "Accueil", image: "/images/projects/salle-artdoise/01-fullpage-desktop.png" },
