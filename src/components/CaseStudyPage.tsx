@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState, useCallback } from "react";
 import type { ProjectData } from "@/lib/projects";
 import ScrollReveal from "./ui/ScrollReveal";
 
@@ -179,10 +179,56 @@ function ScrollingMockup({ project }: { project: ProjectData }) {
   );
 }
 
+/* ─── Arrow Button ─── */
+function CarouselArrow({
+  direction,
+  onClick,
+  visible,
+}: {
+  direction: "left" | "right";
+  onClick: () => void;
+  visible: boolean;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      aria-label={direction === "left" ? "Previous" : "Next"}
+      className={`absolute top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/10 bg-black/60 p-3 text-white/70 backdrop-blur-sm transition-all hover:border-accent hover:text-accent ${
+        direction === "left" ? "left-2 md:left-4" : "right-2 md:right-4"
+      } ${visible ? "opacity-100" : "pointer-events-none opacity-0"}`}
+    >
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+        {direction === "left" ? (
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        ) : (
+          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        )}
+      </svg>
+    </button>
+  );
+}
+
 /* ─── Screenshot Carousel ─── */
 function ScreenshotCarousel({ project }: { project: ProjectData }) {
   const t = useTranslations("portfolio");
   const k = project.translationKey;
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollState = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 20);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 20);
+  }, []);
+
+  const scroll = useCallback((dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.querySelector<HTMLElement>(":scope > div")?.offsetWidth ?? 700;
+    el.scrollBy({ left: dir === "left" ? -cardWidth - 24 : cardWidth + 24, behavior: "smooth" });
+  }, []);
 
   const containerVariants = {
     hidden: {},
@@ -205,13 +251,19 @@ function ScreenshotCarousel({ project }: { project: ProjectData }) {
 
   return (
     <div className="relative">
+      {/* Navigation arrows */}
+      <CarouselArrow direction="left" onClick={() => scroll("left")} visible={canScrollLeft} />
+      <CarouselArrow direction="right" onClick={() => scroll("right")} visible={canScrollRight} />
+
       <motion.div
+        ref={scrollRef}
         className="flex gap-6 overflow-x-auto px-6 pb-6 snap-x snap-mandatory"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
+        onScroll={updateScrollState}
       >
         {project.pages.map((page, i) => (
           <motion.div
@@ -235,8 +287,26 @@ function ScreenshotCarousel({ project }: { project: ProjectData }) {
         ))}
       </motion.div>
 
+      {/* Edge fades */}
       <div className="pointer-events-none absolute top-0 left-0 bottom-6 w-10 bg-gradient-to-r from-background to-transparent" />
       <div className="pointer-events-none absolute top-0 right-0 bottom-6 w-20 bg-gradient-to-l from-background to-transparent" />
+
+      {/* Scroll indicator dots */}
+      <div className="mt-4 flex justify-center gap-1.5">
+        {project.pages.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => {
+              const el = scrollRef.current;
+              if (!el) return;
+              const card = el.children[i] as HTMLElement;
+              if (card) card.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+            }}
+            className="h-1.5 w-6 rounded-full bg-white/15 transition-colors hover:bg-white/30"
+            aria-label={`Slide ${i + 1}`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
