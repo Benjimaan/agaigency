@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import type { ProjectData } from "@/lib/projects";
 import ScrollReveal from "./ui/ScrollReveal";
 
@@ -179,131 +179,117 @@ function ScrollingMockup({ project }: { project: ProjectData }) {
   );
 }
 
-/* ─── Arrow Button ─── */
-function CarouselArrow({
-  direction,
-  onClick,
-  visible,
-}: {
-  direction: "left" | "right";
-  onClick: () => void;
-  visible: boolean;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      aria-label={direction === "left" ? "Previous" : "Next"}
-      className={`absolute top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/10 bg-black/60 p-3 text-white/70 backdrop-blur-sm transition-all hover:border-accent hover:text-accent ${
-        direction === "left" ? "left-2 md:left-4" : "right-2 md:right-4"
-      } ${visible ? "opacity-100" : "pointer-events-none opacity-0"}`}
-    >
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-        {direction === "left" ? (
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-        ) : (
-          <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-        )}
-      </svg>
-    </button>
-  );
-}
+/* ─── Screenshot Carousel (state-driven) ─── */
+const EASE = [0.4, 0, 0.2, 1] as [number, number, number, number];
 
-/* ─── Screenshot Carousel ─── */
 function ScreenshotCarousel({ project }: { project: ProjectData }) {
   const t = useTranslations("portfolio");
   const k = project.translationKey;
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const total = project.pages.length;
 
-  const updateScrollState = useCallback(() => {
-    const el = scrollRef.current;
-    if (!el) return;
-    setCanScrollLeft(el.scrollLeft > 20);
-    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 20);
-  }, []);
-
-  const scroll = useCallback((dir: "left" | "right") => {
-    const el = scrollRef.current;
-    if (!el) return;
-    const cardWidth = el.querySelector<HTMLElement>(":scope > div")?.offsetWidth ?? 700;
-    el.scrollBy({ left: dir === "left" ? -cardWidth - 24 : cardWidth + 24, behavior: "smooth" });
-  }, []);
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.1 },
+  const go = useCallback(
+    (idx: number) => {
+      setDirection(idx > current ? 1 : -1);
+      setCurrent(idx);
     },
-  };
+    [current],
+  );
 
-  const itemVariants = {
-    hidden: { opacity: 0, x: 60 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
-      },
-    },
+  const prev = useCallback(() => go((current - 1 + total) % total), [go, current, total]);
+  const next = useCallback(() => go((current + 1) % total), [go, current, total]);
+
+  /* Auto-advance every 5s */
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((c) => {
+        setDirection(1);
+        return (c + 1) % total;
+      });
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [total]);
+
+  const page = project.pages[current];
+
+  const variants = {
+    enter: (dir: number) => ({ x: dir > 0 ? 300 : -300, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir: number) => ({ x: dir > 0 ? -300 : 300, opacity: 0 }),
   };
 
   return (
-    <div className="relative">
-      {/* Navigation arrows */}
-      <CarouselArrow direction="left" onClick={() => scroll("left")} visible={canScrollLeft} />
-      <CarouselArrow direction="right" onClick={() => scroll("right")} visible={canScrollRight} />
-
-      <motion.div
-        ref={scrollRef}
-        className="flex gap-6 overflow-x-auto px-6 pb-6 snap-x snap-mandatory"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-50px" }}
-        onScroll={updateScrollState}
-      >
-        {project.pages.map((page, i) => (
-          <motion.div
-            key={i}
-            variants={itemVariants}
-            className="w-[80vw] max-w-[700px] flex-shrink-0 snap-center"
-          >
-            <BrowserFrame url={project.liveUrl ? `${project.liveUrl}/${page.label.toLowerCase().replace(/\s|à/g, "-")}` : undefined}>
-              <div className="group/img relative aspect-[16/10] overflow-hidden">
+    <div className="relative mx-auto max-w-5xl px-6">
+      {/* Main image */}
+      <div className="relative overflow-hidden rounded-xl">
+        <BrowserFrame
+          url={
+            project.liveUrl
+              ? `${project.liveUrl}/${page.label.toLowerCase().replace(/\s|à/g, "-")}`
+              : undefined
+          }
+        >
+          <div className="relative aspect-[16/10] overflow-hidden">
+            <AnimatePresence initial={false} custom={direction} mode="wait">
+              <motion.div
+                key={current}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.4, ease: EASE }}
+                className="absolute inset-0"
+              >
                 <Image
                   src={page.image}
                   alt={`${t(`items.${k}.title`)} - ${page.label}`}
                   fill
-                  className="object-cover object-top transition-[object-position] duration-[8s] ease-in-out group-hover/img:object-bottom"
-                  sizes="(max-width: 768px) 80vw, 700px"
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 100vw, 900px"
                 />
-              </div>
-            </BrowserFrame>
-            <p className="mt-3 text-center text-sm font-medium text-muted">{page.label}</p>
-          </motion.div>
-        ))}
-      </motion.div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </BrowserFrame>
 
-      {/* Edge fades */}
-      <div className="pointer-events-none absolute top-0 left-0 bottom-6 w-10 bg-gradient-to-r from-background to-transparent" />
-      <div className="pointer-events-none absolute top-0 right-0 bottom-6 w-20 bg-gradient-to-l from-background to-transparent" />
+        {/* Arrow buttons */}
+        <button
+          onClick={prev}
+          aria-label="Previous"
+          className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/10 bg-black/60 p-3 text-white/70 backdrop-blur-sm transition-all hover:border-accent hover:text-accent"
+        >
+          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+        <button
+          onClick={next}
+          aria-label="Next"
+          className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-white/10 bg-black/60 p-3 text-white/70 backdrop-blur-sm transition-all hover:border-accent hover:text-accent"
+        >
+          <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </button>
+      </div>
 
-      {/* Scroll indicator dots */}
-      <div className="mt-4 flex justify-center gap-1.5">
-        {project.pages.map((_, i) => (
+      {/* Page label */}
+      <p className="mt-4 text-center text-sm font-medium text-muted">{page.label}</p>
+
+      {/* Dot indicators */}
+      <div className="mt-4 flex justify-center gap-2">
+        {project.pages.map((p, i) => (
           <button
             key={i}
-            onClick={() => {
-              const el = scrollRef.current;
-              if (!el) return;
-              const card = el.children[i] as HTMLElement;
-              if (card) card.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-            }}
-            className="h-1.5 w-6 rounded-full bg-white/15 transition-colors hover:bg-white/30"
-            aria-label={`Slide ${i + 1}`}
+            onClick={() => go(i)}
+            aria-label={p.label}
+            className={`h-1.5 rounded-full transition-all duration-300 ${
+              i === current
+                ? "w-8 bg-accent"
+                : "w-4 bg-white/15 hover:bg-white/30"
+            }`}
           />
         ))}
       </div>
@@ -354,12 +340,12 @@ function StickySection({
         {images.map((img, i) => (
           <ScrollReveal key={i} delay={i * 0.1}>
             <BrowserFrame>
-              <div className="group/img relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={img}
                   alt={`Screenshot ${i + 1}`}
                   fill
-                  className="object-cover object-top transition-[object-position] duration-[8s] ease-in-out group-hover/img:object-bottom"
+                  className="object-cover object-top"
                   sizes="(max-width: 1024px) 100vw, 60vw"
                 />
               </div>
