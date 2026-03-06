@@ -148,6 +148,33 @@ export const projects: ProjectData[] = [
       },
     ],
   },
+  {
+    slug: "domaine-moulin-villeteint",
+    translationKey: "domaineMoulinVilleteint",
+    color: "#8B7355",
+    heroImage: "/images/projects/domaine-moulin-villeteint/01-fullpage-desktop.png",
+    carouselSectionKey: "website",
+    pages: [
+      { label: "Hero", image: "/images/projects/domaine-moulin-villeteint/02-hero-desktop.png" },
+      { label: "Espaces", image: "/images/projects/domaine-moulin-villeteint/03-espaces-desktop.png" },
+      { label: "Votre Journée", image: "/images/projects/domaine-moulin-villeteint/04-journee-desktop.png" },
+      { label: "Galerie", image: "/images/projects/domaine-moulin-villeteint/05-galerie-desktop.png" },
+      { label: "Devis", image: "/images/projects/domaine-moulin-villeteint/06-devis-desktop.png" },
+      { label: "Témoignages", image: "/images/projects/domaine-moulin-villeteint/07-temoignages-desktop.png" },
+      { label: "Mobile", image: "/images/projects/domaine-moulin-villeteint/08-hero-mobile.png" },
+    ],
+    sections: [
+      {
+        key: "espaces",
+        images: ["/images/projects/domaine-moulin-villeteint/03-espaces-desktop.png"],
+      },
+      {
+        key: "devis",
+        images: ["/images/projects/domaine-moulin-villeteint/06-devis-desktop.png"],
+        reverse: true,
+      },
+    ],
+  },
 ];
 
 export function getProjectBySlug(slug: string): ProjectData | undefined {

@@ -246,6 +246,43 @@
           "features": "Fonctionnalités",
           "duration": "Semaines de dev"
         }
+      },
+      "domaineMoulinVilleteint": {
+        "title": "Domaine Moulin de Villeteint",
+        "sector": "Événementiel",
+        "category": "Site Vitrine & Domaine de Réception",
+        "stat": "50 000m²",
+        "statLabel": "de nature privatisable pour vos événements",
+        "challenge": "Le Domaine Moulin de Villeteint, domaine de réception d'exception à Cires-lès-Mello, avait besoin d'un site à la hauteur de son cadre unique : 50 000m² de nature, lac privé, clairière secrète, piscine. Aucune présence digitale existante pour valoriser ce lieu hors du commun.",
+        "solutionTags": "Design Nature Premium, Galerie Filtrée, Timeline Journée, Formulaire de Devis, Pré-réservation, SEO Local",
+        "quote": "Le site capture parfaitement l'âme du domaine. Les demandes de visite ont doublé dès le premier mois.",
+        "quoteAuthor": "Propriétaire",
+        "quoteRole": "Domaine Moulin de Villeteint, Cires-lès-Mello",
+        "description": "Site vitrine premium pour un domaine de réception de 50 000m² dans l'Oise : présentation des 6 espaces, galerie photo filtrée, timeline de journée, formulaire de devis multi-étapes, pré-réservation en ligne et design nature raffiné.",
+        "heroSubtitle": "Un domaine de caractère pour célébrer vos instants les plus précieux — à 45 minutes de Paris",
+        "sections": {
+          "website": {
+            "title": "Le Site Vitrine",
+            "description": "Un site au design nature raffiné avec palette champagne & ivoire, mettant en valeur les 50 000m² de ce domaine d'exception. Navigation immersive entre les espaces, la galerie et le déroulé de journée."
+          },
+          "espaces": {
+            "title": "Les Espaces",
+            "description": "Présentation détaillée des 6 espaces : Les Grands Parcs, Les Jardins Intimes, La Clairière secrète, Le Lac Privé, La Piscine et le Court de Tennis. Fiches avec capacité d'accueil et photos immersives."
+          },
+          "devis": {
+            "title": "Le Formulaire de Devis",
+            "description": "Un parcours de demande de devis personnalisé : type d'événement, date, nombre d'invités, espaces souhaités. Complété par un système de pré-réservation en ligne pour bloquer une date."
+          },
+          "results": {
+            "title": "Résultats",
+            "description": "Un site vitrine premium qui valorise le caractère unique du domaine et génère des demandes de visite et de devis qualifiées grâce à un parcours utilisateur immersif."
+          }
+        },
+        "stats": {
+          "pages": "Pages créées",
+          "features": "Fonctionnalités",
+          "duration": "Semaines de dev"
+        }
       }
     }
   },

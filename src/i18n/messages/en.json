@@ -246,6 +246,43 @@
           "features": "Features",
           "duration": "Weeks of dev"
         }
+      },
+      "domaineMoulinVilleteint": {
+        "title": "Domaine Moulin de Villeteint",
+        "sector": "Events",
+        "category": "Showcase Website & Reception Estate",
+        "stat": "50,000m²",
+        "statLabel": "of privatizable nature for your events",
+        "challenge": "Domaine Moulin de Villeteint, an exceptional reception estate in Cires-lès-Mello (Oise), needed a digital presence worthy of its unique setting: 50,000m² of nature, private lake, secret clearing, and swimming pool. No existing online presence to showcase this one-of-a-kind venue.",
+        "solutionTags": "Premium Nature Design, Filtered Gallery, Day Timeline, Quote Form, Online Pre-booking, Local SEO",
+        "quote": "The website perfectly captures the soul of the estate. Visit requests doubled within the first month.",
+        "quoteAuthor": "Owner",
+        "quoteRole": "Domaine Moulin de Villeteint, Cires-lès-Mello",
+        "description": "Premium showcase website for a 50,000m² reception estate in Oise, France: presentation of 6 distinct spaces, filtered photo gallery, day timeline, multi-step quote form, online pre-booking, and refined nature-inspired design.",
+        "heroSubtitle": "A character estate to celebrate your most precious moments — 45 minutes from Paris",
+        "sections": {
+          "website": {
+            "title": "The Showcase Website",
+            "description": "A refined nature-inspired website with a champagne & ivory palette, showcasing the 50,000m² of this exceptional estate. Immersive navigation between spaces, gallery, and day timeline."
+          },
+          "espaces": {
+            "title": "The Spaces",
+            "description": "Detailed presentation of 6 spaces: The Grand Parks, Intimate Gardens, Secret Clearing, Private Lake, Swimming Pool, and Tennis Court. Technical specs with guest capacity and immersive photography."
+          },
+          "devis": {
+            "title": "The Quote Form",
+            "description": "A custom quote request journey: event type, date, number of guests, desired spaces. Complemented by an online pre-booking system to secure a date."
+          },
+          "results": {
+            "title": "Results",
+            "description": "A premium showcase website that highlights the estate's unique character and generates qualified visit and quote requests through an immersive user journey."
+          }
+        },
+        "stats": {
+          "pages": "Pages created",
+          "features": "Features",
+          "duration": "Weeks of dev"
+        }
       }
     }
   },
