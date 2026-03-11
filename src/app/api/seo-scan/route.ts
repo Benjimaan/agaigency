@@ -934,26 +934,76 @@ export async function POST(request: Request) {
       hasScraping: sc !== null,
     };
 
-    // Send lead capture email via Resend
-    try {
-      const resend = new Resend(process.env.RESEND_API_KEY);
-      const keywordsList = results.keywords
-        .map((kw) => `${kw.keyword} (${kw.volume} vol.)`)
-        .join(", ");
+    // Compute counts for emails
+    const failCount =
+      performanceItems.filter((i) => i.status === "fail").length +
+      seoItems.filter((i) => i.status === "fail").length +
+      mobileItems.filter((i) => i.status === "fail").length +
+      securityItems.filter((i) => i.status === "fail").length;
 
-      const failCount =
-        performanceItems.filter((i) => i.status === "fail").length +
-        seoItems.filter((i) => i.status === "fail").length +
-        mobileItems.filter((i) => i.status === "fail").length +
-        securityItems.filter((i) => i.status === "fail").length;
+    const warnCount =
+      performanceItems.filter((i) => i.status === "warning").length +
+      seoItems.filter((i) => i.status === "warning").length +
+      mobileItems.filter((i) => i.status === "warning").length +
+      securityItems.filter((i) => i.status === "warning").length;
 
-      const warnCount =
-        performanceItems.filter((i) => i.status === "warning").length +
-        seoItems.filter((i) => i.status === "warning").length +
-        mobileItems.filter((i) => i.status === "warning").length +
-        securityItems.filter((i) => i.status === "warning").length;
+    const passCount =
+      performanceItems.filter((i) => i.status === "pass").length +
+      seoItems.filter((i) => i.status === "pass").length +
+      mobileItems.filter((i) => i.status === "pass").length +
+      securityItems.filter((i) => i.status === "pass").length;
 
-      await resend.emails.send({
+    // Send emails in parallel: internal lead + prospect report
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const keywordsList = results.keywords
+      .map((kw) => `${kw.keyword} (${kw.volume} vol.)`)
+      .join(", ");
+
+    // Score verdict for prospect email
+    const verdictLabel = globalScore >= 80 ? "Bon" : globalScore >= 60 ? "Correct" : globalScore >= 40 ? "Fragile" : "Critique";
+    const verdictColor = globalScore >= 80 ? "#22c55e" : globalScore >= 60 ? "#D4AF37" : globalScore >= 40 ? "#f97316" : "#ef4444";
+    const lcpDisplay = ps ? `${(ps.lcp / 1000).toFixed(1)}s` : "N/A";
+
+    // Build prospect findings summary (top problems only, business language)
+    const allItems = [...performanceItems, ...seoItems, ...mobileItems, ...securityItems];
+    const topProblems = allItems
+      .filter((i) => i.status === "fail")
+      .slice(0, 5)
+      .map((item) => {
+        // Map labelKeys to business-friendly French descriptions
+        const labelMap: Record<string, string> = {
+          "perf.lcp.label": "Vitesse d'affichage",
+          "perf.cls.label": "Stabilité visuelle",
+          "perf.tbt.label": "Réactivité",
+          "perf.fcp.label": "Premier affichage",
+          "perf.images.label": "Poids des images",
+          "perf.compression.label": "Compression des données",
+          "seo.title.label": "Titre de la page",
+          "seo.meta.label": "Description pour Google",
+          "seo.h1.label": "Titre principal",
+          "seo.imagesAlt.label": "Description des images",
+          "seo.sitemap.label": "Plan du site",
+          "seo.robots.label": "Instructions pour Google",
+          "seo.og.label": "Aperçu réseaux sociaux",
+          "seo.wordCount.label": "Contenu textuel",
+          "mobile.viewport.label": "Adaptation mobile",
+          "mobile.fontSize.label": "Lisibilité mobile",
+          "mobile.tapTargets.label": "Boutons tactiles",
+          "mobile.loadTime.label": "Vitesse sur mobile",
+          "security.https.label": "Connexion sécurisée",
+          "security.headers.label": "Protection des données",
+          "security.compression.label": "Optimisation réseau",
+        };
+        return labelMap[item.labelKey] || item.labelKey;
+      });
+
+    const problemsList = topProblems.length > 0
+      ? topProblems.map((p) => `<tr><td style="padding: 6px 12px; color: #ef4444;">✗</td><td style="padding: 6px 0;">${p}</td></tr>`).join("")
+      : `<tr><td style="padding: 6px 12px; color: #22c55e;">✓</td><td style="padding: 6px 0;">Aucun problème critique détecté</td></tr>`;
+
+    await Promise.allSettled([
+      // 1. Internal lead notification
+      resend.emails.send({
         from: "AgaiGency <noreply@agaigency.com>",
         to: TO_EMAILS,
         replyTo: email,
@@ -996,10 +1046,110 @@ export async function POST(request: Request) {
             <p style="color: #999; font-size: 12px;">Envoyé depuis l'outil Audit SEO — agaigency.com</p>
           </div>
         `,
-      });
-    } catch {
-      console.error("Failed to send lead email");
-    }
+      }),
+
+      // 2. Prospect audit report email
+      resend.emails.send({
+        from: "AgaiGency <noreply@agaigency.com>",
+        to: [email],
+        replyTo: "contact@agaigency.com",
+        subject: `Votre audit digital — ${domain} : ${globalScore}/100`,
+        html: `
+          <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0a0a0a; color: #e5e5e5; border-radius: 12px; overflow: hidden;">
+
+            <!-- Header -->
+            <div style="background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); padding: 40px 32px 24px; text-align: center; border-bottom: 2px solid #D4AF37;">
+              <div style="font-size: 14px; letter-spacing: 2px; color: #D4AF37; text-transform: uppercase; margin-bottom: 8px;">Audit Digital</div>
+              <h1 style="margin: 0; font-size: 24px; color: #fff; font-weight: 700;">Résultats pour ${domain}</h1>
+            </div>
+
+            <!-- Score -->
+            <div style="text-align: center; padding: 32px;">
+              <div style="display: inline-block; width: 120px; height: 120px; border-radius: 50%; border: 4px solid ${verdictColor}; line-height: 120px; font-size: 42px; font-weight: 800; color: ${verdictColor};">
+                ${globalScore}
+              </div>
+              <div style="margin-top: 12px; font-size: 18px; font-weight: 600; color: ${verdictColor};">${verdictLabel}</div>
+              <p style="margin-top: 8px; color: #999; font-size: 14px;">Score global sur 100</p>
+            </div>
+
+            <!-- Key Metrics -->
+            <div style="padding: 0 32px 24px;">
+              <table style="width: 100%; border-collapse: collapse;">
+                <tr>
+                  <td style="padding: 12px; text-align: center; background: #141414; border-radius: 8px; width: 25%;">
+                    <div style="font-size: 22px; font-weight: 700; color: #fff;">${lcpDisplay}</div>
+                    <div style="font-size: 11px; color: #999; margin-top: 4px;">Vitesse</div>
+                  </td>
+                  <td style="width: 8px;"></td>
+                  <td style="padding: 12px; text-align: center; background: #141414; border-radius: 8px; width: 25%;">
+                    <div style="font-size: 22px; font-weight: 700; color: ${results.keyMetrics.mobileReady ? "#22c55e" : "#ef4444"};">${results.keyMetrics.mobileReady ? "✓" : "✗"}</div>
+                    <div style="font-size: 11px; color: #999; margin-top: 4px;">Mobile</div>
+                  </td>
+                  <td style="width: 8px;"></td>
+                  <td style="padding: 12px; text-align: center; background: #141414; border-radius: 8px; width: 25%;">
+                    <div style="font-size: 22px; font-weight: 700; color: #D4AF37;">${failCount + warnCount}</div>
+                    <div style="font-size: 11px; color: #999; margin-top: 4px;">Problèmes</div>
+                  </td>
+                  <td style="width: 8px;"></td>
+                  <td style="padding: 12px; text-align: center; background: #141414; border-radius: 8px; width: 25%;">
+                    <div style="font-size: 22px; font-weight: 700; color: ${results.keyMetrics.isSecure ? "#22c55e" : "#ef4444"};">${results.keyMetrics.isSecure ? "✓" : "✗"}</div>
+                    <div style="font-size: 11px; color: #999; margin-top: 4px;">Sécurité</div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- Problems Found -->
+            ${failCount > 0 ? `
+            <div style="padding: 0 32px 24px;">
+              <h2 style="font-size: 16px; color: #D4AF37; margin: 0 0 12px; font-weight: 600;">Points critiques détectés</h2>
+              <table style="width: 100%; border-collapse: collapse; background: #141414; border-radius: 8px; overflow: hidden;">
+                ${problemsList}
+              </table>
+            </div>
+            ` : ""}
+
+            <!-- Summary -->
+            <div style="padding: 0 32px 24px;">
+              <div style="background: #141414; border-radius: 8px; padding: 20px; border-left: 3px solid #D4AF37;">
+                <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #ccc;">
+                  Votre site présente <strong style="color: #fff;">${passCount} points conformes</strong>,
+                  <strong style="color: #f97316;">${warnCount} améliorations possibles</strong> et
+                  <strong style="color: #ef4444;">${failCount} points critiques</strong> qui impactent directement
+                  votre visibilité et vos conversions.
+                </p>
+                ${positioning.financialLoss > 0 ? `
+                <p style="margin: 12px 0 0; font-size: 14px; color: #ccc;">
+                  Manque à gagner estimé : <strong style="color: #D4AF37;">${positioning.financialLoss.toLocaleString("fr-FR")} €/mois</strong>
+                </p>` : ""}
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; padding: 8px 32px 40px;">
+              <p style="color: #999; font-size: 14px; margin-bottom: 20px;">
+                Chaque jour sans optimisation, ce sont des clients qui choisissent vos concurrents.
+              </p>
+              <a href="https://agaigency.com/fr#contact" style="display: inline-block; background: linear-gradient(135deg, #D4AF37, #b8962e); color: #0a0a0a; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 15px; letter-spacing: 0.5px;">
+                Réserver un appel stratégique
+              </a>
+              <p style="margin-top: 12px; color: #666; font-size: 12px;">Gratuit · 30 min · Sans engagement</p>
+            </div>
+
+            <!-- Footer -->
+            <div style="padding: 20px 32px; background: #050505; text-align: center; border-top: 1px solid #1a1a1a;">
+              <p style="margin: 0; color: #666; font-size: 12px;">
+                AgaiGency — Partenaire de croissance digitale<br>
+                <a href="https://agaigency.com" style="color: #D4AF37; text-decoration: none;">agaigency.com</a>
+              </p>
+            </div>
+          </div>
+        `,
+      }),
+    ]).then(([leadResult, prospectResult]) => {
+      if (leadResult.status === "rejected") console.error("Failed to send lead email:", leadResult.reason);
+      if (prospectResult.status === "rejected") console.error("Failed to send prospect email:", prospectResult.reason);
+    });
 
     return NextResponse.json(results);
   } catch (err) {
