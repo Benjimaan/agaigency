@@ -541,6 +541,7 @@
         "perMonth": "/month",
         "select": "Choose",
         "selected": "Selected",
+        "budgetNote": "These budgets cover your visibility investment (advertising, content, tools). Our management fees are presented during the strategy call.",
         "essential": {
           "name": "Essential",
           "desc": "Fix the basics and make your site perform",

@@ -541,6 +541,7 @@
         "perMonth": "/mois",
         "select": "Choisir",
         "selected": "Sélectionné",
+        "budgetNote": "Ces budgets correspondent à votre investissement en visibilité (publicité, contenu, outils). Nos honoraires d'accompagnement sont présentés lors de l'appel stratégique.",
         "essential": {
           "name": "Essentiel",
           "desc": "Corriger les bases et rendre votre site performant",

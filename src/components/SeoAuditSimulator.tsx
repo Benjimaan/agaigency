@@ -826,6 +826,16 @@ export default function SeoAuditSimulator() {
                 ))}
               </div>
 
+              {/* Budget note */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.8, duration: 0.5 }}
+                className="mb-10 text-center text-xs text-muted/60 italic"
+              >
+                {t("strategy.budgetNote")}
+              </motion.p>
+
               {/* ═══ Section 3: ROI Projection ═══ */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
