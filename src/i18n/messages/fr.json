@@ -513,8 +513,6 @@
       },
       "results": {
         "title": "Voici le diagnostic de votre site",
-        "fullTitle": "Le diagnostic complet de votre site",
-        "scoreLabel": "Score global",
         "scoreOut": "/ 100",
         "verdictCritical": "Votre site travaille contre vous. Chaque jour qui passe, vous perdez des clients au profit de concurrents mieux positionnés.",
         "verdictWeak": "Votre site a du potentiel, mais des problèmes importants freinent votre croissance et votre visibilité.",
@@ -522,27 +520,81 @@
         "verdictGood": "Votre site est bien optimisé. Quelques ajustements ciblés peuvent encore améliorer vos résultats.",
         "cardSpeed": "Rapidité",
         "cardMobile": "Téléphone",
-        "cardProblems": "Problèmes détectés",
+        "cardProblems": "Problèmes",
         "cardSecurity": "Sécurité",
         "cardOk": "Adapté",
         "cardKo": "Problème",
-        "problems": "problèmes",
-        "improvements": "à améliorer",
-        "hiddenFindings": "constats supplémentaires",
-        "searchesMonth": "recherches/mois",
-        "keywordsTitle": "Des clients vous cherchent — mais ne vous trouvent pas",
-        "keywordsSubtitle": "Ces recherches sont faites chaque mois par vos clients potentiels. Vos concurrents apparaissent, pas vous.",
+        "issuesTitle": "Ce qui freine votre site aujourd'hui",
         "financialTitle": "Ce que ça vous coûte",
         "financialPerMonth": "/mois",
         "financialDesc": "Chiffre d'affaires estimé que vous laissez à vos concurrents chaque mois",
-        "competitors": "Concurrents mieux positionnés",
-        "missingPages": "Opportunités manquées",
-        "unlockTitle": "Voir le diagnostic complet",
-        "unlockSubtitle": "Découvrez tous les points qui freinent votre site, avec l'impact concret sur votre activité.",
-        "unlockCta": "Débloquer le diagnostic complet",
-        "ctaTitle": "Vous connaissez maintenant les problèmes. Voulez-vous les solutions ?",
-        "ctaSubtitle": "Réservez un appel de 30 minutes. On vous présente un plan d'action concret, adapté à votre activité et vos objectifs.",
-        "ctaButton": "Réserver mon appel stratégique"
+        "ctaTitle": "Prêt à transformer votre site en machine à clients ?",
+        "ctaSubtitle": "Réservez un appel de 30 minutes. On vous présente un plan d'action concret, adapté à votre activité et vos objectifs. Aucun engagement.",
+        "ctaButton": "Réserver mon appel stratégique",
+        "ctaFree": "Gratuit · 30 min · Sans engagement"
+      },
+      "strategy": {
+        "badge": "Notre recommandation",
+        "title": "Voici ce que nous allons mettre en place",
+        "subtitle": "En fonction de vos objectifs et de votre budget, choisissez la formule qui correspond à votre ambition. Chaque palier est conçu pour générer un retour concret et mesurable.",
+        "recommended": "Recommandé",
+        "perMonth": "/mois",
+        "select": "Choisir",
+        "selected": "Sélectionné",
+        "essential": {
+          "name": "Essentiel",
+          "desc": "Corriger les bases et rendre votre site performant",
+          "feature1": "Correction des problèmes techniques détectés",
+          "feature2": "Optimisation de la vitesse et du mobile",
+          "feature3": "Référencement naturel de base (SEO)",
+          "feature4": "Rapport mensuel de progression"
+        },
+        "growth": {
+          "name": "Croissance",
+          "desc": "Attirer plus de visiteurs qualifiés et les convertir en clients",
+          "feature1": "Tout ce qui est inclus dans Essentiel",
+          "feature2": "Création de contenu optimisé pour Google",
+          "feature3": "Stratégie de mots-clés et positionnement",
+          "feature4": "Suivi des conversions et optimisation continue"
+        },
+        "performance": {
+          "name": "Performance",
+          "desc": "Dominer votre marché local et maximiser vos demandes",
+          "feature1": "Tout ce qui est inclus dans Croissance",
+          "feature2": "Campagnes publicitaires (Google Ads)",
+          "feature3": "Gestion de votre fiche Google Business",
+          "feature4": "Appel de suivi stratégique bi-mensuel"
+        }
+      },
+      "roi": {
+        "title": "Votre retour sur investissement",
+        "subtitle": "Voici ce que vous pouvez attendre en choisissant cette formule",
+        "investmentLabel": "Votre investissement mensuel",
+        "simulationTitle": "Résultats estimés sur 6 mois",
+        "trafficIncrease": "Trafic en plus",
+        "over6months": "sur 6 mois",
+        "leadsPerMonth": "Demandes / mois",
+        "qualifiedLeads": "prospects qualifiés",
+        "estimatedRevenue": "CA supplémentaire",
+        "perMonthExtra": "estimé par mois",
+        "returnOnInvestment": "Retour sur invest.",
+        "roiExplanation": "pour 1€ investi",
+        "roiSummary": "Pour {investment} €/mois investis, vous pouvez espérer générer {revenue} € de chiffre d'affaires supplémentaire par mois, soit un retour de {roi}x votre investissement."
+      },
+      "timeline": {
+        "title": "Comment ça se passe concrètement",
+        "month1": {
+          "title": "Mois 1 — Diagnostic & corrections",
+          "desc": "Nous corrigeons les problèmes détectés, optimisons votre site et posons les bases de votre stratégie de visibilité."
+        },
+        "month2": {
+          "title": "Mois 2 — Visibilité & contenu",
+          "desc": "Votre site commence à remonter sur Google. On crée du contenu ciblé et on optimise vos pages stratégiques."
+        },
+        "month3": {
+          "title": "Mois 3 — Résultats & accélération",
+          "desc": "Les premiers résultats arrivent : plus de visiteurs, plus de demandes. On ajuste la stratégie pour accélérer la croissance."
+        }
       }
     },
     "audit": {

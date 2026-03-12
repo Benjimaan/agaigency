@@ -513,8 +513,6 @@
       },
       "results": {
         "title": "Your site diagnostic",
-        "fullTitle": "Your complete site diagnostic",
-        "scoreLabel": "Overall Score",
         "scoreOut": "/ 100",
         "verdictCritical": "Your site is working against you. Every day that passes, you're losing clients to better-positioned competitors.",
         "verdictWeak": "Your site has potential, but significant issues are holding back your growth and visibility.",
@@ -522,27 +520,81 @@
         "verdictGood": "Your site is well optimized. A few targeted adjustments can still improve your results.",
         "cardSpeed": "Speed",
         "cardMobile": "Phone",
-        "cardProblems": "Issues found",
+        "cardProblems": "Issues",
         "cardSecurity": "Security",
         "cardOk": "Adapted",
         "cardKo": "Issue",
-        "problems": "issues",
-        "improvements": "to improve",
-        "hiddenFindings": "additional findings",
-        "searchesMonth": "searches/month",
-        "keywordsTitle": "Clients are searching for you — but can't find you",
-        "keywordsSubtitle": "These searches are made every month by your potential clients. Your competitors show up, you don't.",
+        "issuesTitle": "What's holding your site back today",
         "financialTitle": "What this is costing you",
         "financialPerMonth": "/month",
         "financialDesc": "Estimated revenue you're leaving to your competitors every month",
-        "competitors": "Better-positioned competitors",
-        "missingPages": "Missed opportunities",
-        "unlockTitle": "See the full diagnostic",
-        "unlockSubtitle": "Discover all the issues holding back your site, with the concrete impact on your business.",
-        "unlockCta": "Unlock the full diagnostic",
-        "ctaTitle": "You now know the problems. Want the solutions?",
-        "ctaSubtitle": "Book a 30-minute call. We'll present a concrete action plan, tailored to your business and goals.",
-        "ctaButton": "Book my strategy call"
+        "ctaTitle": "Ready to turn your site into a client-generating machine?",
+        "ctaSubtitle": "Book a 30-minute call. We'll present a concrete action plan, tailored to your business and goals. No commitment required.",
+        "ctaButton": "Book my strategy call",
+        "ctaFree": "Free · 30 min · No commitment"
+      },
+      "strategy": {
+        "badge": "Our recommendation",
+        "title": "Here's what we'll put in place for you",
+        "subtitle": "Based on your goals and budget, choose the plan that matches your ambition. Each tier is designed to generate concrete, measurable returns.",
+        "recommended": "Recommended",
+        "perMonth": "/month",
+        "select": "Choose",
+        "selected": "Selected",
+        "essential": {
+          "name": "Essential",
+          "desc": "Fix the basics and make your site perform",
+          "feature1": "Fix all detected technical issues",
+          "feature2": "Speed and mobile optimization",
+          "feature3": "Basic search engine optimization (SEO)",
+          "feature4": "Monthly progress report"
+        },
+        "growth": {
+          "name": "Growth",
+          "desc": "Attract more qualified visitors and convert them into clients",
+          "feature1": "Everything included in Essential",
+          "feature2": "Google-optimized content creation",
+          "feature3": "Keyword strategy and positioning",
+          "feature4": "Conversion tracking and ongoing optimization"
+        },
+        "performance": {
+          "name": "Performance",
+          "desc": "Dominate your local market and maximize inquiries",
+          "feature1": "Everything included in Growth",
+          "feature2": "Advertising campaigns (Google Ads)",
+          "feature3": "Google Business Profile management",
+          "feature4": "Bi-monthly strategic follow-up call"
+        }
+      },
+      "roi": {
+        "title": "Your return on investment",
+        "subtitle": "Here's what you can expect by choosing this plan",
+        "investmentLabel": "Your monthly investment",
+        "simulationTitle": "Estimated results over 6 months",
+        "trafficIncrease": "Traffic increase",
+        "over6months": "over 6 months",
+        "leadsPerMonth": "Inquiries / month",
+        "qualifiedLeads": "qualified prospects",
+        "estimatedRevenue": "Additional revenue",
+        "perMonthExtra": "estimated per month",
+        "returnOnInvestment": "Return on invest.",
+        "roiExplanation": "for every €1 invested",
+        "roiSummary": "For €{investment}/month invested, you can expect to generate €{revenue} in additional revenue per month — a {roi}x return on your investment."
+      },
+      "timeline": {
+        "title": "Here's how it works in practice",
+        "month1": {
+          "title": "Month 1 — Diagnostic & fixes",
+          "desc": "We fix the detected issues, optimize your site, and lay the foundation for your visibility strategy."
+        },
+        "month2": {
+          "title": "Month 2 — Visibility & content",
+          "desc": "Your site starts climbing on Google. We create targeted content and optimize your key pages."
+        },
+        "month3": {
+          "title": "Month 3 — Results & acceleration",
+          "desc": "First results arrive: more visitors, more inquiries. We adjust the strategy to accelerate growth."
+        }
       }
     },
     "audit": {
