@@ -341,6 +341,7 @@
     "badge": "Client Results",
     "title": "They trusted us. Here's what happened.",
     "subtitle": "We don't promise results. We deliver them.",
+    "googleReview": "Leave us a review on Google",
     "items": {
       "client1": {
         "name": "Moussa D.",
@@ -694,6 +695,7 @@
     "navigation": "Navigation",
     "legal": "Legal notice",
     "privacy": "Privacy policy",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "googleReview": "Leave a Google review"
   }
 }

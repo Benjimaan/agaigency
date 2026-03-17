@@ -341,6 +341,7 @@
     "badge": "Résultats Clients",
     "title": "Ils nous ont fait confiance. Voici ce qui s'est passé.",
     "subtitle": "Nous ne promettons pas des résultats. Nous les livrons.",
+    "googleReview": "Laissez-nous votre avis sur Google",
     "items": {
       "client1": {
         "name": "Salif",
@@ -694,6 +695,7 @@
     "navigation": "Navigation",
     "legal": "Mentions légales",
     "privacy": "Politique de confidentialité",
-    "rights": "Tous droits réservés."
+    "rights": "Tous droits réservés.",
+    "googleReview": "Laisser un avis Google"
   }
 }
