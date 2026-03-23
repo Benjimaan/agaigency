@@ -697,5 +697,198 @@
     "privacy": "Privacy policy",
     "rights": "All rights reserved.",
     "googleReview": "Leave a Google review"
+  },
+  "campaignBuilder": {
+    "pageTitle": "Campaign Builder",
+    "pageSubtitle": "Structure your Google Ads campaigns with method.",
+    "prev": "Previous",
+    "next": "Next",
+    "steps": {
+      "client": "Client",
+      "objective": "Objective",
+      "campaign_type": "Type",
+      "keywords": "Keywords",
+      "ads": "Ads",
+      "budget": "Budget",
+      "targeting": "Targeting",
+      "summary": "Summary"
+    },
+    "client": {
+      "title": "Client Information",
+      "desc": "Enter the basic information to customize the campaign.",
+      "name": "Client / business name",
+      "namePlaceholder": "E.g.: Martin's Bakery",
+      "activity": "Main activity",
+      "activityPlaceholder": "E.g.: Plumber, Lawyer, Clothing store...",
+      "website": "Website",
+      "typeLabel": "Client type",
+      "types": {
+        "local": "Local business / Small",
+        "pme": "SME / E-commerce",
+        "liberal": "Professional services",
+        "startup": "Startup / SaaS",
+        "other": "Other"
+      }
+    },
+    "objective": {
+      "title": "Campaign Objective",
+      "desc": "What is the main result the client wants to achieve?",
+      "items": {
+        "leads": "Generate leads",
+        "traffic": "Increase traffic",
+        "sales": "Online sales",
+        "awareness": "Brand awareness",
+        "local": "Store visits"
+      },
+      "descs": {
+        "leads": "Forms, calls, quote requests",
+        "traffic": "More website visitors",
+        "sales": "E-commerce, online purchases",
+        "awareness": "Build brand recognition",
+        "local": "Drive foot traffic to your location"
+      }
+    },
+    "campaignType": {
+      "title": "Campaign Type",
+      "desc": "Choose the most suitable format for the objective.",
+      "recommended": "RECOMMENDED",
+      "items": {
+        "search": {
+          "label": "Search Network",
+          "desc": "Text ads in Google search results",
+          "best": "Best for: Leads, qualified traffic"
+        },
+        "display": {
+          "label": "Display Network",
+          "desc": "Visual banners across millions of websites",
+          "best": "Best for: Awareness, remarketing"
+        },
+        "shopping": {
+          "label": "Shopping",
+          "desc": "Product listings with photo and price",
+          "best": "Best for: E-commerce only"
+        },
+        "pmax": {
+          "label": "Performance Max",
+          "desc": "Automated campaign across all networks",
+          "best": "Best for: Versatile, AI-driven by Google"
+        },
+        "video": {
+          "label": "Video (YouTube)",
+          "desc": "Video ads on YouTube",
+          "best": "Best for: Awareness, engagement"
+        }
+      }
+    },
+    "keywords": {
+      "title": "Keywords",
+      "desc": "Define the keywords the campaign will target.",
+      "matchTypes": {
+        "exact": "[Exact]",
+        "phrase": "\"Phrase\"",
+        "broad": "Broad"
+      },
+      "matchDescs": {
+        "exact": "Exact keyword only — e.g.: [plumber paris]",
+        "phrase": "Contains the phrase — e.g.: \"plumber paris\"",
+        "broad": "Variants and synonyms — e.g.: plumber paris"
+      },
+      "addPlaceholder": "Add a keyword...",
+      "add": "+ Add",
+      "suggestionsLabel": "Suggestions based on activity",
+      "added": "Added keywords",
+      "negativeTitle": "Negative keywords",
+      "negativeDesc": "Exclude terms to avoid useless clicks (e.g.: \"free\", \"job\", \"internship\")",
+      "negativePlaceholder": "E.g.: free, job...",
+      "exclude": "Exclude"
+    },
+    "ads": {
+      "title": "Ad Copy",
+      "desc": "Create compelling ads. Google displays up to 3 headlines and 2 descriptions.",
+      "preview": "Ad preview",
+      "sponsored": "Sponsored",
+      "previewTitle": "Headline 1 | Headline 2 | Headline 3",
+      "previewDesc": "Your Google Ads description...",
+      "headlinesLabel": "Headlines (max 30 characters each)",
+      "headlinePlaceholder": "Headline",
+      "addHeadline": "Add a headline",
+      "descriptionsLabel": "Descriptions (max 90 characters each)",
+      "descriptionPlaceholder": "Description",
+      "addDescription": "Add a description",
+      "displayUrlLabel": "Display URL (custom path)",
+      "displayUrlPlaceholder": "E.g.: special-offer",
+      "required": "required",
+      "optional": "optional",
+      "tipsTitle": "Writing tips",
+      "tips": {
+        "0": "Include the main keyword in Headline 1",
+        "1": "Add a clear call to action (Free quote, Call now...)",
+        "2": "Mention a unique benefit (free delivery, 15 years experience...)",
+        "3": "Use numbers to grab attention (−20%, from $29...)"
+      }
+    },
+    "budget": {
+      "title": "Budget & Bidding",
+      "desc": "Set the daily budget and bidding strategy.",
+      "daily": "Daily budget (€)",
+      "monthly": "Monthly budget (€)",
+      "strategyLabel": "Bidding strategy",
+      "levelBeginner": "Beginner",
+      "levelIntermediate": "Intermediate",
+      "levelAdvanced": "Advanced",
+      "strategies": {
+        "maximize_clicks": {
+          "label": "Maximize clicks",
+          "desc": "Google optimizes for maximum clicks within budget",
+          "level": "Beginner"
+        },
+        "maximize_conversions": {
+          "label": "Maximize conversions",
+          "desc": "Requires conversion tracking setup",
+          "level": "Intermediate"
+        },
+        "target_cpa": {
+          "label": "Target CPA",
+          "desc": "Set a target cost per acquisition",
+          "level": "Advanced"
+        },
+        "manual_cpc": {
+          "label": "Manual CPC",
+          "desc": "Full control over each bid",
+          "level": "Advanced"
+        }
+      },
+      "estimatesTitle": "Estimates",
+      "cpc": "Est. CPC",
+      "clicksDay": "Clicks/day",
+      "monthlyBudget": "Budget/month",
+      "disclaimer": "Indicative estimates based on industry averages"
+    },
+    "targeting": {
+      "title": "Geographic Targeting & Audience",
+      "desc": "Define where and to whom to show the ads.",
+      "locationLabel": "Geographic zone",
+      "locationPlaceholder": "E.g.: Paris, London, Nationwide...",
+      "radiusLabel": "Radius",
+      "devicesLabel": "Devices",
+      "devices": {
+        "desktop": "Desktop",
+        "mobile": "Mobile",
+        "tablet": "Tablet"
+      },
+      "scheduleLabel": "Ad schedule",
+      "schedules": {
+        "always": { "label": "24/7", "desc": "Always running" },
+        "business": { "label": "Business hours", "desc": "Mon-Fri 8am-7pm" },
+        "extended": { "label": "Extended hours", "desc": "Mon-Sat 7am-10pm" },
+        "custom": { "label": "Custom", "desc": "Configure in Google Ads" }
+      }
+    },
+    "summary": {
+      "title": "Campaign Summary",
+      "desc": "Review all information before setting up in Google Ads.",
+      "exportTxt": "Export as .txt",
+      "exportCsv": "Export keywords (.csv)"
+    }
   }
 }
