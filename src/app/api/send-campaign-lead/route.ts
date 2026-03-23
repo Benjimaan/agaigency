@@ -206,7 +206,7 @@ export async function POST(request: Request) {
           </p>
 
           <div style="text-align: center; margin-bottom: 32px;">
-            <a href="https://www.agaigency.com/fr#contact" style="display: inline-block; background: #D4AF37; color: #0a0a0a; padding: 14px 32px; border-radius: 24px; text-decoration: none; font-weight: 700; font-size: 15px;">
+            <a href="https://calendly.com/benjaminferment/30min" style="display: inline-block; background: #D4AF37; color: #0a0a0a; padding: 14px 32px; border-radius: 24px; text-decoration: none; font-weight: 700; font-size: 15px;">
               Réserver mon appel stratégique gratuit
             </a>
             <p style="margin-top: 8px; font-size: 12px; color: #808080;">Gratuit · Sans engagement · 30 min</p>

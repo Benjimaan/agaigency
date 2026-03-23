@@ -456,7 +456,9 @@ export default function CampaignBuilder() {
           <h3 className="mb-3 text-2xl font-bold tracking-tight">{t("summary.ctaTitle")}</h3>
           <p className="mx-auto mb-6 max-w-md text-sm text-muted">{t("summary.ctaDesc")}</p>
           <a
-            href={`/${locale}#contact`}
+            href="https://calendly.com/benjaminferment/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="gold-glow-hover inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-bold text-background transition-all hover:bg-gold-light"
           >
             {t("summary.ctaButton")}
