@@ -699,29 +699,28 @@
     "googleReview": "Laisser un avis Google"
   },
   "campaignBuilder": {
-    "pageTitle": "Constructeur de Campagne",
-    "pageSubtitle": "Structurez vos campagnes Google Ads avec méthode.",
+    "pageTitle": "Simulateur Google Ads",
+    "pageSubtitle": "Découvrez combien de clients Google peut vous apporter chaque mois.",
     "prev": "Précédent",
     "next": "Suivant",
     "steps": {
-      "client": "Client",
+      "client": "Vous",
       "objective": "Objectif",
-      "campaign_type": "Type",
-      "keywords": "Mots-clés",
-      "ads": "Annonces",
+      "campaign_type": "Stratégie",
       "budget": "Budget",
-      "targeting": "Ciblage",
-      "summary": "Récap"
+      "summary": "Résultat"
     },
     "client": {
-      "title": "Informations client",
-      "desc": "Renseigne les informations de base pour personnaliser la campagne.",
-      "name": "Nom du client / entreprise",
+      "title": "Parlez-nous de votre entreprise",
+      "desc": "Ces informations nous permettent de personnaliser vos estimations.",
+      "name": "Nom de votre entreprise",
       "namePlaceholder": "Ex : Boulangerie Martin",
-      "activity": "Activité principale",
+      "activity": "Votre activité",
       "activityPlaceholder": "Ex : Plombier, Avocat, Boutique de vêtements...",
       "website": "Site web",
-      "typeLabel": "Type de client",
+      "email": "Votre adresse email",
+      "emailPlaceholder": "Ex : contact@monentreprise.fr",
+      "typeLabel": "Votre secteur",
       "types": {
         "local": "Commerce local / TPE",
         "pme": "PME / E-commerce",
@@ -731,164 +730,78 @@
       }
     },
     "objective": {
-      "title": "Objectif de la campagne",
-      "desc": "Quel est le résultat principal que le client souhaite atteindre ?",
+      "title": "Quel est votre objectif principal ?",
+      "desc": "Choisissez ce que vous souhaitez accomplir avec Google Ads.",
       "items": {
-        "leads": "Générer des leads",
-        "traffic": "Augmenter le trafic",
-        "sales": "Ventes en ligne",
-        "awareness": "Notoriété de marque",
-        "local": "Visites en magasin"
+        "leads": "Recevoir plus de demandes",
+        "traffic": "Attirer plus de visiteurs",
+        "sales": "Augmenter mes ventes en ligne",
+        "awareness": "Faire connaître ma marque",
+        "local": "Attirer des clients en magasin"
       },
       "descs": {
         "leads": "Formulaires, appels, demandes de devis",
-        "traffic": "Plus de visiteurs sur le site web",
-        "sales": "E-commerce, achats en ligne",
-        "awareness": "Faire connaître la marque",
-        "local": "Attirer du trafic en point de vente"
+        "traffic": "Plus de visiteurs qualifiés sur votre site",
+        "sales": "Plus de commandes sur votre boutique en ligne",
+        "awareness": "Développer votre notoriété auprès de votre cible",
+        "local": "Augmenter le passage en point de vente"
       }
     },
     "campaignType": {
-      "title": "Type de campagne",
-      "desc": "Choisis le format de diffusion le plus adapté à l'objectif.",
+      "title": "Quelle stratégie pour y arriver ?",
+      "desc": "Nous vous recommandons le format le plus adapté à votre objectif.",
       "recommended": "RECOMMANDÉ",
       "items": {
         "search": {
-          "label": "Réseau de Recherche",
-          "desc": "Annonces textuelles dans les résultats Google",
-          "best": "Idéal pour : Leads, trafic qualifié"
+          "label": "Apparaître en haut de Google",
+          "desc": "Vos clients vous trouvent quand ils recherchent vos services",
+          "best": "Le plus efficace pour recevoir des demandes"
         },
         "display": {
-          "label": "Réseau Display",
-          "desc": "Bannières visuelles sur des millions de sites",
-          "best": "Idéal pour : Notoriété, remarketing"
+          "label": "Bannières sur des milliers de sites",
+          "desc": "Votre marque s'affiche sur les sites que visitent vos clients",
+          "best": "Idéal pour développer votre notoriété"
         },
         "shopping": {
-          "label": "Shopping",
-          "desc": "Fiches produits avec photo et prix",
-          "best": "Idéal pour : E-commerce uniquement"
+          "label": "Fiches produits Google",
+          "desc": "Vos produits avec photo et prix directement dans Google",
+          "best": "Parfait pour les boutiques en ligne"
         },
         "pmax": {
-          "label": "Performance Max",
-          "desc": "Campagne automatisée sur tous les réseaux",
-          "best": "Idéal pour : Polyvalent, piloté par l'IA Google"
+          "label": "Campagne intelligente (tous les canaux)",
+          "desc": "Google diffuse automatiquement là où ça convertit le mieux",
+          "best": "L'option la plus complète et automatisée"
         },
         "video": {
-          "label": "Vidéo (YouTube)",
-          "desc": "Publicités vidéo sur YouTube",
-          "best": "Idéal pour : Notoriété, engagement"
+          "label": "Publicité vidéo YouTube",
+          "desc": "Votre message en vidéo avant les contenus que regarde votre cible",
+          "best": "Puissant pour marquer les esprits"
         }
-      }
-    },
-    "keywords": {
-      "title": "Mots-clés",
-      "desc": "Définis les mots-clés sur lesquels la campagne va se positionner.",
-      "matchTypes": {
-        "exact": "[Exact]",
-        "phrase": "\"Expression\"",
-        "broad": "Large"
-      },
-      "matchDescs": {
-        "exact": "Mot-clé exact uniquement — Ex: [plombier paris]",
-        "phrase": "Contient l'expression — Ex: \"plombier paris\"",
-        "broad": "Variantes et synonymes — Ex: plombier paris"
-      },
-      "addPlaceholder": "Ajouter un mot-clé...",
-      "add": "+ Ajouter",
-      "suggestionsLabel": "Suggestions basées sur l'activité",
-      "added": "Mots-clés ajoutés",
-      "negativeTitle": "Mots-clés négatifs",
-      "negativeDesc": "Exclure des termes pour éviter les clics inutiles (ex : « gratuit », « emploi », « stage »)",
-      "negativePlaceholder": "Ex : gratuit, emploi...",
-      "exclude": "Exclure"
-    },
-    "ads": {
-      "title": "Rédaction des annonces",
-      "desc": "Crée des annonces percutantes. Google affiche 3 titres max et 2 descriptions.",
-      "preview": "Aperçu de l'annonce",
-      "sponsored": "Sponsorisé",
-      "previewTitle": "Titre 1 | Titre 2 | Titre 3",
-      "previewDesc": "Description de votre annonce Google Ads...",
-      "headlinesLabel": "Titres (max 30 caractères chacun)",
-      "headlinePlaceholder": "Titre",
-      "addHeadline": "Ajouter un titre",
-      "descriptionsLabel": "Descriptions (max 90 caractères chacune)",
-      "descriptionPlaceholder": "Description",
-      "addDescription": "Ajouter une description",
-      "displayUrlLabel": "URL affichée (chemin personnalisé)",
-      "displayUrlPlaceholder": "Ex : offre-speciale",
-      "required": "obligatoire",
-      "optional": "optionnel",
-      "tipsTitle": "Conseils de rédaction",
-      "tips": {
-        "0": "Inclus le mot-clé principal dans le Titre 1",
-        "1": "Ajoute un appel à l'action clair (Devis gratuit, Appelez maintenant...)",
-        "2": "Mentionne un avantage unique (livraison offerte, 15 ans d'expérience...)",
-        "3": "Utilise des chiffres pour attirer l'attention (−20%, dès 29€...)"
       }
     },
     "budget": {
-      "title": "Budget & enchères",
-      "desc": "Définis le budget quotidien et la stratégie d'enchères.",
-      "daily": "Budget quotidien (€)",
-      "monthly": "Budget mensuel (€)",
-      "strategyLabel": "Stratégie d'enchères",
-      "levelBeginner": "Débutant",
-      "levelIntermediate": "Intermédiaire",
-      "levelAdvanced": "Avancé",
-      "strategies": {
-        "maximize_clicks": {
-          "label": "Maximiser les clics",
-          "desc": "Google optimise pour avoir le max de clics dans le budget",
-          "level": "Débutant"
-        },
-        "maximize_conversions": {
-          "label": "Maximiser les conversions",
-          "desc": "Nécessite le suivi des conversions configuré",
-          "level": "Intermédiaire"
-        },
-        "target_cpa": {
-          "label": "CPA cible",
-          "desc": "Définir un coût par acquisition cible",
-          "level": "Avancé"
-        },
-        "manual_cpc": {
-          "label": "CPC manuel",
-          "desc": "Contrôle total sur chaque enchère",
-          "level": "Avancé"
-        }
-      },
-      "estimatesTitle": "Estimations",
-      "cpc": "CPC estimé",
-      "clicksDay": "Clics/jour",
-      "monthlyBudget": "Budget/mois",
-      "disclaimer": "Estimations indicatives basées sur les moyennes du secteur"
-    },
-    "targeting": {
-      "title": "Ciblage géographique & audience",
-      "desc": "Définis où et à qui montrer les annonces.",
-      "locationLabel": "Zone géographique",
-      "locationPlaceholder": "Ex : Paris, Lyon, France entière...",
-      "radiusLabel": "Rayon",
-      "devicesLabel": "Appareils",
-      "devices": {
-        "desktop": "Desktop",
-        "mobile": "Mobile",
-        "tablet": "Tablette"
-      },
-      "scheduleLabel": "Planning de diffusion",
-      "schedules": {
-        "always": { "label": "24h/7j", "desc": "Diffusion permanente" },
-        "business": { "label": "Heures de bureau", "desc": "Lun-Ven 8h-19h" },
-        "extended": { "label": "Horaires étendus", "desc": "Lun-Sam 7h-22h" },
-        "custom": { "label": "Personnalisé", "desc": "À configurer dans Google Ads" }
-      }
+      "title": "Quel budget souhaitez-vous investir ?",
+      "desc": "Ce budget est versé directement à Google pour la diffusion de vos annonces.",
+      "daily": "Budget par jour",
+      "monthly": "Budget par mois",
+      "budgetNote": "Ce budget est votre investissement publicitaire versé à Google. Nos honoraires d'accompagnement sont présentés lors de l'appel stratégique.",
+      "roiTitle": "Votre retour sur investissement estimé",
+      "roiSubtitle": "Voici ce que vous pouvez attendre chaque mois avec ce budget",
+      "cpc": "Coût par clic",
+      "clicksMonth": "Visiteurs / mois",
+      "leadsMonth": "Clients potentiels / mois",
+      "costPerLead": "Coût par prospect",
+      "disclaimer": "Estimations basées sur les moyennes de votre secteur. Les résultats réels dépendent de nombreux facteurs."
     },
     "summary": {
-      "title": "Récapitulatif de la campagne",
-      "desc": "Vérifie toutes les informations avant de lancer la configuration dans Google Ads.",
-      "exportTxt": "Exporter en .txt",
-      "exportCsv": "Exporter mots-clés (.csv)"
+      "title": "Votre plan de croissance Google Ads",
+      "desc": "Voici le résumé de votre stratégie personnalisée.",
+      "investmentTitle": "Votre investissement & résultats estimés",
+      "ctaBadge": "Prochaine étape",
+      "ctaTitle": "Prêt à passer à l'action ?",
+      "ctaDesc": "Réservez un appel stratégique gratuit de 30 minutes. Nous analyserons votre marché ensemble et construirons votre campagne sur mesure.",
+      "ctaButton": "Réserver mon appel stratégique",
+      "ctaReassurance": "Gratuit · Sans engagement · 30 min"
     }
   }
 }
