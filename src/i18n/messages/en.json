@@ -801,7 +801,8 @@
       "ctaTitle": "Ready to take action?",
       "ctaDesc": "Book a free 30-minute strategy call. We'll analyze your market together and build your custom campaign.",
       "ctaButton": "Book my strategy call",
-      "ctaReassurance": "Free · No commitment · 30 min"
+      "ctaReassurance": "Free · No commitment · 30 min",
+      "emailSent": "A summary has been sent to your email."
     }
   }
 }

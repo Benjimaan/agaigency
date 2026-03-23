@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ScrollReveal from "./ui/ScrollReveal";
@@ -166,12 +165,54 @@ export default function CampaignBuilder() {
     monthlyBudget: "",
   });
 
+  const leadSentRef = useRef(false);
+  const [leadSent, setLeadSent] = useState(false);
+
   const update = <K extends keyof CampaignData>(key: K, val: CampaignData[K]) =>
     setData((prev) => ({ ...prev, [key]: val }));
 
   const goTo = (target: number) => {
     setDirection(target > step ? 1 : -1);
     setStep(target);
+    // Auto-send lead when arriving at summary step
+    if (target === 4 && !leadSentRef.current) {
+      leadSentRef.current = true;
+      sendLead();
+    }
+  };
+
+  const sendLead = async () => {
+    try {
+      const mBudget = Number(data.monthlyBudget) || (data.dailyBudget ? Number(data.dailyBudget) * 30.4 : 0);
+      const cpcVal = estimateCPC(data.clientType, data.objective);
+      const dBudget = Number(data.dailyBudget) || (data.monthlyBudget ? Number(data.monthlyBudget) / 30.4 : 0);
+      const clicksMonth = dBudget ? Math.round(dBudget / cpcVal) * 30 : 0;
+      const convR = estimateConversionRate(data.objective);
+      const leadsMonth = Math.round(clicksMonth * convR);
+      const cpl = leadsMonth > 0 ? (mBudget / leadsMonth).toFixed(0) : "—";
+
+      await fetch("/api/send-campaign-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          clientName: data.clientName,
+          clientEmail: data.clientEmail,
+          clientActivity: data.clientActivity,
+          clientWebsite: data.clientWebsite,
+          clientType: data.clientType,
+          objective: data.objective,
+          campaignType: data.campaignType,
+          monthlyBudget: mBudget.toFixed(0),
+          estimatedClicks: clicksMonth,
+          estimatedLeads: leadsMonth,
+          costPerLead: cpl,
+          cpc: cpcVal,
+        }),
+      });
+      setLeadSent(true);
+    } catch {
+      // Silent fail — don't block the UX
+    }
   };
 
   /* validation */
@@ -414,16 +455,19 @@ export default function CampaignBuilder() {
           <div className="mb-2 text-sm font-bold uppercase tracking-wider text-gold">{t("summary.ctaBadge")}</div>
           <h3 className="mb-3 text-2xl font-bold tracking-tight">{t("summary.ctaTitle")}</h3>
           <p className="mx-auto mb-6 max-w-md text-sm text-muted">{t("summary.ctaDesc")}</p>
-          <Link
-            href={`/${locale}/request-quote`}
+          <a
+            href={`/${locale}#contact`}
             className="gold-glow-hover inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-bold text-background transition-all hover:bg-gold-light"
           >
             {t("summary.ctaButton")}
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
-          </Link>
-          <p className="mt-4 text-xs text-muted/60">{t("summary.ctaReassurance")}</p>
+          </a>
+          {leadSent && (
+            <p className="mt-3 text-xs text-[#4ade80]">{t("summary.emailSent")}</p>
+          )}
+          <p className="mt-2 text-xs text-muted/60">{t("summary.ctaReassurance")}</p>
         </div>
       </div>
     </div>

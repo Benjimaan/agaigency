@@ -801,7 +801,8 @@
       "ctaTitle": "Prêt à passer à l'action ?",
       "ctaDesc": "Réservez un appel stratégique gratuit de 30 minutes. Nous analyserons votre marché ensemble et construirons votre campagne sur mesure.",
       "ctaButton": "Réserver mon appel stratégique",
-      "ctaReassurance": "Gratuit · Sans engagement · 30 min"
+      "ctaReassurance": "Gratuit · Sans engagement · 30 min",
+      "emailSent": "Un récapitulatif vous a été envoyé par email."
     }
   }
 }
