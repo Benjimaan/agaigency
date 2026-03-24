@@ -7,6 +7,12 @@ import ScrollReveal from "./ui/ScrollReveal";
 
 const EASE = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
 
+const VALUES = [
+  { iconKey: "val0Icon", titleKey: "val0Title", descKey: "val0Desc" },
+  { iconKey: "val1Icon", titleKey: "val1Title", descKey: "val1Desc" },
+  { iconKey: "val2Icon", titleKey: "val2Title", descKey: "val2Desc" },
+] as const;
+
 export default function GoogleAdsTeaser() {
   const t = useTranslations("googleAdsTeaser");
   const locale = useLocale();
@@ -19,10 +25,10 @@ export default function GoogleAdsTeaser() {
             <span className="mb-4 inline-block rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-medium tracking-wider text-gold uppercase">
               {t("badge")}
             </span>
-            <h2 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
               {t("title")}
             </h2>
-            <p className="mx-auto mb-4 max-w-2xl text-lg text-muted">
+            <p className="mx-auto mb-10 max-w-xl text-base text-muted sm:text-lg">
               {t("subtitle")}
             </p>
           </ScrollReveal>
@@ -35,11 +41,14 @@ export default function GoogleAdsTeaser() {
             transition={{ duration: 0.6, delay: 0.15, ease: EASE }}
             className="mb-10 grid gap-4 sm:grid-cols-3"
           >
-            {[0, 1, 2].map((i) => (
-              <div key={i} className="rounded-xl border border-border bg-background p-5 text-center">
-                <div className="mb-2 text-2xl">{t(`values.${i}.icon`)}</div>
-                <div className="text-sm font-semibold">{t(`values.${i}.title`)}</div>
-                <div className="mt-1 text-xs text-muted">{t(`values.${i}.desc`)}</div>
+            {VALUES.map((v) => (
+              <div
+                key={v.titleKey}
+                className="flex flex-col items-center rounded-xl border border-border bg-background px-4 py-6 text-center"
+              >
+                <div className="mb-3 text-3xl">{t(v.iconKey)}</div>
+                <div className="text-sm font-bold leading-tight">{t(v.titleKey)}</div>
+                <div className="mt-1.5 text-xs leading-relaxed text-muted">{t(v.descKey)}</div>
               </div>
             ))}
           </motion.div>
