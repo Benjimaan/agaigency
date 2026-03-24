@@ -5,6 +5,7 @@
     "process": "Méthode",
     "about": "À propos",
     "seoAudit": "Audit SEO",
+    "googleAds": "Google Ads",
     "contact": "Contact"
   },
   "hero": {
@@ -697,6 +698,18 @@
     "privacy": "Politique de confidentialité",
     "rights": "Tous droits réservés.",
     "googleReview": "Laisser un avis Google"
+  },
+  "googleAdsTeaser": {
+    "badge": "Acquisition payante",
+    "title": "Et si Google vous amenait des clients chaque semaine ?",
+    "subtitle": "Simulez votre retour sur investissement en 2 minutes. Découvrez combien de prospects Google Ads peut vous apporter avec votre budget.",
+    "values": {
+      "0": { "icon": "🎯", "title": "Votre budget, votre ROI", "desc": "Estimez le nombre de clients selon votre investissement" },
+      "1": { "icon": "⚡", "title": "Résultats en 2 min", "desc": "Aucune compétence technique requise" },
+      "2": { "icon": "📊", "title": "Stratégie sur mesure", "desc": "Un plan adapté à votre activité et objectif" }
+    },
+    "cta": "Simuler mon ROI Google Ads",
+    "reassurance": "Gratuit · 2 minutes · Sans engagement"
   },
   "campaignBuilder": {
     "pageTitle": "Simulateur Google Ads",

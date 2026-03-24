@@ -16,6 +16,8 @@ export default function Footer() {
     { href: "#portfolio", label: nav("portfolio") },
     { href: "#process", label: nav("process") },
     { href: "#about", label: nav("about") },
+    { href: "#seo-audit", label: nav("seoAudit") },
+    { href: "#google-ads", label: nav("googleAds") },
     { href: "#contact", label: nav("contact") },
   ];
 

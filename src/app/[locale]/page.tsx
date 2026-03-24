@@ -8,6 +8,7 @@ import Process from "@/components/Process";
 import About from "@/components/About";
 import Faq from "@/components/Faq";
 import SeoAuditTeaser from "@/components/SeoAuditTeaser";
+import GoogleAdsTeaser from "@/components/GoogleAdsTeaser";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -25,6 +26,7 @@ export default function Home() {
         <About />
         <Faq />
         <SeoAuditTeaser />
+        <GoogleAdsTeaser />
         <Contact />
       </main>
       <Footer />

@@ -14,6 +14,7 @@ const navLinks = [
   { href: "#process", key: "process" },
   { href: "#about", key: "about" },
   { href: "#seo-audit", key: "seoAudit" },
+  { href: "#google-ads", key: "googleAds" },
   { href: "#contact", key: "contact" },
 ] as const;
 
