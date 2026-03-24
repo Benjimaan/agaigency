@@ -601,94 +601,160 @@
       }
     },
     "audit": {
-      "section.visitors": "Your visitors' experience",
-      "section.google": "Your Google visibility",
-      "section.mobile": "The phone experience",
-      "section.trust": "Trust and security",
-      "perf.lcp.findingGood": "Your site loads in {value} seconds — your visitors see your content quickly",
-      "perf.lcp.findingBad": "Your visitors wait {value} seconds before seeing your site",
-      "perf.lcp.impact": "More than half of visitors leave a site that takes over 3 seconds to load. Every second lost means fewer clients.",
-      "perf.cls.findingGood": "Your page is stable — nothing jumps around during loading",
-      "perf.cls.findingBad": "Elements on your page jump and shift during loading",
-      "perf.cls.impact": "Imagine a visitor trying to tap your contact button, and the button moves at the last second. That's frustrating — and it drives prospects away.",
-      "perf.tbt.findingGood": "Your site responds immediately to clicks — good responsiveness",
-      "perf.tbt.findingBad": "Your site takes {value}ms to respond when a visitor clicks",
-      "perf.tbt.impact": "When a prospect clicks \"Get a quote\" and nothing happens for several seconds, they think the site is broken and leave.",
-      "perf.fcp.findingGood": "Your site starts displaying in {value}s — good first impression",
-      "perf.fcp.findingBad": "Your site shows a blank screen for {value} seconds when opening",
-      "perf.fcp.impact": "A prolonged blank screen makes your site feel broken. Visitors leave before even seeing your offer.",
-      "perf.images.findingGood": "Your photos and images are well optimized for the web",
-      "perf.images.findingBad": "Some images on your site are too heavy and slow down loading",
-      "perf.images.impact": "Heavy images slow down your entire site. Each second of delay costs you about 7% of your contact requests.",
-      "perf.modernFormats.findingGood": "Your images use modern, lightweight formats",
-      "perf.modernFormats.findingBad": "Your images use older formats that are much heavier than necessary",
-      "perf.modernFormats.impact": "Modern image formats are up to 80% lighter. Your site could load much faster without losing any visual quality.",
-      "perf.compression.findingGood": "Your site loads quickly thanks to data compression",
-      "perf.compression.findingBad": "Your site sends raw files without compression — it's slower than it needs to be",
-      "perf.compression.impact": "Without compression, your pages are up to 5 times heavier. It's like mailing a letter in a box — it arrives, but it's slow and wasteful.",
-      "perf.cache.findingGood": "Returning visitors find your site loads instantly",
-      "perf.cache.findingBad": "Returning visitors have to re-download everything each time they visit",
-      "perf.cache.impact": "A returning client has to wait just as long as the first time. Result: they go somewhere else.",
-      "perf.renderBlocking.findingBad": "{count} elements are blocking your page from displaying — your visitors see a blank screen",
-      "perf.renderBlocking.impact": "Your site waits for files to load before showing anything. Meanwhile, your visitors see nothing and grow impatient.",
-      "perf.unusedCss.findingBad": "Your site loads unused code that slows down the display",
-      "perf.unusedCss.impact": "Unnecessary code weighs down your pages. It's dead weight that slows the experience for every visitor.",
-      "perf.unusedJs.findingBad": "Your site loads scripts that serve no purpose on this page",
-      "perf.unusedJs.impact": "These useless scripts block interactivity. Visitors can't click or navigate until everything is loaded.",
-      "seo.title.findingGood": "Your Google title is well written: \"{content}\"",
-      "seo.title.findingBad": "Your Google title is {length} characters — it gets cut off in search results",
-      "seo.title.findingMissing": "Your site has no title in Google search results",
-      "seo.title.impact": "The title is the first thing people see in Google. Without a compelling title, they click on your competitors instead of you.",
-      "seo.meta.findingGood": "Your Google description is well written",
-      "seo.meta.findingBad": "Your Google description is {length} characters — it's not optimal",
-      "seo.meta.findingMissing": "You have no description in Google search results",
-      "seo.meta.impact": "Without a custom description, Google shows a random snippet from your page. You lose control over the first impression you make.",
-      "seo.h1.findingGood": "Your page has a clear main heading: \"{content}\"",
-      "seo.h1.findingMissing": "Your page has no main heading — Google doesn't understand what it's about",
-      "seo.h1.findingMultiple": "Your page has {count} main headings instead of one — Google is confused",
-      "seo.h1.impact": "Google needs a clear main heading to understand your page and show it to the right people. Without it, your site is invisible for the searches that matter.",
-      "seo.imagesAlt.findingGood": "All your images are properly described for Google",
-      "seo.imagesAlt.findingBad": "{missing} of your {total} images are invisible to Google",
-      "seo.imagesAlt.impact": "Google can't \"see\" your photos. You're missing out on all the traffic from Google Images — an often overlooked source of prospects.",
-      "seo.sitemap.findingGood": "Google has a complete map of your site to explore",
-      "seo.sitemap.findingBad": "Google has no map to explore your site",
-      "seo.sitemap.impact": "Without a site map, Google takes weeks — even months — to discover your new pages. Your competitors, on the other hand, get indexed immediately.",
-      "seo.robots.findingGood": "You're properly guiding Google through your site",
-      "seo.robots.findingBad": "You're not guiding Google — it explores your site randomly",
-      "seo.robots.impact": "Without directions, Google may index useless pages and miss the ones that matter. Your key pages might never show up.",
-      "seo.structuredData.findingGood": "Your site uses enhanced data to stand out in Google",
-      "seo.structuredData.findingBad": "Your Google results are basic — no stars, no reviews, no prices",
-      "seo.structuredData.impact": "Competitors who show stars, prices, or reviews in Google naturally get more clicks than you. It's an easy advantage to take.",
-      "seo.og.findingGood": "When someone shares your site, the preview looks complete and professional",
-      "seo.og.findingBad": "When someone shares your site on social media, the preview is empty or poorly formatted",
-      "seo.og.impact": "A shared link without an image or description looks unprofessional. Every share is a missed click opportunity.",
-      "seo.wordCount.findingGood": "Your page has {count} words — rich content that Google loves",
-      "seo.wordCount.findingBad": "Your page has only {count} words — too little to convince Google",
-      "seo.wordCount.impact": "Google favors pages with rich, detailed content. With so little text, your page has very little chance of showing up in search results.",
-      "seo.canonical.findingGood": "Google knows exactly which version of your page is the right one",
-      "seo.canonical.findingBad": "Google might confuse different versions of your page",
-      "seo.canonical.impact": "If Google indexes multiple versions of the same page, your ranking power is diluted. It's like splitting your votes between candidates — nobody wins.",
-      "mobile.viewport.findingGood": "Your site adapts correctly to all screen sizes",
-      "mobile.viewport.findingBad": "Your site doesn't adapt to phone screens",
-      "mobile.viewport.impact": "60% of your visitors browse from their phone. If your site isn't adapted, you're losing more than half your potential clients.",
-      "mobile.fontSize.findingGood": "Text is readable on phone without zooming",
-      "mobile.fontSize.findingBad": "Your site's text is too small on phone — visitors have to zoom to read",
-      "mobile.fontSize.impact": "Your visitors won't zoom in to read your prices or phone number. They'll go to a competitor whose site is readable.",
-      "mobile.tapTargets.findingGood": "Your site's buttons are easy to tap on phone",
-      "mobile.tapTargets.findingBad": "Your site's buttons and links are too small or too close together on phone",
-      "mobile.tapTargets.impact": "When visitors try to tap \"Book\" and hit the wrong button, the frustration makes them leave your site.",
-      "mobile.loadTime.findingGood": "Your site loads in {value}s on phone — fast",
-      "mobile.loadTime.findingBad": "Your site takes {value} seconds to load on phone",
-      "mobile.loadTime.impact": "On mobile networks, your site is slow. Yet it's the mobile version that Google uses to rank you. Slow on mobile = invisible on Google.",
-      "security.https.findingGood": "Your site is secure — visitors see the padlock icon in their browser",
-      "security.https.findingBad": "Your site shows \"Not Secure\" in your visitors' browser",
-      "security.https.impact": "When a visitor sees \"Not Secure,\" they leave immediately. The abandonment rate is 2x higher on unsecured sites. It's also a Google ranking factor.",
-      "security.headers.findingGood": "Your site is protected against common attacks",
-      "security.headers.findingBad": "{missing} security protections are missing from your site",
-      "security.headers.impact": "Your site is vulnerable to attacks that could harm your visitors. Google takes security into account in its rankings.",
-      "security.compression.findingGood": "Your site is optimized to load quickly",
-      "security.compression.findingBad": "Your site sends files without compressing them — it's slower than necessary",
-      "security.compression.impact": "Without compression, your pages are up to 5 times heavier. It's like mailing a letter in a box — it arrives, but it's slow and wasteful."
+      "section": {
+        "visitors": "Your visitors' experience",
+        "google": "Your Google visibility",
+        "mobile": "The phone experience",
+        "trust": "Trust and security"
+      },
+      "perf": {
+        "lcp": {
+          "findingGood": "Your site loads in {value} seconds — your visitors see your content quickly",
+          "findingBad": "Your visitors wait {value} seconds before seeing your site",
+          "impact": "More than half of visitors leave a site that takes over 3 seconds to load. Every second lost means fewer clients."
+        },
+        "cls": {
+          "findingGood": "Your page is stable — nothing jumps around during loading",
+          "findingBad": "Elements on your page jump and shift during loading",
+          "impact": "Imagine a visitor trying to tap your contact button, and the button moves at the last second. That's frustrating — and it drives prospects away."
+        },
+        "tbt": {
+          "findingGood": "Your site responds immediately to clicks — good responsiveness",
+          "findingBad": "Your site takes {value}ms to respond when a visitor clicks",
+          "impact": "When a prospect clicks \"Get a quote\" and nothing happens for several seconds, they think the site is broken and leave."
+        },
+        "fcp": {
+          "findingGood": "Your site starts displaying in {value}s — good first impression",
+          "findingBad": "Your site shows a blank screen for {value} seconds when opening",
+          "impact": "A prolonged blank screen makes your site feel broken. Visitors leave before even seeing your offer."
+        },
+        "images": {
+          "findingGood": "Your photos and images are well optimized for the web",
+          "findingBad": "Some images on your site are too heavy and slow down loading",
+          "impact": "Heavy images slow down your entire site. Each second of delay costs you about 7% of your contact requests."
+        },
+        "modernFormats": {
+          "findingGood": "Your images use modern, lightweight formats",
+          "findingBad": "Your images use older formats that are much heavier than necessary",
+          "impact": "Modern image formats are up to 80% lighter. Your site could load much faster without losing any visual quality."
+        },
+        "compression": {
+          "findingGood": "Your site loads quickly thanks to data compression",
+          "findingBad": "Your site sends raw files without compression — it's slower than it needs to be",
+          "impact": "Without compression, your pages are up to 5 times heavier. It's like mailing a letter in a box — it arrives, but it's slow and wasteful."
+        },
+        "cache": {
+          "findingGood": "Returning visitors find your site loads instantly",
+          "findingBad": "Returning visitors have to re-download everything each time they visit",
+          "impact": "A returning client has to wait just as long as the first time. Result: they go somewhere else."
+        },
+        "renderBlocking": {
+          "findingBad": "{count} elements are blocking your page from displaying — your visitors see a blank screen",
+          "impact": "Your site waits for files to load before showing anything. Meanwhile, your visitors see nothing and grow impatient."
+        },
+        "unusedCss": {
+          "findingBad": "Your site loads unused code that slows down the display",
+          "impact": "Unnecessary code weighs down your pages. It's dead weight that slows the experience for every visitor."
+        },
+        "unusedJs": {
+          "findingBad": "Your site loads scripts that serve no purpose on this page",
+          "impact": "These useless scripts block interactivity. Visitors can't click or navigate until everything is loaded."
+        }
+      },
+      "seo": {
+        "title": {
+          "findingGood": "Your Google title is well written: \"{content}\"",
+          "findingBad": "Your Google title is {length} characters — it gets cut off in search results",
+          "findingMissing": "Your site has no title in Google search results",
+          "impact": "The title is the first thing people see in Google. Without a compelling title, they click on your competitors instead of you."
+        },
+        "meta": {
+          "findingGood": "Your Google description is well written",
+          "findingBad": "Your Google description is {length} characters — it's not optimal",
+          "findingMissing": "You have no description in Google search results",
+          "impact": "Without a custom description, Google shows a random snippet from your page. You lose control over the first impression you make."
+        },
+        "h1": {
+          "findingGood": "Your page has a clear main heading: \"{content}\"",
+          "findingMissing": "Your page has no main heading — Google doesn't understand what it's about",
+          "findingMultiple": "Your page has {count} main headings instead of one — Google is confused",
+          "impact": "Google needs a clear main heading to understand your page and show it to the right people. Without it, your site is invisible for the searches that matter."
+        },
+        "imagesAlt": {
+          "findingGood": "All your images are properly described for Google",
+          "findingBad": "{missing} of your {total} images are invisible to Google",
+          "impact": "Google can't \"see\" your photos. You're missing out on all the traffic from Google Images — an often overlooked source of prospects."
+        },
+        "sitemap": {
+          "findingGood": "Google has a complete map of your site to explore",
+          "findingBad": "Google has no map to explore your site",
+          "impact": "Without a site map, Google takes weeks — even months — to discover your new pages. Your competitors, on the other hand, get indexed immediately."
+        },
+        "robots": {
+          "findingGood": "You're properly guiding Google through your site",
+          "findingBad": "You're not guiding Google — it explores your site randomly",
+          "impact": "Without directions, Google may index useless pages and miss the ones that matter. Your key pages might never show up."
+        },
+        "structuredData": {
+          "findingGood": "Your site uses enhanced data to stand out in Google",
+          "findingBad": "Your Google results are basic — no stars, no reviews, no prices",
+          "impact": "Competitors who show stars, prices, or reviews in Google naturally get more clicks than you. It's an easy advantage to take."
+        },
+        "og": {
+          "findingGood": "When someone shares your site, the preview looks complete and professional",
+          "findingBad": "When someone shares your site on social media, the preview is empty or poorly formatted",
+          "impact": "A shared link without an image or description looks unprofessional. Every share is a missed click opportunity."
+        },
+        "wordCount": {
+          "findingGood": "Your page has {count} words — rich content that Google loves",
+          "findingBad": "Your page has only {count} words — too little to convince Google",
+          "impact": "Google favors pages with rich, detailed content. With so little text, your page has very little chance of showing up in search results."
+        },
+        "canonical": {
+          "findingGood": "Google knows exactly which version of your page is the right one",
+          "findingBad": "Google might confuse different versions of your page",
+          "impact": "If Google indexes multiple versions of the same page, your ranking power is diluted. It's like splitting your votes between candidates — nobody wins."
+        }
+      },
+      "mobile": {
+        "viewport": {
+          "findingGood": "Your site adapts correctly to all screen sizes",
+          "findingBad": "Your site doesn't adapt to phone screens",
+          "impact": "60% of your visitors browse from their phone. If your site isn't adapted, you're losing more than half your potential clients."
+        },
+        "fontSize": {
+          "findingGood": "Text is readable on phone without zooming",
+          "findingBad": "Your site's text is too small on phone — visitors have to zoom to read",
+          "impact": "Your visitors won't zoom in to read your prices or phone number. They'll go to a competitor whose site is readable."
+        },
+        "tapTargets": {
+          "findingGood": "Your site's buttons are easy to tap on phone",
+          "findingBad": "Your site's buttons and links are too small or too close together on phone",
+          "impact": "When visitors try to tap \"Book\" and hit the wrong button, the frustration makes them leave your site."
+        },
+        "loadTime": {
+          "findingGood": "Your site loads in {value}s on phone — fast",
+          "findingBad": "Your site takes {value} seconds to load on phone",
+          "impact": "On mobile networks, your site is slow. Yet it's the mobile version that Google uses to rank you. Slow on mobile = invisible on Google."
+        }
+      },
+      "security": {
+        "https": {
+          "findingGood": "Your site is secure — visitors see the padlock icon in their browser",
+          "findingBad": "Your site shows \"Not Secure\" in your visitors' browser",
+          "impact": "When a visitor sees \"Not Secure,\" they leave immediately. The abandonment rate is 2x higher on unsecured sites. It's also a Google ranking factor."
+        },
+        "headers": {
+          "findingGood": "Your site is protected against common attacks",
+          "findingBad": "{missing} security protections are missing from your site",
+          "impact": "Your site is vulnerable to attacks that could harm your visitors. Google takes security into account in its rankings."
+        },
+        "compression": {
+          "findingGood": "Your site is optimized to load quickly",
+          "findingBad": "Your site sends files without compressing them — it's slower than necessary",
+          "impact": "Without compression, your pages are up to 5 times heavier. It's like mailing a letter in a box — it arrives, but it's slow and wasteful."
+        }
+      }
     }
   },
   "footer": {

@@ -601,94 +601,160 @@
       }
     },
     "audit": {
-      "section.visitors": "L'expérience de vos visiteurs",
-      "section.google": "Votre visibilité sur Google",
-      "section.mobile": "L'expérience sur téléphone",
-      "section.trust": "Confiance et sécurité",
-      "perf.lcp.findingGood": "Votre site s'affiche en {value} secondes — vos visiteurs voient votre contenu rapidement",
-      "perf.lcp.findingBad": "Vos visiteurs attendent {value} secondes avant de voir votre site",
-      "perf.lcp.impact": "Plus de la moitié des visiteurs quittent un site qui met plus de 3 secondes à s'afficher. Chaque seconde perdue, ce sont des clients en moins.",
-      "perf.cls.findingGood": "Votre page est stable — rien ne bouge pendant le chargement",
-      "perf.cls.findingBad": "Des éléments de votre page bougent et sautent pendant le chargement",
-      "perf.cls.impact": "Imaginez un visiteur qui veut cliquer sur votre bouton de contact, et le bouton se déplace au dernier moment. C'est frustrant — et ça fait partir vos prospects.",
-      "perf.tbt.findingGood": "Votre site réagit immédiatement aux clics — bonne réactivité",
-      "perf.tbt.findingBad": "Votre site met {value}ms à réagir quand un visiteur clique",
-      "perf.tbt.impact": "Quand un prospect clique sur \"Demander un devis\" et que rien ne se passe pendant plusieurs secondes, il pense que le site est en panne et quitte la page.",
-      "perf.fcp.findingGood": "Votre site commence à s'afficher en {value}s — bonne première impression",
-      "perf.fcp.findingBad": "Votre site affiche un écran blanc pendant {value} secondes à l'ouverture",
-      "perf.fcp.impact": "Un écran blanc prolongé donne l'impression que votre site est en panne. Vos visiteurs partent avant même de voir votre offre.",
-      "perf.images.findingGood": "Vos photos et images sont bien optimisées pour le web",
-      "perf.images.findingBad": "Certaines images de votre site sont trop lourdes et ralentissent l'affichage",
-      "perf.images.impact": "Des images lourdes ralentissent tout votre site. Chaque seconde de retard vous coûte environ 7% de vos demandes de contact.",
-      "perf.modernFormats.findingGood": "Vos images utilisent des formats modernes et légers",
-      "perf.modernFormats.findingBad": "Vos images utilisent des formats anciens, beaucoup plus lourds que nécessaire",
-      "perf.modernFormats.impact": "Les formats d'images modernes sont jusqu'à 80% plus légers. Votre site pourrait s'afficher beaucoup plus vite sans perdre en qualité visuelle.",
-      "perf.compression.findingGood": "Votre site charge rapidement grâce à la compression des données",
-      "perf.compression.findingBad": "Votre site envoie des fichiers bruts, sans compression — il est plus lent que nécessaire",
-      "perf.compression.impact": "Sans compression, vos pages sont jusqu'à 5 fois plus lourdes. C'est comme envoyer un colis sans l'emballer — ça prend beaucoup plus de place pour le même contenu.",
-      "perf.cache.findingGood": "Vos visiteurs réguliers retrouvent votre site instantanément",
-      "perf.cache.findingBad": "Vos visiteurs récurrents doivent tout re-télécharger à chaque visite",
-      "perf.cache.impact": "Un client qui revient voir votre site doit attendre aussi longtemps que la première fois. Résultat : il va voir ailleurs.",
-      "perf.renderBlocking.findingBad": "{count} éléments bloquent l'affichage de votre page — vos visiteurs voient un écran blanc",
-      "perf.renderBlocking.impact": "Votre site attend le chargement de fichiers avant de s'afficher. Pendant ce temps, vos visiteurs ne voient rien et s'impatientent.",
-      "perf.unusedCss.findingBad": "Votre site charge du code inutilisé qui ralentit l'affichage",
-      "perf.unusedCss.impact": "Du code superflu alourdit vos pages. C'est du poids mort qui ralentit l'expérience de chaque visiteur.",
-      "perf.unusedJs.findingBad": "Votre site charge des scripts qui ne servent à rien sur cette page",
-      "perf.unusedJs.impact": "Ces scripts inutiles bloquent l'interactivité. Vos visiteurs ne peuvent pas cliquer ou naviguer tant que tout n'est pas chargé.",
-      "seo.title.findingGood": "Votre titre dans Google est bien rédigé : \"{content}\"",
-      "seo.title.findingBad": "Votre titre dans Google fait {length} caractères — il est tronqué dans les résultats de recherche",
-      "seo.title.findingMissing": "Votre site n'a pas de titre dans les résultats Google",
-      "seo.title.impact": "Le titre est la première chose que les gens voient dans Google. Sans titre accrocheur, ils cliquent sur vos concurrents plutôt que sur vous.",
-      "seo.meta.findingGood": "La description de votre site dans Google est bien rédigée",
-      "seo.meta.findingBad": "La description de votre site dans Google fait {length} caractères — elle n'est pas optimale",
-      "seo.meta.findingMissing": "Vous n'avez pas de description dans les résultats Google",
-      "seo.meta.impact": "Sans description personnalisée, Google affiche un extrait aléatoire de votre page. Vous perdez le contrôle sur la première impression que vous donnez.",
-      "seo.h1.findingGood": "Votre page a un titre principal clair : \"{content}\"",
-      "seo.h1.findingMissing": "Votre page n'a pas de titre principal — Google ne comprend pas de quoi elle parle",
-      "seo.h1.findingMultiple": "Votre page a {count} titres principaux au lieu d'un seul — Google est confus",
-      "seo.h1.impact": "Google a besoin d'un titre principal clair pour comprendre votre page et la proposer aux bonnes personnes. Sans ça, votre site est invisible sur les recherches qui comptent.",
-      "seo.imagesAlt.findingGood": "Toutes vos images sont correctement décrites pour Google",
-      "seo.imagesAlt.findingBad": "{missing} de vos {total} images sont invisibles pour Google",
-      "seo.imagesAlt.impact": "Google ne peut pas \"voir\" vos photos. Vous passez à côté de tout le trafic venant de Google Images — une source de prospects souvent négligée.",
-      "seo.sitemap.findingGood": "Google a une carte complète de votre site pour l'explorer",
-      "seo.sitemap.findingBad": "Google n'a pas de carte pour explorer votre site",
-      "seo.sitemap.impact": "Sans carte de votre site, Google met des semaines — voire des mois — à découvrir vos nouvelles pages. Vos concurrents, eux, sont indexés immédiatement.",
-      "seo.robots.findingGood": "Vous guidez correctement Google dans l'exploration de votre site",
-      "seo.robots.findingBad": "Vous ne guidez pas Google — il explore votre site au hasard",
-      "seo.robots.impact": "Sans directives, Google peut indexer des pages inutiles et ignorer celles qui comptent. Vos pages stratégiques risquent de ne jamais apparaître.",
-      "seo.structuredData.findingGood": "Votre site utilise des données enrichies pour se démarquer dans Google",
-      "seo.structuredData.findingBad": "Vos résultats Google sont basiques — pas d'étoiles, pas d'avis, pas de prix",
-      "seo.structuredData.impact": "Vos concurrents qui affichent des étoiles, des prix ou des avis dans Google obtiennent naturellement plus de clics que vous. C'est un avantage facile à prendre.",
-      "seo.og.findingGood": "Quand quelqu'un partage votre site, l'aperçu est complet et professionnel",
-      "seo.og.findingBad": "Quand quelqu'un partage votre site sur les réseaux sociaux, l'aperçu est vide ou mal présenté",
-      "seo.og.impact": "Un lien partagé sans image ni description donne une impression d'amateurisme. Chaque partage est une opportunité de clic perdue.",
-      "seo.wordCount.findingGood": "Votre page contient {count} mots — un contenu riche qui plaît à Google",
-      "seo.wordCount.findingBad": "Votre page contient seulement {count} mots — trop peu pour convaincre Google",
-      "seo.wordCount.impact": "Google favorise les pages avec du contenu riche et détaillé. Avec si peu de texte, votre page a très peu de chances d'apparaître dans les résultats de recherche.",
-      "seo.canonical.findingGood": "Google sait exactement quelle version de votre page est la bonne",
-      "seo.canonical.findingBad": "Google peut confondre différentes versions de votre page",
-      "seo.canonical.impact": "Si Google indexe plusieurs versions de la même page, votre référencement est dilué. C'est comme diviser vos votes entre plusieurs candidats — personne ne gagne.",
-      "mobile.viewport.findingGood": "Votre site s'adapte correctement à tous les écrans",
-      "mobile.viewport.findingBad": "Votre site ne s'adapte pas aux écrans de téléphone",
-      "mobile.viewport.impact": "60% de vos visiteurs naviguent depuis leur téléphone. Si votre site n'est pas adapté, vous perdez plus de la moitié de vos clients potentiels.",
-      "mobile.fontSize.findingGood": "Le texte est lisible sur téléphone sans avoir à zoomer",
-      "mobile.fontSize.findingBad": "Le texte de votre site est trop petit sur téléphone — il faut zoomer pour lire",
-      "mobile.fontSize.impact": "Vos visiteurs ne vont pas zoomer pour lire vos tarifs ou votre numéro de téléphone. Ils iront chez un concurrent dont le site est lisible.",
-      "mobile.tapTargets.findingGood": "Les boutons de votre site sont faciles à toucher sur téléphone",
-      "mobile.tapTargets.findingBad": "Les boutons et liens de votre site sont trop petits ou trop rapprochés sur téléphone",
-      "mobile.tapTargets.impact": "Quand vos visiteurs essaient de toucher \"Réserver\" et appuient sur le mauvais bouton, la frustration les pousse à quitter votre site.",
-      "mobile.loadTime.findingGood": "Votre site se charge en {value}s sur téléphone — rapide",
-      "mobile.loadTime.findingBad": "Votre site met {value} secondes à se charger sur téléphone",
-      "mobile.loadTime.impact": "Sur un réseau mobile, votre site est lent. C'est pourtant la version mobile que Google utilise pour vous classer. Lent sur mobile = invisible sur Google.",
-      "security.https.findingGood": "Votre site est sécurisé — vos visiteurs le voient via le cadenas dans leur navigateur",
-      "security.https.findingBad": "Votre site affiche \"Non sécurisé\" dans le navigateur de vos visiteurs",
-      "security.https.impact": "Quand un visiteur voit \"Non sécurisé\", il quitte immédiatement. Le taux d'abandon est 2 fois plus élevé sur un site non sécurisé. C'est aussi un critère de classement Google.",
-      "security.headers.findingGood": "Votre site est protégé contre les attaques courantes",
-      "security.headers.findingBad": "{missing} protections de sécurité manquent sur votre site",
-      "security.headers.impact": "Votre site est vulnérable à des attaques qui pourraient nuire à vos visiteurs. Google prend la sécurité en compte dans son classement.",
-      "security.compression.findingGood": "Votre site est optimisé pour charger rapidement",
-      "security.compression.findingBad": "Votre site transmet ses fichiers sans les compresser — il est plus lent que nécessaire",
-      "security.compression.impact": "Sans compression, vos pages sont jusqu'à 5 fois plus lourdes. C'est comme envoyer une lettre dans un carton — ça arrive, mais c'est lent et inutile."
+      "section": {
+        "visitors": "L'expérience de vos visiteurs",
+        "google": "Votre visibilité sur Google",
+        "mobile": "L'expérience sur téléphone",
+        "trust": "Confiance et sécurité"
+      },
+      "perf": {
+        "lcp": {
+          "findingGood": "Votre site s'affiche en {value} secondes — vos visiteurs voient votre contenu rapidement",
+          "findingBad": "Vos visiteurs attendent {value} secondes avant de voir votre site",
+          "impact": "Plus de la moitié des visiteurs quittent un site qui met plus de 3 secondes à s'afficher. Chaque seconde perdue, ce sont des clients en moins."
+        },
+        "cls": {
+          "findingGood": "Votre page est stable — rien ne bouge pendant le chargement",
+          "findingBad": "Des éléments de votre page bougent et sautent pendant le chargement",
+          "impact": "Imaginez un visiteur qui veut cliquer sur votre bouton de contact, et le bouton se déplace au dernier moment. C'est frustrant — et ça fait partir vos prospects."
+        },
+        "tbt": {
+          "findingGood": "Votre site réagit immédiatement aux clics — bonne réactivité",
+          "findingBad": "Votre site met {value}ms à réagir quand un visiteur clique",
+          "impact": "Quand un prospect clique sur \"Demander un devis\" et que rien ne se passe pendant plusieurs secondes, il pense que le site est en panne et quitte la page."
+        },
+        "fcp": {
+          "findingGood": "Votre site commence à s'afficher en {value}s — bonne première impression",
+          "findingBad": "Votre site affiche un écran blanc pendant {value} secondes à l'ouverture",
+          "impact": "Un écran blanc prolongé donne l'impression que votre site est en panne. Vos visiteurs partent avant même de voir votre offre."
+        },
+        "images": {
+          "findingGood": "Vos photos et images sont bien optimisées pour le web",
+          "findingBad": "Certaines images de votre site sont trop lourdes et ralentissent l'affichage",
+          "impact": "Des images lourdes ralentissent tout votre site. Chaque seconde de retard vous coûte environ 7% de vos demandes de contact."
+        },
+        "modernFormats": {
+          "findingGood": "Vos images utilisent des formats modernes et légers",
+          "findingBad": "Vos images utilisent des formats anciens, beaucoup plus lourds que nécessaire",
+          "impact": "Les formats d'images modernes sont jusqu'à 80% plus légers. Votre site pourrait s'afficher beaucoup plus vite sans perdre en qualité visuelle."
+        },
+        "compression": {
+          "findingGood": "Votre site charge rapidement grâce à la compression des données",
+          "findingBad": "Votre site envoie des fichiers bruts, sans compression — il est plus lent que nécessaire",
+          "impact": "Sans compression, vos pages sont jusqu'à 5 fois plus lourdes. C'est comme envoyer un colis sans l'emballer — ça prend beaucoup plus de place pour le même contenu."
+        },
+        "cache": {
+          "findingGood": "Vos visiteurs réguliers retrouvent votre site instantanément",
+          "findingBad": "Vos visiteurs récurrents doivent tout re-télécharger à chaque visite",
+          "impact": "Un client qui revient voir votre site doit attendre aussi longtemps que la première fois. Résultat : il va voir ailleurs."
+        },
+        "renderBlocking": {
+          "findingBad": "{count} éléments bloquent l'affichage de votre page — vos visiteurs voient un écran blanc",
+          "impact": "Votre site attend le chargement de fichiers avant de s'afficher. Pendant ce temps, vos visiteurs ne voient rien et s'impatientent."
+        },
+        "unusedCss": {
+          "findingBad": "Votre site charge du code inutilisé qui ralentit l'affichage",
+          "impact": "Du code superflu alourdit vos pages. C'est du poids mort qui ralentit l'expérience de chaque visiteur."
+        },
+        "unusedJs": {
+          "findingBad": "Votre site charge des scripts qui ne servent à rien sur cette page",
+          "impact": "Ces scripts inutiles bloquent l'interactivité. Vos visiteurs ne peuvent pas cliquer ou naviguer tant que tout n'est pas chargé."
+        }
+      },
+      "seo": {
+        "title": {
+          "findingGood": "Votre titre dans Google est bien rédigé : \"{content}\"",
+          "findingBad": "Votre titre dans Google fait {length} caractères — il est tronqué dans les résultats de recherche",
+          "findingMissing": "Votre site n'a pas de titre dans les résultats Google",
+          "impact": "Le titre est la première chose que les gens voient dans Google. Sans titre accrocheur, ils cliquent sur vos concurrents plutôt que sur vous."
+        },
+        "meta": {
+          "findingGood": "La description de votre site dans Google est bien rédigée",
+          "findingBad": "La description de votre site dans Google fait {length} caractères — elle n'est pas optimale",
+          "findingMissing": "Vous n'avez pas de description dans les résultats Google",
+          "impact": "Sans description personnalisée, Google affiche un extrait aléatoire de votre page. Vous perdez le contrôle sur la première impression que vous donnez."
+        },
+        "h1": {
+          "findingGood": "Votre page a un titre principal clair : \"{content}\"",
+          "findingMissing": "Votre page n'a pas de titre principal — Google ne comprend pas de quoi elle parle",
+          "findingMultiple": "Votre page a {count} titres principaux au lieu d'un seul — Google est confus",
+          "impact": "Google a besoin d'un titre principal clair pour comprendre votre page et la proposer aux bonnes personnes. Sans ça, votre site est invisible sur les recherches qui comptent."
+        },
+        "imagesAlt": {
+          "findingGood": "Toutes vos images sont correctement décrites pour Google",
+          "findingBad": "{missing} de vos {total} images sont invisibles pour Google",
+          "impact": "Google ne peut pas \"voir\" vos photos. Vous passez à côté de tout le trafic venant de Google Images — une source de prospects souvent négligée."
+        },
+        "sitemap": {
+          "findingGood": "Google a une carte complète de votre site pour l'explorer",
+          "findingBad": "Google n'a pas de carte pour explorer votre site",
+          "impact": "Sans carte de votre site, Google met des semaines — voire des mois — à découvrir vos nouvelles pages. Vos concurrents, eux, sont indexés immédiatement."
+        },
+        "robots": {
+          "findingGood": "Vous guidez correctement Google dans l'exploration de votre site",
+          "findingBad": "Vous ne guidez pas Google — il explore votre site au hasard",
+          "impact": "Sans directives, Google peut indexer des pages inutiles et ignorer celles qui comptent. Vos pages stratégiques risquent de ne jamais apparaître."
+        },
+        "structuredData": {
+          "findingGood": "Votre site utilise des données enrichies pour se démarquer dans Google",
+          "findingBad": "Vos résultats Google sont basiques — pas d'étoiles, pas d'avis, pas de prix",
+          "impact": "Vos concurrents qui affichent des étoiles, des prix ou des avis dans Google obtiennent naturellement plus de clics que vous. C'est un avantage facile à prendre."
+        },
+        "og": {
+          "findingGood": "Quand quelqu'un partage votre site, l'aperçu est complet et professionnel",
+          "findingBad": "Quand quelqu'un partage votre site sur les réseaux sociaux, l'aperçu est vide ou mal présenté",
+          "impact": "Un lien partagé sans image ni description donne une impression d'amateurisme. Chaque partage est une opportunité de clic perdue."
+        },
+        "wordCount": {
+          "findingGood": "Votre page contient {count} mots — un contenu riche qui plaît à Google",
+          "findingBad": "Votre page contient seulement {count} mots — trop peu pour convaincre Google",
+          "impact": "Google favorise les pages avec du contenu riche et détaillé. Avec si peu de texte, votre page a très peu de chances d'apparaître dans les résultats de recherche."
+        },
+        "canonical": {
+          "findingGood": "Google sait exactement quelle version de votre page est la bonne",
+          "findingBad": "Google peut confondre différentes versions de votre page",
+          "impact": "Si Google indexe plusieurs versions de la même page, votre référencement est dilué. C'est comme diviser vos votes entre plusieurs candidats — personne ne gagne."
+        }
+      },
+      "mobile": {
+        "viewport": {
+          "findingGood": "Votre site s'adapte correctement à tous les écrans",
+          "findingBad": "Votre site ne s'adapte pas aux écrans de téléphone",
+          "impact": "60% de vos visiteurs naviguent depuis leur téléphone. Si votre site n'est pas adapté, vous perdez plus de la moitié de vos clients potentiels."
+        },
+        "fontSize": {
+          "findingGood": "Le texte est lisible sur téléphone sans avoir à zoomer",
+          "findingBad": "Le texte de votre site est trop petit sur téléphone — il faut zoomer pour lire",
+          "impact": "Vos visiteurs ne vont pas zoomer pour lire vos tarifs ou votre numéro de téléphone. Ils iront chez un concurrent dont le site est lisible."
+        },
+        "tapTargets": {
+          "findingGood": "Les boutons de votre site sont faciles à toucher sur téléphone",
+          "findingBad": "Les boutons et liens de votre site sont trop petits ou trop rapprochés sur téléphone",
+          "impact": "Quand vos visiteurs essaient de toucher \"Réserver\" et appuient sur le mauvais bouton, la frustration les pousse à quitter votre site."
+        },
+        "loadTime": {
+          "findingGood": "Votre site se charge en {value}s sur téléphone — rapide",
+          "findingBad": "Votre site met {value} secondes à se charger sur téléphone",
+          "impact": "Sur un réseau mobile, votre site est lent. C'est pourtant la version mobile que Google utilise pour vous classer. Lent sur mobile = invisible sur Google."
+        }
+      },
+      "security": {
+        "https": {
+          "findingGood": "Votre site est sécurisé — vos visiteurs le voient via le cadenas dans leur navigateur",
+          "findingBad": "Votre site affiche \"Non sécurisé\" dans le navigateur de vos visiteurs",
+          "impact": "Quand un visiteur voit \"Non sécurisé\", il quitte immédiatement. Le taux d'abandon est 2 fois plus élevé sur un site non sécurisé. C'est aussi un critère de classement Google."
+        },
+        "headers": {
+          "findingGood": "Votre site est protégé contre les attaques courantes",
+          "findingBad": "{missing} protections de sécurité manquent sur votre site",
+          "impact": "Votre site est vulnérable à des attaques qui pourraient nuire à vos visiteurs. Google prend la sécurité en compte dans son classement."
+        },
+        "compression": {
+          "findingGood": "Votre site est optimisé pour charger rapidement",
+          "findingBad": "Votre site transmet ses fichiers sans les compresser — il est plus lent que nécessaire",
+          "impact": "Sans compression, vos pages sont jusqu'à 5 fois plus lourdes. C'est comme envoyer une lettre dans un carton — ça arrive, mais c'est lent et inutile."
+        }
+      }
     }
   },
   "footer": {
