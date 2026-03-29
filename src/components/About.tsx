@@ -1,9 +1,9 @@
 "use client";
 
+import { useState, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { useRef } from "react";
 import ScrollReveal from "./ui/ScrollReveal";
 import RevealText from "./ui/RevealText";
 
@@ -21,6 +21,50 @@ const valueIcons = [
     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
   </svg>,
 ];
+
+function VideoPlayer() {
+  const [playing, setPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setPlaying(true);
+    }
+  };
+
+  return (
+    <div className="group relative mt-8 aspect-video w-full overflow-hidden rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+      <video
+        ref={videoRef}
+        className="h-full w-full object-cover"
+        controls={playing}
+        playsInline
+        preload="metadata"
+        onEnded={() => setPlaying(false)}
+        onPause={() => setPlaying(false)}
+        onPlay={() => setPlaying(true)}
+      >
+        <source src="/agaigency-showreel-v2.mp4" type="video/mp4" />
+      </video>
+
+      {/* Custom play button overlay */}
+      {!playing && (
+        <button
+          onClick={handlePlay}
+          aria-label="Lire la vidéo"
+          className="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors hover:bg-black/20"
+        >
+          <div className="flex h-20 w-20 items-center justify-center rounded-full border-2 border-gold/60 bg-gold/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:border-gold group-hover:bg-gold/30 group-hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]">
+            <svg className="ml-1 h-8 w-8 text-gold" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </button>
+      )}
+    </div>
+  );
+}
 
 export default function About() {
   const t = useTranslations("about");
@@ -75,17 +119,7 @@ export default function About() {
 
             {/* Showreel */}
             <ScrollReveal delay={0.3}>
-              <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-                <video
-                  className="h-full w-full object-cover"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster=""
-                >
-                  <source src="/agaigency-showreel-v2.mp4" type="video/mp4" />
-                </video>
-              </div>
+              <VideoPlayer />
             </ScrollReveal>
           </div>
 

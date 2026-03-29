@@ -11,8 +11,9 @@
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
     "cheerio": "^1.2.0",
-    "framer-motion": "^12.34.0",
+    "framer-motion": "^12.38.0",
     "gsap": "^3.14.2",
+    "lucide-react": "^1.7.0",
     "next": "16.1.6",
     "next-intl": "^4.8.2",
     "react": "19.2.3",
