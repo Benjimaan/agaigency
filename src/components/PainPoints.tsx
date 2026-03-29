@@ -52,6 +52,19 @@ export default function PainPoints() {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* Micro-CTA → scroll to Services */}
+        <ScrollReveal delay={0.5} className="mt-12 text-center">
+          <a
+            href="#services"
+            className="group inline-flex items-center gap-2 text-sm font-medium text-gold transition-colors hover:text-gold-dark"
+          >
+            {t("cta")}
+            <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </ScrollReveal>
       </div>
     </section>
   );

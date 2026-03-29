@@ -21,6 +21,7 @@
     "badge": "The reality",
     "title": "Your website is costing you money. Every single day.",
     "subtitle": "These 3 signals indicate your digital presence is sabotaging your growth.",
+    "cta": "See how we solve this",
     "items": {
       "visibility": {
         "title": "Invisible where your clients search",
@@ -36,10 +37,107 @@
       }
     }
   },
+  "expertise": {
+    "badge": "Our Approach",
+    "title": "The Engineering of <gold>Conversion</gold>",
+    "subtitle": "We don't settle for beautiful visuals. We build complete acquisition machines.",
+    "items": {
+      "engine": {
+        "title": "The Engine",
+        "description": "An ultra-fast architecture and custom code for formidable technical performance. Your site loads in under 2 seconds."
+      },
+      "body": {
+        "title": "The Bodywork",
+        "description": "A premium, minimalist UI/UX design crafted to establish your authority from the first second. Every pixel serves conversion."
+      },
+      "fuel": {
+        "title": "The Fuel",
+        "description": "SEO strategies and persuasive copywriting to turn your traffic into high-end clients. Content that converts."
+      }
+    }
+  },
+  "premiumProcess": {
+    "badge": "Methodology",
+    "title": "Our<br></br><gold>bespoke approach.</gold>",
+    "description": "Excellence is never improvised. It's the result of a meticulous methodology, combining technical engineering and sales psychology.",
+    "steps": {
+      "audit": {
+        "title": "Audit & Architecture",
+        "description": "We never start with design. We analyze your market, competitors and friction points in your current acquisition to build a bespoke strategy."
+      },
+      "craft": {
+        "title": "Digital Craftsmanship",
+        "description": "Creating a luxurious, minimalist UI/UX interface. Every pixel, animation and word is designed to establish your authority and guide toward conversion."
+      },
+      "accelerate": {
+        "title": "Acceleration",
+        "description": "The engine is ready — we inject the fuel. SEO systems, Web-to-Store and lead generation to transform your site into a high-return asset."
+      }
+    }
+  },
+  "portfolioGallery": {
+    "stepLabel": "Step {number}",
+    "steps": {
+      "architecture": {
+        "title": "The Initial Architecture",
+        "description": "Market analysis and web ecosystem structuring to ensure solid, conversion-oriented foundations."
+      },
+      "visual": {
+        "title": "Visual Craftsmanship",
+        "description": "Creating a bespoke art direction. Dark, luxurious and minimalist interfaces designed to leave a lasting impression."
+      },
+      "engineering": {
+        "title": "Next.js Engineering",
+        "description": "Pure development and fluid animation integration. The site isn't just beautiful — it loads at lightning speed."
+      },
+      "conversion": {
+        "title": "The Conversion Engine",
+        "description": "Deploying acquisition strategies. The visitor is captivated, the prospect is qualified, the client is closed."
+      }
+    }
+  },
+  "pricing": {
+    "badge": "Investment",
+    "title": "An investment,<br></br><gold>not an expense.</gold>",
+    "subtitle": "Choose the digital ecosystem that will propel your business to the next level.",
+    "popularBadge": "Flagship Offer",
+    "plans": {
+      "vitrine": {
+        "name": "Showcase Excellence",
+        "description": "The perfect architecture to establish your authority online.",
+        "price": "Custom quote",
+        "features": [
+          "Custom premium UI/UX design",
+          "Ultra-fast Next.js development",
+          "Smooth animations (Framer Motion)",
+          "Secure database",
+          "Vercel hosting included",
+          "Basic SEO optimization"
+        ],
+        "cta": "Request an audit"
+      },
+      "acquisition": {
+        "name": "Acquisition Machine",
+        "description": "The tech engine coupled with the fuel of conversion.",
+        "price": "WaaS Pack",
+        "priceSub": "+ % on generated leads",
+        "features": [
+          "Everything in 'Showcase' included",
+          "Complete persuasive copywriting",
+          "Advanced SEO strategy (Traffic)",
+          "Automated sales funnels",
+          "Web-to-Store system (Bookings)",
+          "Unlimited maintenance & updates"
+        ],
+        "cta": "Start the machine"
+      }
+    }
+  },
   "services": {
     "badge": "Growth Levers",
     "title": "4 levers. One objective: your growth.",
     "subtitle": "We don't sell websites. We build systems that generate measurable results for your business.",
+    "cardCta": "Learn more",
     "items": {
       "design": {
         "title": "UI/UX Design",
@@ -388,7 +486,9 @@
         "question": "Will my site be optimized for SEO?",
         "answer": "This isn't optional — it's a prerequisite. Every site we deliver is optimized for search: technical architecture, load times, semantic markup, metadata. We can also manage your SEO strategy long-term for compounding results."
       }
-    }
+    },
+    "stillQuestions": "Have a question specific to your project?",
+    "ctaContact": "Let's talk about it"
   },
   "legal": {
     "title": "Legal notice",
@@ -410,6 +510,11 @@
     "title": "Your growth starts with a conversation.",
     "subtitle": "Book 30 minutes. We'll analyze your situation and show you exactly how to accelerate.",
     "cta": "Schedule a strategy call",
+    "reassurance": {
+      "duration": "30 min · video or phone",
+      "free": "Free · No commitment",
+      "response": "Response within 24h"
+    },
     "form": {
       "name": "Your name",
       "email": "Your email",
@@ -756,6 +861,11 @@
         }
       }
     }
+  },
+  "ctaBandeau": {
+    "title": "Ready to transform your digital presence?",
+    "subtitle": "Book a 30-minute strategy call. We'll analyze your situation and show you the shortest path to your goals.",
+    "cta": "Book my free call"
   },
   "footer": {
     "description": "Digital growth partner for leaders who refuse mediocrity.",

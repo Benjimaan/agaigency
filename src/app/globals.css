@@ -59,6 +59,127 @@ body::after {
               0 0 80px rgba(212, 175, 55, 0.08);
 }
 
+/* ─── Unified CTA system — color fill hover ─────────── */
+
+/*
+ * Mechanic: a ::before pseudo-element fills the button
+ * horizontally (scaleX 0→1) from the left on hover.
+ * Text/icons sit above via relative z-10.
+ * overflow-hidden + border-radius keep the fill contained.
+ */
+
+.cta-base {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  overflow: hidden;
+  transition: color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Fill layer — sits behind all content (text + icons) */
+.cta-base::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: -1;
+}
+
+.cta-base:hover::before {
+  transform: scaleX(1);
+}
+
+.cta-base:active {
+  transform: scale(0.97);
+}
+
+.cta-base:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* ── Primary: gold → darker gold fill ── */
+.cta-primary {
+  background: var(--color-gold);
+  color: var(--color-background);
+  padding: 1rem 2.5rem;
+}
+
+.cta-primary::before {
+  background: var(--color-gold-dark);
+}
+
+.cta-primary:hover {
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.35);
+}
+
+/* ── Secondary: transparent → gold fill, text goes dark ── */
+.cta-secondary {
+  border: 1px solid var(--color-border);
+  color: var(--color-foreground);
+  padding: 1rem 2rem;
+}
+
+.cta-secondary::before {
+  background: var(--color-gold);
+}
+
+.cta-secondary:hover {
+  border-color: var(--color-gold);
+  color: var(--color-background);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+}
+
+/* ── Outline gold: tinted → solid gold fill, text goes dark ── */
+.cta-outline-gold {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--color-gold);
+  padding: 0.875rem 2rem;
+}
+
+.cta-outline-gold::before {
+  background: var(--color-gold);
+}
+
+.cta-outline-gold:hover {
+  border-color: var(--color-gold);
+  color: var(--color-background);
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+}
+
+/* ── Disabled ── */
+.cta-disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .cta-base,
+  .cta-base::before {
+    transition: none;
+  }
+  .cta-base:hover::before {
+    transform: scaleX(1); /* instant fill, no animation */
+  }
+  .cta-base:active {
+    transform: none;
+  }
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 6px;

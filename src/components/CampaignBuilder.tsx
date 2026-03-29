@@ -459,7 +459,7 @@ export default function CampaignBuilder() {
             href="https://calendly.com/benjaminferment/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="gold-glow-hover inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3.5 text-sm font-bold text-background transition-all hover:bg-gold-light"
+            className="cta-base cta-primary"
           >
             {t("summary.ctaButton")}
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -532,7 +532,7 @@ export default function CampaignBuilder() {
             {step > 0 ? (
               <button
                 onClick={() => goTo(step - 1)}
-                className="rounded-xl border border-border bg-white/[0.04] px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-gold/30"
+                className="cta-base cta-secondary !rounded-xl !px-6 !py-3"
               >
                 ← {t("prev")}
               </button>
@@ -542,8 +542,8 @@ export default function CampaignBuilder() {
             {step < STEPS.length - 1 && (
               <button
                 onClick={() => canProceed() && goTo(step + 1)}
-                className={`rounded-xl bg-gold px-6 py-3 text-sm font-bold text-background transition-all ${
-                  canProceed() ? "cursor-pointer hover:bg-gold-light" : "cursor-not-allowed opacity-40"
+                className={`cta-base cta-primary !rounded-xl !px-6 !py-3 ${
+                  canProceed() ? "" : "cta-disabled"
                 }`}
               >
                 {t("next")} →

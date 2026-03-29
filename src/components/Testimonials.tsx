@@ -42,7 +42,7 @@ export default function Testimonials() {
             href="https://share.google/GMpytWzTD9om1P59J"
             target="_blank"
             rel="noopener noreferrer"
-            className="gold-glow-hover group inline-flex items-center gap-3 rounded-full border border-gold/30 bg-gold/10 px-6 py-3 text-sm font-medium text-gold transition-all hover:border-gold/50 hover:bg-gold/20"
+            className="cta-base cta-outline-gold group"
           >
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>

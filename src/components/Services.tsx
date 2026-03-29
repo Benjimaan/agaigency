@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 import ScrollReveal from "./ui/ScrollReveal";
 import RevealText from "./ui/RevealText";
 
@@ -33,6 +34,7 @@ const bentoSpans = [2, 1, 1, 2] as const;
 
 export default function Services() {
   const t = useTranslations("services");
+  const locale = useLocale();
 
   return (
     <section id="services" className="bg-[#FAFAFA] px-6 py-32">
@@ -54,8 +56,8 @@ export default function Services() {
           {serviceKeys.map((key, i) => {
             const span = bentoSpans[i];
             return (
+              <Link key={key} href={`/${locale}/request-quote`} className="block">
               <motion.div
-                key={key}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
@@ -83,6 +85,13 @@ export default function Services() {
                   <p className={`leading-relaxed text-gray-500 ${span === 2 ? "max-w-md text-base" : "text-sm"}`}>
                     {t(`items.${key}.description`)}
                   </p>
+                  {/* CTA — visible on hover */}
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-gold opacity-0 transition-all duration-300 group-hover:opacity-100">
+                    {t("cardCta")}
+                    <svg className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </span>
                 </div>
 
                 {/* Decorative grid pattern for large cards */}
@@ -97,6 +106,7 @@ export default function Services() {
                   />
                 )}
               </motion.div>
+              </Link>
             );
           })}
         </div>

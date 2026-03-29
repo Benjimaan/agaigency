@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 import ScrollReveal from "./ui/ScrollReveal";
 
 const EASE = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
@@ -10,6 +11,7 @@ const faqKeys = ["price", "timeline", "maintenance", "seo"] as const;
 
 export default function Faq() {
   const t = useTranslations("faq");
+  const locale = useLocale();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (index: number) => {
@@ -72,6 +74,20 @@ export default function Faq() {
             </ScrollReveal>
           ))}
         </div>
+
+        {/* CTA after FAQ */}
+        <ScrollReveal delay={0.3} className="mt-12 text-center">
+          <p className="mb-4 text-sm text-muted">{t("stillQuestions")}</p>
+          <Link
+            href={`/${locale}/request-quote`}
+            className="cta-base cta-outline-gold"
+          >
+            {t("ctaContact")}
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
+        </ScrollReveal>
       </div>
     </section>
   );

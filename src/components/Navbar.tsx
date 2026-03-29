@@ -88,7 +88,7 @@ export default function Navbar() {
           <Link
             href={`/${locale}/request-quote`}
             onClick={() => track("Click_Demarrer_Projet", { location: "navbar" })}
-            className="rounded-full border border-gold/20 bg-gold/10 px-5 py-2 text-sm font-medium text-gold transition-all hover:bg-gold/20"
+            className="cta-base cta-outline-gold !py-2 !px-5"
           >
             {tContact("cta")}
           </Link>
@@ -139,7 +139,7 @@ export default function Navbar() {
           <Link
             href={`/${locale}/request-quote`}
             onClick={() => { track("Click_Demarrer_Projet", { location: "navbar_mobile" }); setIsOpen(false); }}
-            className="rounded-full border border-gold/20 bg-gold/10 px-8 py-3 text-lg font-medium text-gold transition-all hover:bg-gold/20"
+            className="cta-base cta-outline-gold !text-lg !px-8"
           >
             {tContact("cta")}
           </Link>

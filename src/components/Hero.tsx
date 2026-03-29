@@ -213,7 +213,7 @@ export default function Hero() {
           <Link
             href={`/${locale}/request-quote`}
             onClick={() => track("Click_Demarrer_Projet", { location: "hero" })}
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-semibold text-background transition-all hover:bg-gold-dark hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)]"
+            className="cta-base cta-primary"
           >
             {t("cta")}
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -222,7 +222,7 @@ export default function Hero() {
           </Link>
           <a
             href="#portfolio"
-            className="inline-flex items-center gap-2 rounded-full border border-border px-8 py-4 text-sm font-medium text-foreground transition-all hover:border-gold/40 hover:text-gold"
+            className="cta-base cta-secondary"
           >
             {t("ctaSecondary")}
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

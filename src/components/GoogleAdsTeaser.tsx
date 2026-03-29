@@ -63,7 +63,7 @@ export default function GoogleAdsTeaser() {
           >
             <Link
               href={`/${locale}/tools/campaign-builder`}
-              className="inline-flex items-center gap-2 rounded-full bg-gold px-10 py-4 text-sm font-semibold text-background transition-all hover:bg-gold-dark hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)]"
+              className="cta-base cta-primary"
             >
               {t("cta")}
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

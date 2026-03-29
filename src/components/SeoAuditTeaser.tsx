@@ -76,11 +76,7 @@ export default function SeoAuditTeaser() {
               <button
                 type="submit"
                 disabled={!canSubmit}
-                className={`inline-flex items-center gap-2 rounded-full px-10 py-4 text-sm font-semibold transition-all ${
-                  canSubmit
-                    ? "bg-gold text-background hover:bg-gold-dark hover:shadow-[0_8px_30px_rgba(212,175,55,0.3)]"
-                    : "cursor-not-allowed bg-border text-muted"
-                }`}
+                className={`cta-base ${canSubmit ? "cta-primary" : "cta-disabled bg-border text-muted"}`}
               >
                 {t("cta")}
                 <svg

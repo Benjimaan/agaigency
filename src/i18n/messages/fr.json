@@ -21,6 +21,7 @@
     "badge": "La réalité",
     "title": "Votre site vous coûte de l'argent. Chaque jour.",
     "subtitle": "Ces 3 signaux indiquent que votre présence digitale sabote votre croissance.",
+    "cta": "Découvrir comment on résout ça",
     "items": {
       "visibility": {
         "title": "Invisible là où vos clients cherchent",
@@ -36,10 +37,107 @@
       }
     }
   },
+  "expertise": {
+    "badge": "Notre Approche",
+    "title": "L'Ingénierie de la <gold>Conversion</gold>",
+    "subtitle": "Nous ne nous contentons pas de beaux visuels. Nous construisons des machines d'acquisition complètes.",
+    "items": {
+      "engine": {
+        "title": "Le Moteur",
+        "description": "Une architecture ultra-rapide et un code sur-mesure pour des performances techniques redoutables. Votre site charge en moins de 2 secondes."
+      },
+      "body": {
+        "title": "La Carrosserie",
+        "description": "Un design UI/UX premium, minimaliste et pensé pour asseoir votre autorité dès la première seconde. Chaque pixel sert la conversion."
+      },
+      "fuel": {
+        "title": "L'Essence",
+        "description": "Des stratégies SEO et un copywriting persuasif pour transformer votre trafic en clients haut de gamme. Le contenu qui convertit."
+      }
+    }
+  },
+  "premiumProcess": {
+    "badge": "Méthodologie",
+    "title": "Notre approche<br></br><gold>sur-mesure.</gold>",
+    "description": "L'excellence ne s'improvise pas. Elle est le résultat d'une méthodologie millimétrée, alliant ingénierie technique et psychologie de vente.",
+    "steps": {
+      "audit": {
+        "title": "L'Audit & L'Architecture",
+        "description": "Nous ne commençons jamais par le design. Nous analysons votre marché, vos concurrents et les points de friction de votre acquisition actuelle pour concevoir une stratégie sur-mesure."
+      },
+      "craft": {
+        "title": "L'Orfèvrerie Digitale",
+        "description": "Création d'une interface UI/UX luxueuse et minimaliste. Chaque pixel, chaque animation et chaque mot est pensé pour asseoir votre autorité et guider vers la conversion."
+      },
+      "accelerate": {
+        "title": "L'Accélération",
+        "description": "Le moteur est prêt, nous y injectons l'essence. Mise en place des systèmes SEO, Web-to-Store et génération de leads pour transformer votre site en un actif ultra-rentable."
+      }
+    }
+  },
+  "portfolioGallery": {
+    "stepLabel": "Étape {number}",
+    "steps": {
+      "architecture": {
+        "title": "L'Architecture Initiale",
+        "description": "Analyse du marché et structuration de l'écosystème web pour garantir des fondations solides et orientées conversion."
+      },
+      "visual": {
+        "title": "L'Orfèvrerie Visuelle",
+        "description": "Création d'une direction artistique sur-mesure. Des interfaces sombres, luxueuses et minimalistes conçues pour marquer les esprits."
+      },
+      "engineering": {
+        "title": "L'Ingénierie Next.js",
+        "description": "Développement pur et intégration d'animations fluides. Le site ne se contente pas d'être beau, il charge à la vitesse de l'éclair."
+      },
+      "conversion": {
+        "title": "Le Moteur de Conversion",
+        "description": "Déploiement des stratégies d'acquisition. Le visiteur est captivé, le prospect est qualifié, le client est closé."
+      }
+    }
+  },
+  "pricing": {
+    "badge": "Investissement",
+    "title": "Un investissement,<br></br><gold>pas une dépense.</gold>",
+    "subtitle": "Choisissez l'écosystème digital qui propulsera votre entreprise au niveau supérieur.",
+    "popularBadge": "L'Offre Phare",
+    "plans": {
+      "vitrine": {
+        "name": "Vitrine d'Excellence",
+        "description": "L'architecture parfaite pour asseoir votre autorité en ligne.",
+        "price": "Sur devis",
+        "features": [
+          "Design sur-mesure UI/UX Premium",
+          "Développement Next.js ultra-rapide",
+          "Animations fluides (Framer Motion)",
+          "Base de données sécurisée",
+          "Hébergement Vercel inclus",
+          "Optimisation SEO de base"
+        ],
+        "cta": "Demander un audit"
+      },
+      "acquisition": {
+        "name": "Machine d'Acquisition",
+        "description": "Le moteur technologique couplé à l'essence de la conversion.",
+        "price": "Pack WaaS",
+        "priceSub": "+ % sur les leads générés",
+        "features": [
+          "Tout ce qui est inclus dans 'Vitrine'",
+          "Copywriting persuasif complet",
+          "Stratégie SEO avancée (Trafic)",
+          "Tunnels de vente automatisés",
+          "Système Web-to-Store (RDV)",
+          "Maintenance & Évolutions illimitées"
+        ],
+        "cta": "Démarrer la machine"
+      }
+    }
+  },
   "services": {
     "badge": "Leviers de Croissance",
     "title": "4 leviers. Un seul objectif : votre croissance.",
     "subtitle": "Nous ne vendons pas des sites. Nous concevons des systèmes qui génèrent des résultats mesurables pour votre entreprise.",
+    "cardCta": "En savoir plus",
     "items": {
       "design": {
         "title": "Design UI/UX",
@@ -388,7 +486,9 @@
         "question": "Mon site sera-t-il optimisé pour le référencement (SEO) ?",
         "answer": "Ce n'est pas une option, c'est un prérequis. Chaque site que nous livrons est optimisé pour le référencement : architecture technique, temps de chargement, balisage sémantique, métadonnées. Nous pouvons également piloter votre stratégie SEO dans la durée pour des résultats croissants."
       }
-    }
+    },
+    "stillQuestions": "Vous avez une question spécifique à votre projet ?",
+    "ctaContact": "Parlons-en directement"
   },
   "legal": {
     "title": "Mentions légales",
@@ -410,6 +510,11 @@
     "title": "Votre croissance commence par une conversation.",
     "subtitle": "Réservez 30 minutes. Nous analyserons votre situation et vous montrerons exactement comment accélérer.",
     "cta": "Planifier un appel stratégique",
+    "reassurance": {
+      "duration": "30 min · visio ou téléphone",
+      "free": "Gratuit · Sans engagement",
+      "response": "Réponse sous 24h"
+    },
     "form": {
       "name": "Votre nom",
       "email": "Votre email",
@@ -756,6 +861,11 @@
         }
       }
     }
+  },
+  "ctaBandeau": {
+    "title": "Prêt à transformer votre présence digitale ?",
+    "subtitle": "Réservez un appel stratégique de 30 minutes. Nous analyserons votre situation et vous montrerons le chemin le plus court vers vos objectifs.",
+    "cta": "Réserver mon appel gratuit"
   },
   "footer": {
     "description": "Partenaire de croissance digitale pour les dirigeants qui refusent la médiocrité.",
