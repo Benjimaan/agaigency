@@ -73,27 +73,18 @@ export default function About() {
               </div>
             </ScrollReveal>
 
-            {/* Video placeholder */}
+            {/* Showreel */}
             <ScrollReveal delay={0.3}>
-              <div className="group relative mt-8 flex aspect-video w-full items-center justify-center overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all hover:border-gold/20 hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-                <div
-                  className="pointer-events-none absolute inset-0 opacity-[0.03]"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(circle, rgba(212,175,55,1) 1px, transparent 1px)",
-                    backgroundSize: "20px 20px",
-                  }}
-                />
-                <div className="relative flex flex-col items-center gap-3">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold transition-all group-hover:scale-110 group-hover:bg-gold/20">
-                    <svg className="ml-1 h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                  <span className="text-sm text-gray-500">
-                    {t("videoPlaceholder")}
-                  </span>
-                </div>
+              <div className="relative mt-8 aspect-video w-full overflow-hidden rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                <video
+                  className="h-full w-full object-cover"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster=""
+                >
+                  <source src="/agaigency-showreel-v2.mp4" type="video/mp4" />
+                </video>
               </div>
             </ScrollReveal>
           </div>
